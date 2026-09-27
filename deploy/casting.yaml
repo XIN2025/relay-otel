@@ -1,0 +1,11 @@
+apiVersion: v1alpha1
+kind: Installation
+metadata:
+  name: relay-otel-signoz
+spec:
+  deployment:
+    mode: docker
+    flavor: compose
+  metastore:
+    kind: sqlite
+

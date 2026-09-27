@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "resolved_at": "2026-08-23",
+  "installer": {
+    "repository": "SigNoz/foundry",
+    "version": "v0.2.17",
+    "windows_amd64_archive_sha256": "625c7985b8ac6f3e4a99576c1dceaa4fa46fa4a54b2c53f515dff7f63da8dd4a"
+  },
+  "images": {
+    "signoz/signoz": "sha256:0061009f21bf976a5374b6f73f98aa96f6f335d3ac753d6a792c6b3dc91a2328",
+    "signoz/signoz-otel-collector": "sha256:6d1a59bc553e041014597eff0970608948c5c7447aaa984c4d109f2bc9f4062c",
+    "clickhouse/clickhouse-keeper": "sha256:525b8b0f93ccb371131c46f22a066ea43d33d74aba314203e8044609945d8524",
+    "clickhouse/clickhouse-server": "sha256:cacf32d6884291dc2ff5e0156a97f46fc53ff7c929a7906d114e268a929dfd3a"
+  },
+  "component_metadata": {
+    "signoz/signoz": {
+      "version": "v0.138.0",
+      "platform": "linux/amd64",
+      "version_source": "running /api/v1/version"
+    },
+    "signoz/signoz-otel-collector": {
+      "version": "not embedded by this image",
+      "platform": "linux/amd64",
+      "version_source": "binary exposes no version flag; image digest is authoritative"
+    },
+    "clickhouse/clickhouse-keeper": {
+      "version": "25.12.5.44",
+      "platform": "linux/amd64",
+      "version_source": "container image label"
+    },
+    "clickhouse/clickhouse-server": {
+      "version": "25.12.5.44",
+      "platform": "linux/amd64",
+      "version_source": "container image label"
+    }
+  }
+}

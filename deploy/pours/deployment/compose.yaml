@@ -1,0 +1,192 @@
+name: relay-otel-signoz
+networks:
+  relay-otel-signoz-network:
+    name: relay-otel-signoz-network
+services:
+  ingester:
+    command:
+    - -c
+    - |
+      /signoz-otel-collector migrate sync check &&
+      /signoz-otel-collector --config=/etc/otel-collector-config.yaml --manager-config=/etc/opamp-config.yaml --copy-path=/var/tmp/collector-config.yaml
+    deploy:
+      replicas: 1
+    entrypoint:
+    - /bin/sh
+    environment:
+    - SIGNOZ_OTEL_COLLECTOR_CLICKHOUSE_DSN=tcp://relay-otel-signoz-telemetrystore-clickhouse-0-0:9000
+    - SIGNOZ_OTEL_COLLECTOR_TIMEOUT=10m
+    image: signoz/signoz-otel-collector@sha256:6d1a59bc553e041014597eff0970608948c5c7447aaa984c4d109f2bc9f4062c
+    healthcheck:
+      interval: 10s
+      retries: 12
+      start_period: 30s
+      test:
+      - CMD
+      - /usr/bin/bash
+      - -ec
+      - >-
+        exec 3<>/dev/tcp/127.0.0.1/13133;
+        printf 'GET / HTTP/1.0\r\nHost: localhost\r\nConnection: close\r\n\r\n' >&3;
+        IFS= read -r status <&3;
+        [[ "$$status" == HTTP/*" 200 "* ]]
+      timeout: 5s
+    networks:
+      relay-otel-signoz-network:
+        aliases:
+        - relay-otel-signoz-ingester
+    ports:
+    - 127.0.0.1:4318:4318
+    - 127.0.0.1:13133:13133
+    restart: unless-stopped
+    volumes:
+    - ./ingester/ingester.yaml:/etc/otel-collector-config.yaml:ro
+    - ./ingester/opamp.yaml:/etc/opamp-config.yaml:ro
+  relay-otel-signoz-signoz-0:
+    container_name: relay-otel-signoz-signoz-0
+    environment:
+    - SIGNOZ_SQLSTORE_PROVIDER=sqlite
+    - SIGNOZ_SQLSTORE_SQLITE_PATH=/var/lib/signoz/signoz.db
+    - SIGNOZ_TELEMETRYSTORE_CLICKHOUSE_DSN=tcp://relay-otel-signoz-telemetrystore-clickhouse-0-0:9000
+    - SIGNOZ_TELEMETRYSTORE_PROVIDER=clickhouse
+    healthcheck:
+      interval: 30s
+      retries: 3
+      start_period: 60s
+      test:
+      - CMD
+      - wget
+      - --spider
+      - -q
+      - http://localhost:8080/api/v1/health
+      timeout: 10s
+    image: signoz/signoz@sha256:0061009f21bf976a5374b6f73f98aa96f6f335d3ac753d6a792c6b3dc91a2328
+    networks:
+    - relay-otel-signoz-network
+    ports:
+    - 127.0.0.1:8080:8080
+    restart: unless-stopped
+    volumes:
+    - relay-otel-signoz-metastore-sqlite-0-data:/var/lib/signoz
+  relay-otel-signoz-telemetrykeeper-clickhousekeeper-0:
+    container_name: relay-otel-signoz-telemetrykeeper-clickhousekeeper-0
+    entrypoint:
+    - /usr/bin/clickhouse-keeper
+    - --config-file=/etc/clickhouse-keeper/keeper.yaml
+    healthcheck:
+      interval: 30s
+      retries: 3
+      start_period: 40s
+      test:
+      - CMD
+      - clickhouse-keeper-client
+      - -h
+      - localhost
+      - -p
+      - "9181"
+      - -q
+      - ls
+      timeout: 10s
+    image: clickhouse/clickhouse-keeper@sha256:525b8b0f93ccb371131c46f22a066ea43d33d74aba314203e8044609945d8524
+    networks:
+    - relay-otel-signoz-network
+    restart: unless-stopped
+    volumes:
+    - relay-otel-signoz-telemetrykeeper-0-data:/var/lib/clickhouse-keeper
+    - ./telemetrykeeper/clickhousekeeper/keeper-0.yaml:/etc/clickhouse-keeper/keeper.yaml:ro
+  relay-otel-signoz-telemetrystore-clickhouse-0-0:
+    container_name: relay-otel-signoz-telemetrystore-clickhouse-0-0
+    depends_on:
+      relay-otel-signoz-telemetrykeeper-clickhousekeeper-0:
+        condition: service_healthy
+      relay-otel-signoz-telemetrystore-clickhouse-user-scripts:
+        condition: service_completed_successfully
+    environment:
+    - CLICKHOUSE_SKIP_USER_SETUP=1
+    - CLICKHOUSE_CONFIG=/etc/clickhouse-server/config-0-0.yaml
+    healthcheck:
+      interval: 30s
+      retries: 3
+      start_period: 40s
+      test:
+      - CMD
+      - wget
+      - --spider
+      - -q
+      - http://localhost:8123/ping
+      timeout: 10s
+    image: clickhouse/clickhouse-server@sha256:cacf32d6884291dc2ff5e0156a97f46fc53ff7c929a7906d114e268a929dfd3a
+    networks:
+    - relay-otel-signoz-network
+    restart: unless-stopped
+    volumes:
+    - relay-otel-signoz-telemetrystore-0-0-data:/var/lib/clickhouse
+    - relay-otel-signoz-telemetrystore-user-scripts:/var/lib/clickhouse/user_scripts:ro
+    - ./telemetrystore/clickhouse/config-0-0.yaml:/etc/clickhouse-server/config-0-0.yaml:ro
+    - ./telemetrystore/clickhouse/functions.yaml:/etc/clickhouse-server/functions.yaml:ro
+  relay-otel-signoz-telemetrystore-clickhouse-user-scripts:
+    command:
+    - bash
+    - -c
+    - |-
+      set -euo pipefail
+      version="v0.0.1"
+      node_os=$$(uname -s | tr '[:upper:]' '[:lower:]')
+      node_arch=$$(uname -m | sed s/aarch64/arm64/ | sed s/x86_64/amd64/)
+      case "$${node_os}/$${node_arch}" in
+        linux/amd64)
+          archive_sha="33997073eb6d82b7be4f27f9fc8ec9e28a395e0f20674d5d54bb2fa28a75488d"
+          binary_sha="fc3168f98e9f3126506d96ef8d7e6057dd777fd72786cdc58e0e8c9de80dd997"
+          ;;
+        linux/arm64)
+          archive_sha="e5605ebffa82a450ebbcdf6cf19dad546e1e40d52dbf3e03cfd2d2d5b7394211"
+          binary_sha="a52455dc7f2b1894d7c4e45d43112d12558e7191e6023d2b20ea8442fec77562"
+          ;;
+        *)
+          echo "Unsupported histogram-binary platform: $${node_os}/$${node_arch}" >&2
+          exit 64
+          ;;
+      esac
+      echo "Fetching histogram-binary for $${node_os}/$${node_arch}"
+      cd /tmp
+      wget -q -O histogram-quantile.tar.gz "https://github.com/SigNoz/signoz/releases/download/histogram-quantile%2F$${version}/histogram-quantile_$${node_os}_$${node_arch}.tar.gz"
+      printf '%s  %s\n' "$${archive_sha}" histogram-quantile.tar.gz | sha256sum -c -
+      tar -xzf histogram-quantile.tar.gz
+      printf '%s  %s\n' "$${binary_sha}" histogram-quantile | sha256sum -c -
+      cp histogram-quantile /var/lib/clickhouse/user_scripts/histogramQuantile.next
+      chmod 0755 /var/lib/clickhouse/user_scripts/histogramQuantile.next
+      mv -f /var/lib/clickhouse/user_scripts/histogramQuantile.next /var/lib/clickhouse/user_scripts/histogramQuantile
+    container_name: relay-otel-signoz-telemetrystore-clickhouse-user-scripts
+    image: clickhouse/clickhouse-server@sha256:cacf32d6884291dc2ff5e0156a97f46fc53ff7c929a7906d114e268a929dfd3a
+    networks:
+    - relay-otel-signoz-network
+    restart: on-failure
+    volumes:
+    - relay-otel-signoz-telemetrystore-user-scripts:/var/lib/clickhouse/user_scripts
+  relay-otel-signoz-telemetrystore-migrator:
+    command:
+    - -c
+    - |
+      /signoz-otel-collector migrate ready &&
+      /signoz-otel-collector migrate bootstrap &&
+      /signoz-otel-collector migrate sync up &&
+      /signoz-otel-collector migrate async up
+    container_name: relay-otel-signoz-telemetrystore-migrator
+    entrypoint:
+    - /bin/sh
+    environment:
+    - SIGNOZ_OTEL_COLLECTOR_CLICKHOUSE_DSN=tcp://relay-otel-signoz-telemetrystore-clickhouse-0-0:9000
+    - SIGNOZ_OTEL_COLLECTOR_TIMEOUT=10m
+    image: signoz/signoz-otel-collector@sha256:6d1a59bc553e041014597eff0970608948c5c7447aaa984c4d109f2bc9f4062c
+    networks:
+    - relay-otel-signoz-network
+    restart: on-failure
+volumes:
+  relay-otel-signoz-metastore-sqlite-0-data:
+    name: relay-otel-signoz-metastore-sqlite-0-data
+  relay-otel-signoz-telemetrykeeper-0-data:
+    name: relay-otel-signoz-telemetrykeeper-0-data
+  relay-otel-signoz-telemetrystore-0-0-data:
+    name: relay-otel-signoz-telemetrystore-0-0-data
+  relay-otel-signoz-telemetrystore-user-scripts:
+    name: relay-otel-signoz-telemetrystore-user-scripts

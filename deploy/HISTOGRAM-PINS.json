@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-08-24",
+  "source": {
+    "repository": "SigNoz/signoz",
+    "release": "histogram-quantile/v0.0.1",
+    "release_url": "https://github.com/SigNoz/signoz/releases/tag/histogram-quantile%2Fv0.0.1"
+  },
+  "artifacts": {
+    "linux_amd64": {
+      "archive": "histogram-quantile_linux_amd64.tar.gz",
+      "archive_bytes": 669465,
+      "archive_sha256": "33997073eb6d82b7be4f27f9fc8ec9e28a395e0f20674d5d54bb2fa28a75488d",
+      "binary_bytes": 1446040,
+      "binary_sha256": "fc3168f98e9f3126506d96ef8d7e6057dd777fd72786cdc58e0e8c9de80dd997"
+    },
+    "linux_arm64": {
+      "archive": "histogram-quantile_linux_arm64.tar.gz",
+      "archive_bytes": 630694,
+      "archive_sha256": "e5605ebffa82a450ebbcdf6cf19dad546e1e40d52dbf3e03cfd2d2d5b7394211",
+      "binary_bytes": 1507480,
+      "binary_sha256": "a52455dc7f2b1894d7c4e45d43112d12558e7191e6023d2b20ea8442fec77562"
+    }
+  }
+}

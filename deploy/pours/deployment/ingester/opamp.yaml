@@ -1,0 +1,1 @@
+server_endpoint: ws://relay-otel-signoz-signoz-0:4320/v1/opamp
