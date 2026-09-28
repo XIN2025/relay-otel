@@ -1,0 +1,171 @@
+{
+  "criteria": {
+    "bounded_runtime_correctness": true,
+    "compileall": true,
+    "exact_uv_lock": true,
+    "frozen_environment_matches_project_venv": true,
+    "frozen_uv_sync": true,
+    "real_hard_exit_and_fresh_resume": true,
+    "ruff": true,
+    "strict_mypy": true
+  },
+  "evidence": {
+    "commands": [
+      {
+        "command": [
+          "uvx",
+          "uv@0.12.5",
+          "sync",
+          "--frozen"
+        ],
+        "cwd": ".",
+        "exit_code": 0,
+        "stderr": "Checked 47 packages in 21ms\n",
+        "stdout": ""
+      },
+      {
+        "command": [
+          "uvx",
+          "uv@0.12.5",
+          "lock",
+          "--check"
+        ],
+        "cwd": ".",
+        "exit_code": 0,
+        "stderr": "Resolved 47 packages in 2ms\n",
+        "stdout": ""
+      },
+      {
+        "command": [
+          ".\\.venv\\Scripts\\ruff.exe",
+          "check",
+          "."
+        ],
+        "cwd": ".",
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "All checks passed!\n"
+      },
+      {
+        "command": [
+          ".\\.venv\\Scripts\\mypy.exe"
+        ],
+        "cwd": ".",
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "Success: no issues found in 23 source files\n"
+      },
+      {
+        "command": [
+          ".\\.venv\\Scripts\\python.exe",
+          "-m",
+          "compileall",
+          "-q",
+          "src",
+          "scripts",
+          "verify"
+        ],
+        "cwd": ".",
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": ""
+      },
+      {
+        "command": [
+          ".\\.venv\\Scripts\\python.exe",
+          "-c",
+          "import importlib.metadata as metadata, json, platform; names=['PyYAML', 'bandit', 'mypy', 'opentelemetry-api', 'opentelemetry-exporter-otlp-proto-http', 'opentelemetry-sdk', 'pip-audit', 'relay-otel', 'ruff']; print(json.dumps({'python': platform.python_version(), 'implementation': platform.python_implementation(), 'platform': platform.platform(), 'packages': {name: metadata.version(name) for name in names}}, sort_keys=True))"
+        ],
+        "cwd": ".",
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "{\"implementation\": \"CPython\", \"packages\": {\"PyYAML\": \"6.0.3\", \"bandit\": \"1.8.6\", \"mypy\": \"2.3.1\", \"opentelemetry-api\": \"1.44.0\", \"opentelemetry-exporter-otlp-proto-http\": \"1.44.0\", \"opentelemetry-sdk\": \"1.44.0\", \"pip-audit\": \"2.9.0\", \"relay-otel\": \"0.2.0\", \"ruff\": \"0.16.4\"}, \"platform\": \"Windows-11-10.0.26200-SP0\", \"python\": \"3.12.7\"}\n"
+      },
+      {
+        "command": [
+          ".\\.venv\\Scripts\\python.exe",
+          "verify/runtime_correctness.py"
+        ],
+        "cwd": ".",
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "{\"checks\": {\"approvalAndStartGuards\": {\"executions\": 1, \"status\": \"finished\"}, \"crashResume\": {\"awareSpans\": 5, \"businessExecutions\": 1, \"controlSpans\": 5, \"events\": 9}, \"idempotentUnknownOutcome\": {\"businessExecutions\": 1, \"providerCalls\": 2, \"status\": \"finished\"}, \"identityMismatch\": {\"providerCalls\": 1, \"sameAttemptProviderCalls\": 1, \"status\": \"failed\"}, \"legacyMigration\": {\"migratedColumns\": [\"activation_id\", \"at\", \"at_ns\", \"attempt_id\", \"node\", \"payload\", \"run_id\", \"seq\", \"type\"]}, \"loopActivationIsolation\": {\"activations\": 2, \"businessExecutions\": 2}, \"routeReplay\": {\"chooserCallsDuringReplay\": 0}, \"skippedCall\": {\"businessExecutions\": 1, \"resolutions\": 0}, \"unknownOutcome\": {\"providerCalls\": 1, \"status\": \"failed\"}}, \"verdict\": \"PASS\"}\n"
+      }
+    ],
+    "environment": {
+      "implementation": "CPython",
+      "packages": {
+        "PyYAML": "6.0.3",
+        "bandit": "1.8.6",
+        "mypy": "2.3.1",
+        "opentelemetry-api": "1.44.0",
+        "opentelemetry-exporter-otlp-proto-http": "1.44.0",
+        "opentelemetry-sdk": "1.44.0",
+        "pip-audit": "2.9.0",
+        "relay-otel": "0.2.0",
+        "ruff": "0.16.4"
+      },
+      "platform": "Windows-11-10.0.26200-SP0",
+      "python": "3.12.7"
+    },
+    "runtime": {
+      "checks": {
+        "approvalAndStartGuards": {
+          "executions": 1,
+          "status": "finished"
+        },
+        "crashResume": {
+          "awareSpans": 5,
+          "businessExecutions": 1,
+          "controlSpans": 5,
+          "events": 9
+        },
+        "idempotentUnknownOutcome": {
+          "businessExecutions": 1,
+          "providerCalls": 2,
+          "status": "finished"
+        },
+        "identityMismatch": {
+          "providerCalls": 1,
+          "sameAttemptProviderCalls": 1,
+          "status": "failed"
+        },
+        "legacyMigration": {
+          "migratedColumns": [
+            "activation_id",
+            "at",
+            "at_ns",
+            "attempt_id",
+            "node",
+            "payload",
+            "run_id",
+            "seq",
+            "type"
+          ]
+        },
+        "loopActivationIsolation": {
+          "activations": 2,
+          "businessExecutions": 2
+        },
+        "routeReplay": {
+          "chooserCallsDuringReplay": 0
+        },
+        "skippedCall": {
+          "businessExecutions": 1,
+          "resolutions": 0
+        },
+        "unknownOutcome": {
+          "providerCalls": 1,
+          "status": "failed"
+        }
+      },
+      "verdict": "PASS"
+    }
+  },
+  "generated_at": "2026-09-27T11:42:36.076636+00:00",
+  "lineage_id": "v2-2026-09-27-r11",
+  "lineage_inputs_sha256": "d8eb5a8bf157f723afb6dc2aba31d01d426b5ab61d173c6cabcea5a79a073571",
+  "phase": "01-runtime",
+  "schema_version": 1,
+  "verdict": "PASS"
+}

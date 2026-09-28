@@ -1,0 +1,25 @@
+{
+  "criteria": {
+    "bounded_runtime_correctness": true,
+    "compileall": true,
+    "exact_uv_lock": true,
+    "frozen_environment_matches_project_venv": true,
+    "frozen_uv_sync": true,
+    "real_hard_exit_and_fresh_resume": true,
+    "ruff": true,
+    "strict_mypy": true
+  },
+  "evidence": {
+    "bytes": 5645,
+    "path": "receipts/lineages/v2-2026-09-27-r11/phase-01-runtime.evidence.json",
+    "sha256": "9df3bcb14a6f74ad7f9845db6c374be5127001d43aeb03e035f577c9aaa3ad22"
+  },
+  "generated_at": "2026-09-27T11:42:36.082674+00:00",
+  "lineage_id": "v2-2026-09-27-r11",
+  "lineage_inputs_sha256": "d8eb5a8bf157f723afb6dc2aba31d01d426b5ab61d173c6cabcea5a79a073571",
+  "phase": "01-runtime",
+  "previous_phase_receipt": null,
+  "schema_version": 1,
+  "supporting_artifacts": [],
+  "verdict": "PASS"
+}
