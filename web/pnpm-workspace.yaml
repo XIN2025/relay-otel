@@ -1,0 +1,4 @@
+allowBuilds:
+  # next/image needs sharp's prebuilt binary wired up at install time.
+  sharp: true
+  unrs-resolver: false
