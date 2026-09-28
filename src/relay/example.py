@@ -1,16 +1,3 @@
-"""A refund-approval agent, used as the worked example.
-
-Chosen because it has the three properties the engine exists for and a toy graph
-does not: a non-reproducible side effect (the model call), an irreversible one
-(issuing the refund), and a point where a human must decide before the
-irreversible thing happens.
-
-The external calls go through `ctx.call`, so completed results are resolved from
-the journal on recovery. An intent with no completion is not assumed safe: this
-example fails closed unless an adapter explicitly supplies idempotent retry
-semantics.
-"""
-
 from __future__ import annotations
 
 import os
@@ -21,10 +8,7 @@ from .types import Document
 
 graph = Graph(START="classify", version="refund-approval-example/v2")
 
-# A crash injected on purpose, to prove the resume path. Set RELAY_CRASH_AT to a
-# node name and the process dies inside it with os._exit: no unwinding, no
-# `finally`, nothing flushed politely. A demo that raises an exception instead
-# would prove only that try/except works.
+# RELAY_CRASH_AT=<node> hard-exits inside that node with os._exit.
 CRASH_AT = os.environ.get("RELAY_CRASH_AT")
 
 
@@ -37,9 +21,7 @@ def _maybe_crash(node: str) -> None:
 @graph.node("classify", description="Ask the model what kind of ticket this is")
 def classify(state: State, ctx: NodeContext) -> Document:
     def model_call() -> Document:
-        # Stands in for a hosted model call. Deliberately non-deterministic, so
-        # that a replay returning the same answer proves the recording works
-        # rather than proving the function is pure.
+        # Non-deterministic on purpose: a matching replay proves the recording.
         return {
             "category": "refund_request",
             "confidence": round(random.uniform(0.80, 0.99), 4),

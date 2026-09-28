@@ -1,10 +1,3 @@
-"""Versioned durable events for relay runs.
-
-The writer owns schema migration and append durability. Projection uses
-``JournalReader`` instead: it opens an existing database in strict read-only mode
-and never changes WAL state or creates a file on a misspelled path.
-"""
-
 from __future__ import annotations
 
 import json
@@ -62,7 +55,6 @@ class Event:
 
     @property
     def time_ns(self) -> int:
-        """A real recorded timestamp, with a compatibility fallback for v1 rows."""
 
         return self.at_ns if self.at_ns > 0 else int(self.at * 1_000_000_000)
 
@@ -129,8 +121,6 @@ def _event_from_row(row: tuple[Any, ...]) -> Event:
 
 
 class Journal:
-    """Append-only SQLite event writer for runtime schema v2."""
-
     def __init__(self, path: Path | str) -> None:
         self.path = Path(path)
         self.path.parent.mkdir(parents=True, exist_ok=True)
@@ -217,7 +207,6 @@ class Journal:
         activation_id: str,
         workflow_version: str,
     ) -> Event | None:
-        """Atomically reserve a run id and append its first durable activation."""
 
         self._db.execute("BEGIN IMMEDIATE")
         try:
@@ -312,8 +301,6 @@ class Journal:
 
 
 class JournalReader:
-    """Strict read-only access for projectors and other observers."""
-
     def __init__(self, path: Path | str) -> None:
         self.path = Path(path)
         if not self.path.is_file():

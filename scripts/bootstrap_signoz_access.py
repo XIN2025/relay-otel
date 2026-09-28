@@ -1,5 +1,3 @@
-"""Provision and validate a local SigNoz viewer service-account key."""
-
 from __future__ import annotations
 
 import json

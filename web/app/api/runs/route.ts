@@ -214,8 +214,7 @@ export async function POST(request: Request) {
     );
   }
 
-  // Reserve the single local runner synchronously before the health check or
-  // any other await. This closes the previous check-then-await race.
+  // Reserve the runner before any await.
   const work = (async () => {
     const health = await getRuntimeHealth();
     if (!health.ready) {

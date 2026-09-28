@@ -1,10 +1,3 @@
-"""Semantic validation helpers for retained release-command observations.
-
-The phase runner records commands.  The release audit treats those records as
-untrusted documents: command identity, working directory, result shape, and
-machine-readable output are all re-evaluated here.
-"""
-
 from __future__ import annotations
 
 import json

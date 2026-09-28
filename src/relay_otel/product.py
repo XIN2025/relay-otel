@@ -1,5 +1,3 @@
-"""Strict portable product proof assembled from journal and projected evidence."""
-
 from __future__ import annotations
 
 from collections import Counter

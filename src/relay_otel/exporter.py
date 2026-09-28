@@ -1,5 +1,3 @@
-"""Emit projected records through the OpenTelemetry SDK to JSON and optional OTLP."""
-
 from __future__ import annotations
 
 import hashlib
@@ -65,8 +63,6 @@ class PlannedIdGenerator(IdGenerator):
 
 
 class OtlpDeliveryError(RuntimeError):
-    """An OTLP failure whose staged envelope and receipt remain on disk."""
-
     def __init__(self, result: str, receipt_path: Path) -> None:
         super().__init__(
             f"OTLP delivery failed with {result}; durable receipt: {receipt_path}"
@@ -76,8 +72,6 @@ class OtlpDeliveryError(RuntimeError):
 
 
 class OtlpCleanupError(RuntimeError):
-    """Delivery was acknowledged, but exporter shutdown did not complete."""
-
     def __init__(self, receipt_path: Path) -> None:
         super().__init__(
             "OTLP delivery was acknowledged but exporter shutdown failed; "
@@ -97,7 +91,6 @@ def _resource(mode: str) -> Resource:
 
 
 def _write_json_exclusive(path: Path, document: Document) -> None:
-    """Atomically create one immutable, fsynced JSON artifact."""
 
     path.parent.mkdir(parents=True, exist_ok=True)
     data = (json.dumps(document, indent=2, sort_keys=True) + "\n").encode("utf-8")
@@ -451,8 +444,6 @@ def readable_span_document(span: ReadableSpan) -> Document:
 
 
 class DurableJsonlExporter(SpanExporter):
-    """A synchronous control exporter whose completed lines survive hard process exit."""
-
     def __init__(self, path: Path | str) -> None:
         self.path = Path(path)
         self.path.parent.mkdir(parents=True, exist_ok=True)

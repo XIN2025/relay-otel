@@ -1,5 +1,3 @@
-"""Registered local Compose topology used by release evidence validation."""
-
 from __future__ import annotations
 
 EXPECTED_STACK: dict[str, dict[str, str]] = {

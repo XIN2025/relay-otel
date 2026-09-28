@@ -18,14 +18,12 @@ function localAuthority(authority: string | null) {
 }
 
 export function isTrustedLocalRequest(request: Request): boolean {
-  // Next may canonicalize request.url to localhost even when the browser used
-  // 127.0.0.1. The Host header preserves the authority the browser reached.
+  // Next may rewrite request.url to localhost; Host keeps what the browser used.
   const target = localAuthority(request.headers.get("host"));
   if (!target) return false;
 
   const origin = request.headers.get("origin");
-  // This endpoint launches a local process. Browser mutations must carry the
-  // same-origin headers emitted by fetch; Host alone is not an authority signal.
+  // Launches a local process, so require fetch's same-origin headers.
   if (!origin) return false;
   const fetchSite = request.headers.get("sec-fetch-site");
   if (fetchSite && fetchSite !== "same-origin") return false;

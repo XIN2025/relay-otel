@@ -1,5 +1,3 @@
-"""Fetch the pinned official Foundry CLI into ignored local work tooling."""
-
 from __future__ import annotations
 
 import hashlib

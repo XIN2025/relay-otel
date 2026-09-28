@@ -1,5 +1,3 @@
-"""Resolve host-local runtime paths that must never live in the repository."""
-
 from __future__ import annotations
 
 import os
@@ -7,7 +5,6 @@ from pathlib import Path
 
 
 def signoz_secret_path() -> Path:
-    """Return the platform-local SigNoz bootstrap/service-account env path."""
 
     if os.name == "nt":
         local_app_data = os.environ.get("LOCALAPPDATA")
@@ -27,7 +24,6 @@ def signoz_secret_path() -> Path:
 
 
 def prepare_private_secret_parent(path: Path) -> None:
-    """Create a private parent directory where POSIX mode bits are authoritative."""
 
     path.parent.mkdir(parents=True, exist_ok=True)
     if os.name != "nt":
@@ -35,7 +31,6 @@ def prepare_private_secret_parent(path: Path) -> None:
 
 
 def secure_secret_file(path: Path) -> None:
-    """Restrict a secret file where POSIX mode bits are authoritative."""
 
     if os.name != "nt":
         path.chmod(0o600)

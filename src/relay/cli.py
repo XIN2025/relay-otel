@@ -110,7 +110,6 @@ def cmd_replay(args: argparse.Namespace) -> int:
 
 
 def cmd_export(args: argparse.Namespace) -> int:
-    """Write a redacted structural journal view. Recorded results stay local."""
     try:
         reader = JournalReader(DB)
     except FileNotFoundError:

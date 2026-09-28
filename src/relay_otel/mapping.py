@@ -1,5 +1,3 @@
-"""Generic relay span records and deterministic OpenTelemetry identities."""
-
 from __future__ import annotations
 
 import hashlib

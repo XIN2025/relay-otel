@@ -1,5 +1,3 @@
-"""Default-deny public views of durable runtime event payloads."""
-
 from __future__ import annotations
 
 from .journal import Event, EventType
@@ -76,7 +74,6 @@ REDACTED_FIELDS: dict[EventType, tuple[str, ...]] = {
 
 
 def public_event_payload(event: Event) -> Document:
-    """Drop unknown fields and replace known business values with a marker."""
 
     result: Document = {
         field: event.payload[field]

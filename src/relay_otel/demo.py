@@ -1,5 +1,3 @@
-"""One-node refund workflow used by the hard-crash projection proof."""
-
 from __future__ import annotations
 
 import hashlib

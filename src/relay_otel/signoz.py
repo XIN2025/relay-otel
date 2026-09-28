@@ -1,5 +1,3 @@
-"""Documented SigNoz Traces API query construction and response normalization."""
-
 from __future__ import annotations
 
 import json
@@ -17,11 +15,6 @@ LOOPBACK_HOSTS = frozenset({"127.0.0.1", "::1", "localhost"})
 
 
 def local_base_url(base_url: str) -> str:
-    """Return a normalized loopback HTTP origin or fail closed.
-
-    This repository is deliberately local-only. Accepting an arbitrary query
-    target could send the ignored SigNoz API key to a remote host.
-    """
 
     try:
         parsed = urlsplit(base_url)

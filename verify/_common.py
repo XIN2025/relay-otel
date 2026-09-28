@@ -1,5 +1,3 @@
-"""Receipt, hashing, and registered bootstrap helpers for verification executables."""
-
 from __future__ import annotations
 
 import hashlib

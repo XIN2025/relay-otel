@@ -86,8 +86,7 @@ if (Test-Path -LiteralPath $legacySecretPath -PathType Leaf) {
     $sourceSecretPaths += $legacySecretPath
 }
 if (Test-Path -LiteralPath $secretPath -PathType Leaf) {
-    # The destination is authoritative when both paths exist; legacy values only
-    # fill keys that are absent from it during a one-time migration.
+    # Destination wins; legacy values only fill missing keys.
     $sourceSecretPaths += $secretPath
 }
 foreach ($sourceSecretPath in $sourceSecretPaths) {

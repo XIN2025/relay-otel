@@ -1,5 +1,3 @@
-"""Query projected traces back from SigNoz before claiming they are visible."""
-
 from __future__ import annotations
 
 import time
@@ -67,7 +65,6 @@ def _selected_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
 def validate_retained_query(
     proof: dict[str, Any], *, spans: list[dict[str, Any]], service_name: str
 ) -> None:
-    """Re-evaluate retained selected-field rows instead of trusting PASS booleans."""
 
     if not spans or not service_name:
         raise ValueError("retained query verification requires spans and service name")

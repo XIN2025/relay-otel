@@ -1,5 +1,3 @@
-"""Journal-derived graph execution with explicit activation and effect facts."""
-
 from __future__ import annotations
 
 import hashlib
@@ -126,7 +124,6 @@ def _same_effect(source: Event, event: Event) -> None:
 
 
 def fold(graph: Graph, events: list[Event]) -> RunState:
-    """Validate and fold runtime-v2 events without executing graph user code."""
 
     if not events:
         raise JournalLifecycleError("run has no run_started event")
@@ -773,6 +770,5 @@ class Engine:
         return self.resume(run_id)
 
     def replay(self, run_id: str, upto_seq: int) -> RunState:
-        """Fold a durable prefix without invoking node or routing callables."""
 
         return fold(self.graph, self.journal.events(run_id, upto_seq=upto_seq))

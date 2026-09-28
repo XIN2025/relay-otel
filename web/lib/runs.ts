@@ -34,9 +34,7 @@ export type RunLedgerEntry =
 export async function runById(id: string): Promise<RunDocument | null> {
   if (id === featuredRun.runId) return featuredRun;
   if (process.env.RELAY_OTEL_EVIDENCE_ONLY === "1") return null;
-  // No connection() here: /runs/[id] is statically generated, and dynamic APIs
-  // throw DYNAMIC_SERVER_USAGE for ids rendered on demand. Run documents are
-  // write-once, so rendering one on first request is safe.
+  // No connection(): /runs/[id] is static and dynamic APIs would throw here.
   if (!safeRunId.test(id)) return null;
   return readJson(path.join(productRunsRoot, id, "run.json"));
 }

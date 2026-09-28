@@ -1,5 +1,3 @@
-"""Project explicit relay journal facts into honest generic telemetry."""
-
 from __future__ import annotations
 
 from dataclasses import dataclass, field
@@ -305,7 +303,6 @@ def _attempt_end(attempt: Attempt) -> int:
 def project_events(
     events: list[Event], *, run_id: str, replay_aware: bool = True
 ) -> list[SpanRecord]:
-    """Project only explicit facts; never execute workflow or routing callables."""
 
     run_start, attempts, completions, resolutions, run_terminal = _validate_events(
         events, run_id

@@ -309,8 +309,6 @@ const v2ProvenanceSchema = z.union([
     .strict(),
 ]);
 
-// Historical v1 is accepted only as retained evidence. Its old arm and
-// comparison names, and its obsolete semconv metadata, stop at this boundary.
 const retainedV1RunSchema = z
   .object({
     ...sharedRunFields,

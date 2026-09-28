@@ -1,5 +1,3 @@
-"""Live OpenTelemetry controls used only by the Phase 0 durability experiment."""
-
 from __future__ import annotations
 
 from pathlib import Path

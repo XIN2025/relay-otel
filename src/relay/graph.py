@@ -1,16 +1,3 @@
-"""Graph definition. Nodes do work, edges decide what runs next.
-
-A node is a pure-ish function of the accumulated state. It receives the state and
-returns a patch to merge into it. That shape is what makes replay possible: given
-the same state and the same recorded side effects, a node produces the same patch,
-so re-running a prefix of the graph reconstructs the same state every time.
-
-Side effects that are *not* reproducible (an LLM call, an HTTP request) do not
-belong inside a node directly. They go through ``ctx.call``, which records an
-intent before invocation and a completion afterward. A completed result can be
-resolved from the journal; an incomplete, non-idempotent intent fails closed.
-"""
-
 from __future__ import annotations
 
 from collections.abc import Callable
@@ -43,14 +30,6 @@ class NodeFn(Protocol):
 
 @dataclass
 class NodeContext:
-    """What a node is allowed to reach. Deliberately narrow.
-
-    `call` is the only door to the outside world. Anything a node does through it
-    has an explicit durable intent and outcome; anything it does around it is not
-    protected, which is why this is the whole surface rather than handing nodes a
-    client.
-    """
-
     run_id: str
     node: str
     activation_id: str
@@ -62,10 +41,6 @@ class NodeContext:
 class Node:
     name: str
     fn: NodeFn
-    # A node marked `requires_approval` halts the run before it executes. The run
-    # is not held in memory while it waits: it ends, and resuming is an ordinary
-    # resume from the journal. A pause that only survives while the process lives
-    # is not a human-in-the-loop checkpoint, it is a blocking prompt.
     requires_approval: bool = False
     description: str = ""
 
@@ -80,12 +55,6 @@ Route = StaticRoute | Callable[[State], str]
 
 @dataclass
 class Graph:
-    """Nodes plus the routing between them.
-
-    Routing is a function of state rather than a static edge list, because the
-    interesting agent graphs branch on what a step produced. `END` terminates.
-    """
-
     START: str
     version: str = "unversioned"
     nodes: dict[str, Node] = field(default_factory=dict)
@@ -121,12 +90,6 @@ class Graph:
         self.routes[frm] = route
 
     def next_after(self, node: str, state: State) -> str:
-        """Choose a route during live execution.
-
-        The chosen target is persisted in ``activation_finished``. Folding and
-        replaying a run never call this method, so a user chooser cannot fire
-        while an observer reconstructs history.
-        """
 
         route = self.routes.get(node)
         if route is None:
@@ -137,7 +100,6 @@ class Graph:
         return target
 
     def validate(self) -> list[str]:
-        """Structural problems worth catching before a run rather than during one."""
         problems: list[str] = []
         if self.START not in self.nodes:
             problems.append(f"START node {self.START!r} is not defined")
@@ -147,8 +109,7 @@ class Graph:
         for frm, route in self.routes.items():
             if frm not in self.nodes:
                 problems.append(f"route from undefined node {frm!r}")
-            # A static edge is checkable without running it; a branch is not, and
-            # pretending otherwise would mean calling user code during validation.
+            # Branches can't be checked without calling user code.
             if isinstance(route, StaticRoute):
                 target = route.target
                 if target != self.END and target not in self.nodes:

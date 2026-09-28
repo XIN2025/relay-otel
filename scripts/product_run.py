@@ -261,8 +261,7 @@ def execute_product(
     try:
         remaining_seconds(deadline_monotonic, stage)
 
-        # Load the runtime only after the canonical source set has passed its first
-        # freshness check. Later checks prevent publication if that set changes.
+        # Import the runtime only after the first source freshness check.
         from relay.journal import JournalReader
         from relay_otel.demo import RefundStore
         from relay_otel.exporter import emit_records

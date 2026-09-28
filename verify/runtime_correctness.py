@@ -1,9 +1,3 @@
-"""Bounded real-run verification for relay runtime-v2 correctness invariants.
-
-This is an executable release check, not a unit-test suite. It uses temporary
-SQLite databases and one real ``os._exit(9)`` child process, then removes them.
-"""
-
 from __future__ import annotations
 
 import hashlib
