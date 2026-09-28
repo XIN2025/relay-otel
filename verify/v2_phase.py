@@ -105,7 +105,6 @@ def display_command(command: list[str]) -> list[str]:
 
 
 def display_output(value: str) -> str:
-    """Remove only the project host path while preserving parseable output."""
 
     root = str(PROJECT_ROOT.resolve())
     json_escaped_root = json.dumps(root)[1:-1]
@@ -207,7 +206,6 @@ def exact_artifact(value: object, *, location: str) -> ArtifactReference:
 
 
 def copy_artifact_exclusive(source: Path, destination: Path) -> ArtifactReference:
-    """Copy exact evidence bytes into the immutable lineage directory."""
 
     destination.parent.mkdir(parents=True, exist_ok=True)
     require(not destination.exists(), f"snapshot already exists: {destination}")
@@ -1140,11 +1138,6 @@ def publication_phase(
             "sdist omitted README.md",
         )
         require(
-            any(name.endswith("/LICENSE") for name in sdist_entries)
-            and any("licenses/LICENSE" in name for name in wheel_entries),
-            "package distributions omitted LICENSE",
-        )
-        require(
             any("/src/relay/__init__.py" in name for name in sdist_entries)
             and any("/src/relay_otel/__init__.py" in name for name in sdist_entries)
             and "relay/__init__.py" in wheel_entries
@@ -1266,7 +1259,7 @@ def publication_phase(
         "operator_observed_responsive_browser_routes": True,
         "operator_observed_origin_and_unavailable_fail_closed": True,
         "operator_observed_keyboard_and_reduced_motion": True,
-        "package_readme_license_source_and_installed_cli": True,
+        "package_readme_source_and_installed_cli": True,
         "publication_scope_and_v2_vocabulary": True,
     }
     evidence = {

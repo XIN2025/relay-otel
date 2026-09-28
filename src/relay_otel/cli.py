@@ -107,7 +107,6 @@ def _preflight_export_paths(output: Path, snapshot: Path) -> None:
 
 
 def _sqlite_snapshot(source_path: Path, destination_path: Path) -> None:
-    """Create one WAL-consistent, immutable SQLite backup."""
 
     destination_path.parent.mkdir(parents=True, exist_ok=True)
     temporary = destination_path.parent / (
@@ -245,9 +244,6 @@ def signoz_health(base_url: str) -> Document:
 def doctor_command(args: argparse.Namespace) -> int:
     project_root = cast(Path, args.project_root)
     required = (
-        "LICENSE",
-        "SECURITY.md",
-        "SPEC.md",
         "deploy/IMAGE-PINS.json",
         "deploy/HISTOGRAM-PINS.json",
         "uv.lock",

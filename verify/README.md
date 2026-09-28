@@ -95,6 +95,6 @@ The three phase commands are deliberately ordered:
 
 - runtime performs exact frozen synchronization, `uv lock --check`, Ruff, strict mypy, compileall, and the bounded hard-exit/runtime verifier;
 - integration validates the registered product/query-back contract, loopback-only bindings, Docker health for the collector and SigNoz containers, both HTTP health endpoints, exact exports, and a sanitized service-account identity snapshot copied under the lineage;
-- publication performs the frozen web install, production dependency audits (`pnpm audit` and `pip-audit --strict`), the high-severity/high-confidence Bandit scan, package source/README/LICENSE inspection, browser-evidence validation, and publication vocabulary checks.
+- publication performs the frozen web install, production dependency audits (`pnpm audit` and `pip-audit --strict`), the high-severity/high-confidence Bandit scan, package source/README inspection, browser-evidence validation, and publication vocabulary checks.
 
 `web/data/featured.json` must remain byte-identical to the integration-certified product. Phase receipts must be supplied runtime, integration, publication. The finalizer binds every top-level Markdown file and refuses to overwrite an existing manifest or current pointer. There is no atomic pointer rotation or rollback command; that is a production blocker.

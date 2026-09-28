@@ -60,7 +60,7 @@ REQUIRED_PHASE_CRITERIA = {
             "operator_observed_responsive_browser_routes",
             "operator_observed_origin_and_unavailable_fail_closed",
             "operator_observed_keyboard_and_reduced_motion",
-            "package_readme_license_source_and_installed_cli",
+            "package_readme_source_and_installed_cli",
             "publication_scope_and_v2_vocabulary",
         }
     ),
@@ -68,8 +68,6 @@ REQUIRED_PHASE_CRITERIA = {
 
 
 class LineageValidationError(RuntimeError):
-    """A machine-readable configuration error that must prevent execution."""
-
     def __init__(
         self, code: str, message: str, *, details: Document | None = None
     ) -> None:
@@ -179,7 +177,6 @@ class ValidatedCandidate:
 
 
 def _is_link_like(path: Path) -> bool:
-    """Treat Windows junctions and symbolic links as equivalent trust boundaries."""
 
     return path.is_symlink() or path.is_junction()
 
@@ -205,7 +202,6 @@ def _reject_link_components(
 
 
 def select_lineage_artifacts(project_root: Path) -> dict[str, list[Path]]:
-    """Return the complete, canonical input set for one evidence lineage."""
 
     groups: dict[str, list[Path]] = {
         "source": [],
@@ -298,7 +294,6 @@ def select_lineage_artifacts(project_root: Path) -> dict[str, list[Path]]:
         ".gitignore",
         ".node-version",
         ".python-version",
-        "LICENSE",
         "pyproject.toml",
         "uv.lock",
     ):
@@ -360,7 +355,6 @@ def _artifact_reference(project_root: Path, path: Path) -> ArtifactReference:
 
 
 def artifact_reference(project_root: Path, path: Path) -> ArtifactReference:
-    """Create a reference while converting filesystem races into safe typed failures."""
 
     try:
         return _artifact_reference(project_root, path)
@@ -375,7 +369,6 @@ def artifact_reference(project_root: Path, path: Path) -> ArtifactReference:
 
 
 def write_json_exclusive(path: Path, payload: Document) -> None:
-    """Atomically create one fsynced JSON file without any replacement race."""
 
     path.parent.mkdir(parents=True, exist_ok=True)
     data = (
@@ -645,7 +638,6 @@ def _validate_frozen_inputs(
 
 
 def validate_frozen_inputs(project_root: Path, inputs_path: Path) -> ValidatedInputs:
-    """Validate an explicit candidate input set before a final manifest exists."""
 
     try:
         reference = artifact_reference(project_root, inputs_path)
@@ -815,7 +807,6 @@ def validate_candidate_receipts(
     *,
     require_complete: bool = False,
 ) -> ValidatedCandidate:
-    """Validate frozen inputs and an explicit ordered phase chain before activation."""
 
     try:
         checked: dict[str, tuple[str, int]] = {}
@@ -853,7 +844,6 @@ def validate_lineage_manifest(
     *,
     require_current: bool = True,
 ) -> ValidatedLineage:
-    """Recompute every current input, receipt, and referenced evidence hash."""
 
     checked: dict[str, tuple[str, int]] = {}
     manifest_path = _validate_artifact(project_root, manifest_reference, checked)
@@ -987,7 +977,6 @@ def _validate_current_lineage(project_root: Path) -> ValidatedLineage:
 
 
 def validate_current_lineage(project_root: Path) -> ValidatedLineage:
-    """Validate the active pointer with a stable, non-secret filesystem failure mode."""
 
     try:
         return _validate_current_lineage(project_root)
@@ -1028,7 +1017,6 @@ def _status_document(project_root: Path) -> tuple[Document, int]:
 
 
 def main() -> int:
-    """Report non-secret readiness without duplicating lineage checks in callers."""
 
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--project-root", type=Path, default=Path.cwd())

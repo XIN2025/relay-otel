@@ -80,8 +80,6 @@ bound file without cutting a new release turns CI red.
 | `verify/` | Runtime verifier, release phases and release audit |
 | `receipts/lineages/` | The active release's hash-bound evidence |
 
-More detail: [ARCHITECTURE.md](ARCHITECTURE.md), [SPEC.md](SPEC.md),
-[SECURITY.md](SECURITY.md).
 
 ## Limits
 
@@ -91,7 +89,3 @@ More detail: [ARCHITECTURE.md](ARCHITECTURE.md), [SPEC.md](SPEC.md),
 - Only local SigNoz on loopback is supported, with a demo-grade key that is not
   rotated.
 - Releases are one-shot: there is no pointer rotation or rollback command.
-
-## License
-
-Apache-2.0. See [LICENSE](LICENSE).

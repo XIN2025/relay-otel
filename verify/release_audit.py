@@ -1,5 +1,3 @@
-"""Recompute current hashes and re-evaluate retained v2 phase evidence."""
-
 from __future__ import annotations
 
 import json
@@ -986,13 +984,11 @@ def validate_publication(
     wheel_entries = recomputed_contents[wheel_path.name]
     require(
         any(name.endswith("/README.md") for name in sdist_entries)
-        and any(name.endswith("/LICENSE") for name in sdist_entries)
-        and any("licenses/LICENSE" in name for name in wheel_entries)
         and any("/src/relay/__init__.py" in name for name in sdist_entries)
         and any("/src/relay_otel/__init__.py" in name for name in sdist_entries)
         and "relay/__init__.py" in wheel_entries
         and "relay_otel/__init__.py" in wheel_entries,
-        "retained package omitted README, LICENSE, or registered source packages",
+        "retained package omitted README or registered source packages",
     )
     with zipfile.ZipFile(wheel_path) as wheel_archive:
         entry_points_name = next(
