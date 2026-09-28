@@ -1,0 +1,99 @@
+{
+  "console_errors": 0,
+  "evidence_type": "hash-bound-operator-observation",
+  "featured": {
+    "bytes": 24534,
+    "path": "web/data/featured.json",
+    "sha256": "36e459e312a4b368eef431c630573f54e970293b855655762c6ce44dbabefb54"
+  },
+  "keyboard": {
+    "disabled_state": true,
+    "error_state": true,
+    "internal_table_scroll": true,
+    "skip_link": true,
+    "visible_focus": true
+  },
+  "keyboard_navigation": true,
+  "lineage_id": "v2-2026-09-28-r13",
+  "lineage_inputs_sha256": "4e4340c1835f73c705e9b3e25ffa29c5f6d8fe0194f772576763244f4c0196b3",
+  "observation_notes": [
+    "A local production build (Next.js 16.3.6; pnpm build, next start on 127.0.0.1:3010) was driven through Playwright on 2026-09-28; release audit hash-validates this record but does not replay the session.",
+    "All six registered routes were loaded at 375, 768, 1024, and 1440 CSS pixels after network idle: 24 of 24 returned 200 with no document-level horizontal overflow, no broken images, no console errors, and no 4xx/5xx responses.",
+    "Changes since r11: LICENSE, SPEC.md, ARCHITECTURE.md and SECURITY.md were removed from the repository and from every check that required them; commentary docstrings and comments were trimmed; the README links to the removed files were dropped.",
+    "The first Tab lands on 'Skip to content' (#main-content); nav links show a 2px focus-visible ring; 'Crash and resume' is disabled because r13 is a candidate and not yet the current lineage; the missing-run page shows 'That run is not in the local ledger.' (served with HTTP 200, a known soft 404); the journal table scrolls inside its own container at 375 px without page overflow.",
+    "The built stylesheet contains a prefers-reduced-motion rule. Evidence, Runner and SigNoz are separate status cards; lineage state is shown in the Runner card detail and reported separately by /api/runtime.",
+    "Origin checks against POST /api/runs: cross-site 403, https origin 403, missing origin 403, same origin 503 runtime_unavailable because r13 is not yet activated."
+  ],
+  "origin_security": {
+    "cross_site_status": 403,
+    "https_origin_status": 403,
+    "missing_origin_status": 403,
+    "same_origin_unavailable_status": 503
+  },
+  "page_overflow": false,
+  "reduced_motion": true,
+  "routes": [
+    "/",
+    "/architecture",
+    "/contract",
+    "/runs",
+    "/runs/product-20260928093413751-0023-2e45d2",
+    "/spec"
+  ],
+  "screenshots": [
+    {
+      "bytes": 58893,
+      "path": "receipts/lineages/v2-2026-09-28-r13/browser-home-375.png",
+      "sha256": "632e0b82b2fe9e42da43aa78a1b8ddeeefead67e77ecd93c82051be49f8d75c1"
+    },
+    {
+      "bytes": 90964,
+      "path": "receipts/lineages/v2-2026-09-28-r13/browser-architecture-768.png",
+      "sha256": "1dc3c577669ecb428e2fd422e8e8d9e86d5b31024767fdacffcd7f95d80f7adb"
+    },
+    {
+      "bytes": 127857,
+      "path": "receipts/lineages/v2-2026-09-28-r13/browser-run-detail-1024.png",
+      "sha256": "1360f8c92c54e2b8a80097432f6a71bb4165fd5c78c8850fe8cb4a31a91e0c42"
+    },
+    {
+      "bytes": 175456,
+      "path": "receipts/lineages/v2-2026-09-28-r13/browser-home-1440.png",
+      "sha256": "6c3850dfcff03dcf910f0043300895104aebbed628b47667a79d092b8e8a380d"
+    },
+    {
+      "bytes": 128039,
+      "path": "receipts/lineages/v2-2026-09-28-r13/browser-spec-1440.png",
+      "sha256": "7aee843dfed8cca002105249e1b6f94d6d4b209176c5fef50a1701b1808b91fa"
+    }
+  ],
+  "status_surfaces": {
+    "evidence": true,
+    "lineage": true,
+    "runner": true,
+    "signoz": true
+  },
+  "verdict": "PASS",
+  "viewports": [
+    {
+      "height": 812,
+      "page_overflow": false,
+      "width": 375
+    },
+    {
+      "height": 900,
+      "page_overflow": false,
+      "width": 768
+    },
+    {
+      "height": 900,
+      "page_overflow": false,
+      "width": 1024
+    },
+    {
+      "height": 900,
+      "page_overflow": false,
+      "width": 1440
+    }
+  ]
+}

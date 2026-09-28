@@ -1,0 +1,80 @@
+{
+  "criteria": {
+    "aware_and_control_five_spans": true,
+    "collector_and_signoz_healthy": true,
+    "compose_renders": true,
+    "exact_duplicate_free_signoz_queryback": true,
+    "exact_stack_inventory_and_image_pins": true,
+    "immutable_staging_before_acknowledged_otlp": true,
+    "loopback_only_published_ports": true,
+    "mounted_histogram_helper_matches_pin": true,
+    "one_provider_attempt_and_one_durable_refund": true,
+    "registered_product_document": true,
+    "required_containers_healthy": true,
+    "retained_sanitized_source_facts": true,
+    "service_account_identity_validated": true
+  },
+  "evidence": {
+    "bytes": 26840,
+    "path": "receipts/lineages/v2-2026-09-28-r13/phase-02-integration.evidence.json",
+    "sha256": "db2e64e1559e9f67800db90ddc0f3a6787ba6f52ab64814d3dba260f946363c4"
+  },
+  "generated_at": "2026-09-28T09:34:19.963828+00:00",
+  "lineage_id": "v2-2026-09-28-r13",
+  "lineage_inputs_sha256": "4e4340c1835f73c705e9b3e25ffa29c5f6d8fe0194f772576763244f4c0196b3",
+  "phase": "02-integration",
+  "previous_phase_receipt": {
+    "bytes": 806,
+    "path": "receipts/lineages/v2-2026-09-28-r13/phase-01-runtime.json",
+    "sha256": "1d116078004e62ba9cacba92610b0605a509f4447876e065aac35c02eef920f7"
+  },
+  "schema_version": 1,
+  "supporting_artifacts": [
+    {
+      "bytes": 5441,
+      "path": "receipts/lineages/v2-2026-09-28-r13/integration/source-facts.json",
+      "sha256": "420949d55bf5e6e6a62093d4becdd26d2bebc3c60bc84325823542cfe5b9691b"
+    },
+    {
+      "bytes": 24534,
+      "path": "receipts/lineages/v2-2026-09-28-r13/integration/product.json",
+      "sha256": "36e459e312a4b368eef431c630573f54e970293b855655762c6ce44dbabefb54"
+    },
+    {
+      "bytes": 6902,
+      "path": "receipts/lineages/v2-2026-09-28-r13/integration/aware-final.json",
+      "sha256": "3e83d69b61b265fcb9d85a3e81678d3bd21c5c55f8d50eea1124e47bdc655829"
+    },
+    {
+      "bytes": 6351,
+      "path": "receipts/lineages/v2-2026-09-28-r13/integration/aware-staged.json",
+      "sha256": "482ac8759d36b5da95ef696fc858d690e060febfe6d62e16a9d76c0c229d11c6"
+    },
+    {
+      "bytes": 564,
+      "path": "receipts/lineages/v2-2026-09-28-r13/integration/aware-delivery.json",
+      "sha256": "137cac9a3413317d49ffc4b091ed8285ef2048447f6937ddcf32c849c0891105"
+    },
+    {
+      "bytes": 6644,
+      "path": "receipts/lineages/v2-2026-09-28-r13/integration/control-final.json",
+      "sha256": "42bd906d035e3a8143cba97dad53f5fe2a7c2868baaff7f769f4936d13d9b7e6"
+    },
+    {
+      "bytes": 6089,
+      "path": "receipts/lineages/v2-2026-09-28-r13/integration/control-staged.json",
+      "sha256": "d299d5fe2020f122ad322f06c04b4dac14233b606e6bbc146c49726d438a3045"
+    },
+    {
+      "bytes": 568,
+      "path": "receipts/lineages/v2-2026-09-28-r13/integration/control-delivery.json",
+      "sha256": "e7997e6be9785539fd9ecb9a1e415d6f3dc6b5879a91e673b2d5021b74ebcd0b"
+    },
+    {
+      "bytes": 390,
+      "path": "receipts/lineages/v2-2026-09-28-r13/integration/signoz-access.json",
+      "sha256": "808e6726b8ebf60775effa3e6ff4924d4f32e920a5cc793d783f845f4c22db39"
+    }
+  ],
+  "verdict": "PASS"
+}

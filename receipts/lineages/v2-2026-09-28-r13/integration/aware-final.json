@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-27T11:42:51.522379+00:00",
+  "generated_at": "2026-09-28T09:34:14.702430+00:00",
   "journal": {
-    "path": "receipts/work/product-runs/product-20260927114250553-0023-dc13d5/journal.sqlite",
-    "sha256": "12ae4dfbef57124bb05fb78ab0c96c74c454df8ceb765434145c827ace5a31b3"
+    "path": "receipts/work/product-runs/product-20260928093413751-0023-2e45d2/journal.sqlite",
+    "sha256": "6ee6c1777df50a243f68800be903a856387403745c1575a00ffb4c3acaf6f4e5"
   },
   "mode": "aware",
   "otlp": {
@@ -11,37 +11,37 @@
     "cleanup_state": "SUCCESS",
     "delivery_receipt": {
       "bytes": 564,
-      "path": "receipts/work/product-runs/product-20260927114250553-0023-dc13d5/aware-spans.delivery.json",
-      "sha256": "9cc31972ea70999ac626927f84cc3b9a99e6f317abc0d451323719600ba3194a"
+      "path": "receipts/work/product-runs/product-20260928093413751-0023-2e45d2/aware-spans.delivery.json",
+      "sha256": "137cac9a3413317d49ffc4b091ed8285ef2048447f6937ddcf32c849c0891105"
     },
     "endpoint": "http://127.0.0.1:4318/v1/traces",
     "result": "SUCCESS",
     "staged_envelope": {
       "bytes": 6351,
-      "path": "receipts/work/product-runs/product-20260927114250553-0023-dc13d5/aware-spans.staged.json",
-      "sha256": "2fe38ddef9448ee4994be920fe66c239a85712705bd9b0314dee0040abd441c1"
+      "path": "receipts/work/product-runs/product-20260928093413751-0023-2e45d2/aware-spans.staged.json",
+      "sha256": "482ac8759d36b5da95ef696fc858d690e060febfe6d62e16a9d76c0c229d11c6"
     },
     "state": "DELIVERED"
   },
   "provenance": {
     "lineageCandidate": true,
-    "lineageCheckedArtifacts": 104,
-    "lineageId": "v2-2026-09-27-r11",
-    "lineageInputsPath": "receipts/lineages/v2-2026-09-27-r11/inputs.json",
-    "lineageInputsSha256": "d8eb5a8bf157f723afb6dc2aba31d01d426b5ab61d173c6cabcea5a79a073571",
+    "lineageCheckedArtifacts": 100,
+    "lineageId": "v2-2026-09-28-r13",
+    "lineageInputsPath": "receipts/lineages/v2-2026-09-28-r13/inputs.json",
+    "lineageInputsSha256": "4e4340c1835f73c705e9b3e25ffa29c5f6d8fe0194f772576763244f4c0196b3",
     "lineageManifestPath": null,
     "lineageManifestSha256": null,
     "phaseReceipts": {}
   },
   "resource": {
-    "service.instance.id": "ddfbfabf-13c8-4605-8119-e5a8083f4141",
+    "service.instance.id": "43093d9c-d4a4-4a90-b80d-cf8f40126489",
     "service.name": "relay-otel-aware",
     "service.version": "0.2.0",
     "telemetry.sdk.language": "python",
     "telemetry.sdk.name": "opentelemetry",
     "telemetry.sdk.version": "1.44.0"
   },
-  "run_id": "product-20260927114250553-0023-dc13d5",
+  "run_id": "product-20260928093413751-0023-2e45d2",
   "schema_version": 1,
   "sdk_capture_count": 5,
   "sdk_identity_match": true,
@@ -50,74 +50,74 @@
     {
       "attributes": {
         "relay.operation.name": "run",
-        "relay.run.id": "product-20260927114250553-0023-dc13d5",
+        "relay.run.id": "product-20260928093413751-0023-2e45d2",
         "relay.run.outcome": "finished",
         "relay.workflow.version": "refund-v2"
       },
       "classification": "structural",
-      "duration_nano": 273709500,
-      "end_time_unix_nano": 1790509371179849000,
+      "duration_nano": 256252800,
+      "end_time_unix_nano": 1790588054407175400,
       "identity": "run",
       "kind": "INTERNAL",
       "links": [],
       "name": "relay.run",
       "parent_span_id": null,
-      "span_id": "d5905f2bf4c701b6",
-      "start_time_unix_nano": 1790509370906139500,
+      "span_id": "64ec384fc61e5e02",
+      "start_time_unix_nano": 1790588054150922600,
       "status": "UNSET",
-      "trace_id": "f0fa64e045c679de0f4f21985b1b90f4"
+      "trace_id": "cc3f896c5716f8486925f605f5b2fdd0"
     },
     {
       "attributes": {
         "error.type": "relay.attempt.abandoned",
-        "relay.activation.id": "act_19dfdca77ca44f9abd2884a3a07eebfd",
-        "relay.attempt.id": "att_ae47ce55210647b688083fa678c34db7",
+        "relay.activation.id": "act_2f9d43db0424499c9c308c5e08a161f8",
+        "relay.attempt.id": "att_c97be810b16c4d1b95879ef3cfe48e18",
         "relay.attempt.outcome": "abandoned",
         "relay.attempt.recovery": false,
         "relay.node.name": "issue_refund",
         "relay.operation.name": "activation",
-        "relay.run.id": "product-20260927114250553-0023-dc13d5"
+        "relay.run.id": "product-20260928093413751-0023-2e45d2"
       },
       "classification": "structural",
-      "duration_nano": 267921500,
-      "end_time_unix_nano": 1790509371175064200,
-      "identity": "attempt:att_ae47ce55210647b688083fa678c34db7",
+      "duration_nano": 248242000,
+      "end_time_unix_nano": 1790588054401170700,
+      "identity": "attempt:att_c97be810b16c4d1b95879ef3cfe48e18",
       "kind": "INTERNAL",
       "links": [],
       "name": "relay.activation issue_refund",
-      "parent_span_id": "d5905f2bf4c701b6",
-      "span_id": "4be324569a4bfa63",
-      "start_time_unix_nano": 1790509370907142700,
+      "parent_span_id": "64ec384fc61e5e02",
+      "span_id": "f981a10c85bcf815",
+      "start_time_unix_nano": 1790588054152928700,
       "status": "ERROR",
-      "trace_id": "f0fa64e045c679de0f4f21985b1b90f4"
+      "trace_id": "cc3f896c5716f8486925f605f5b2fdd0"
     },
     {
       "attributes": {
-        "relay.activation.id": "act_19dfdca77ca44f9abd2884a3a07eebfd",
-        "relay.attempt.id": "att_d6ea15796fa042a79b3f3c26466fd6e9",
+        "relay.activation.id": "act_2f9d43db0424499c9c308c5e08a161f8",
+        "relay.attempt.id": "att_81ab3f90dce74cb3b5c27200e85802d3",
         "relay.attempt.outcome": "completed",
         "relay.attempt.recovery": true,
         "relay.node.name": "issue_refund",
         "relay.operation.name": "activation",
-        "relay.run.id": "product-20260927114250553-0023-dc13d5"
+        "relay.run.id": "product-20260928093413751-0023-2e45d2"
       },
       "classification": "structural",
-      "duration_nano": 1764600,
-      "end_time_unix_nano": 1790509371178341500,
-      "identity": "attempt:att_d6ea15796fa042a79b3f3c26466fd6e9",
+      "duration_nano": 3001700,
+      "end_time_unix_nano": 1790588054406173600,
+      "identity": "attempt:att_81ab3f90dce74cb3b5c27200e85802d3",
       "kind": "INTERNAL",
       "links": [],
       "name": "relay.activation issue_refund",
-      "parent_span_id": "d5905f2bf4c701b6",
-      "span_id": "5470f787ef133436",
-      "start_time_unix_nano": 1790509371176576900,
+      "parent_span_id": "64ec384fc61e5e02",
+      "span_id": "b59f1c1d48de299c",
+      "start_time_unix_nano": 1790588054403171900,
       "status": "UNSET",
-      "trace_id": "f0fa64e045c679de0f4f21985b1b90f4"
+      "trace_id": "cc3f896c5716f8486925f605f5b2fdd0"
     },
     {
       "attributes": {
-        "relay.activation.id": "act_19dfdca77ca44f9abd2884a3a07eebfd",
-        "relay.attempt.id": "att_ae47ce55210647b688083fa678c34db7",
+        "relay.activation.id": "act_2f9d43db0424499c9c308c5e08a161f8",
+        "relay.attempt.id": "att_c97be810b16c4d1b95879ef3cfe48e18",
         "relay.effect.adapter.version": "refund-store/v1",
         "relay.effect.id": "refund",
         "relay.effect.index": 0,
@@ -127,25 +127,25 @@
         "relay.effect.source": "external",
         "relay.node.name": "issue_refund",
         "relay.operation.name": "effect.execute",
-        "relay.run.id": "product-20260927114250553-0023-dc13d5"
+        "relay.run.id": "product-20260928093413751-0023-2e45d2"
       },
       "classification": "executed",
-      "duration_nano": 18517700,
-      "end_time_unix_nano": 1790509370926658000,
+      "duration_nano": 16229700,
+      "end_time_unix_nano": 1790588054170157700,
       "identity": "effect-execute:4",
       "kind": "INTERNAL",
       "links": [],
       "name": "relay.effect.execute payments:refund",
-      "parent_span_id": "4be324569a4bfa63",
-      "span_id": "4758d3f96d7355a2",
-      "start_time_unix_nano": 1790509370908140300,
+      "parent_span_id": "f981a10c85bcf815",
+      "span_id": "2e0f8aa9be0f4d78",
+      "start_time_unix_nano": 1790588054153928000,
       "status": "UNSET",
-      "trace_id": "f0fa64e045c679de0f4f21985b1b90f4"
+      "trace_id": "cc3f896c5716f8486925f605f5b2fdd0"
     },
     {
       "attributes": {
-        "relay.activation.id": "act_19dfdca77ca44f9abd2884a3a07eebfd",
-        "relay.attempt.id": "att_d6ea15796fa042a79b3f3c26466fd6e9",
+        "relay.activation.id": "act_2f9d43db0424499c9c308c5e08a161f8",
+        "relay.attempt.id": "att_81ab3f90dce74cb3b5c27200e85802d3",
         "relay.effect.adapter.version": "refund-store/v1",
         "relay.effect.id": "refund",
         "relay.effect.index": 0,
@@ -156,26 +156,26 @@
         "relay.effect.source.sequence": 4,
         "relay.node.name": "issue_refund",
         "relay.operation.name": "effect.resolve",
-        "relay.run.id": "product-20260927114250553-0023-dc13d5"
+        "relay.run.id": "product-20260928093413751-0023-2e45d2"
       },
       "classification": "resolved",
       "duration_nano": 0,
-      "end_time_unix_nano": 1790509371178341500,
+      "end_time_unix_nano": 1790588054405181700,
       "identity": "effect-resolve:7",
       "kind": "INTERNAL",
       "links": [
         {
-          "span_id": "4758d3f96d7355a2",
-          "trace_id": "f0fa64e045c679de0f4f21985b1b90f4"
+          "span_id": "2e0f8aa9be0f4d78",
+          "trace_id": "cc3f896c5716f8486925f605f5b2fdd0"
         }
       ],
       "name": "relay.effect.resolve payments:refund",
-      "parent_span_id": "5470f787ef133436",
-      "span_id": "d99cf6ead0844a9a",
-      "start_time_unix_nano": 1790509371178341500,
+      "parent_span_id": "b59f1c1d48de299c",
+      "span_id": "40b26a4e01b657fe",
+      "start_time_unix_nano": 1790588054405181700,
       "status": "UNSET",
-      "trace_id": "f0fa64e045c679de0f4f21985b1b90f4"
+      "trace_id": "cc3f896c5716f8486925f605f5b2fdd0"
     }
   ],
-  "trace_id": "f0fa64e045c679de0f4f21985b1b90f4"
+  "trace_id": "cc3f896c5716f8486925f605f5b2fdd0"
 }

@@ -1,0 +1,17 @@
+{
+  "acknowledged": true,
+  "attempted": true,
+  "cleanup_state": "SUCCESS",
+  "endpoint": "http://127.0.0.1:4318/v1/traces",
+  "exporter_result": "SUCCESS",
+  "generated_at": "2026-09-28T09:34:14.947476+00:00",
+  "mode": "aware",
+  "run_id": "product-20260928093413751-0023-2e45d2",
+  "schema_version": 1,
+  "staged_envelope": {
+    "bytes": 6351,
+    "path": "receipts/work/product-runs/product-20260928093413751-0023-2e45d2/aware-spans.staged.json",
+    "sha256": "482ac8759d36b5da95ef696fc858d690e060febfe6d62e16a9d76c0c229d11c6"
+  },
+  "state": "DELIVERED"
+}

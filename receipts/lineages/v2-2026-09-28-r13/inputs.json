@@ -22,14 +22,9 @@
         "sha256": "5327a40401de3c82bbc3c066c9f8272fd6ce56b99825b5e76fea5b7463729d55"
       },
       {
-        "bytes": 11357,
-        "path": "LICENSE",
-        "sha256": "154cd13997f1c5ed2fd56b7a5e3693b1fbe96d27502f43d455f3d3471dfdb4a1"
-      },
-      {
-        "bytes": 1018,
+        "bytes": 967,
         "path": "pyproject.toml",
-        "sha256": "1b80e6984bc06eb5d7cbb7006e4e0adb6e3fa9610d705b6c7416c81825b41c12"
+        "sha256": "69195f69c1c88c2d0319d913bc4821ce2818d7e305e4446b2e1cf4f3a6a10480"
       },
       {
         "bytes": 77668,
@@ -96,24 +91,9 @@
     ],
     "publication": [
       {
-        "bytes": 10880,
-        "path": "ARCHITECTURE.md",
-        "sha256": "c13310015cd37c804041213d13081b9f6bb326800f451cea168f670f39200948"
-      },
-      {
-        "bytes": 3806,
+        "bytes": 3660,
         "path": "README.md",
-        "sha256": "49fb49e232b9be4502531796d40fb92c368ed952e7ecdd639d3517b670273637"
-      },
-      {
-        "bytes": 8821,
-        "path": "SECURITY.md",
-        "sha256": "b4e081896da12a08605f5cb0ec13e8a3a6f56a83f37582287fb76dc0f6143a18"
-      },
-      {
-        "bytes": 12112,
-        "path": "SPEC.md",
-        "sha256": "4f1e11521affb41f7dfacc89a2111f217de55744d31d98b2a6de7201ed2159e6"
+        "sha256": "907e82bdb8dcfd1df64079aa8a200dcbb89d0cffd2940af0431e72bd13c01c26"
       }
     ],
     "source": [
@@ -123,9 +103,9 @@
         "sha256": "7525b0e057c1503db41bf1d1a4799d811645ea792dcd47076aab8ab5834f25fa"
       },
       {
-        "bytes": 8620,
+        "bytes": 8547,
         "path": "scripts/bootstrap_signoz_access.py",
-        "sha256": "72e18ebd732d9854dc37c6e831ed4c7838bc90a8bdb1907f42e46e29249eaa80"
+        "sha256": "d289284b6edde8f68674d9d0ce06ab4bd03fbe59857a3c11da85484b6a531c6b"
       },
       {
         "bytes": 4988,
@@ -133,9 +113,9 @@
         "sha256": "69af4aa47f1da1fadc493e31a9e77a7d06de5b2fd4c0f8e203aa13aca1e744ae"
       },
       {
-        "bytes": 2162,
+        "bytes": 2084,
         "path": "scripts/fetch_foundry.py",
-        "sha256": "64b761a057707661050c7e28b5b5ee595cb41cfab89ba30b0ac1bfdc4e63062a"
+        "sha256": "05ae146b5363af27631879aaeaa85b54f9fb1f317817dee446ee07216e4ab8d5"
       },
       {
         "bytes": 5798,
@@ -148,14 +128,14 @@
         "sha256": "bffc3e472d8498af037a2f05422437ce4d1196e5a23f891805a733e38d74e9b7"
       },
       {
-        "bytes": 5018,
+        "bytes": 4930,
         "path": "scripts/prepare_signoz_secret.ps1",
-        "sha256": "fa6c6c29987aed122a83d13977b5384e58b3c7545c4824a7a6f0e053e0847687"
+        "sha256": "ff086d739b80ff78c0bfd72b4654b5399720f5b8cf3195a21dea72cf7b12b883"
       },
       {
-        "bytes": 17019,
+        "bytes": 16928,
         "path": "scripts/product_run.py",
-        "sha256": "bc9ac50ac8d03261cfd7cb85c42953bb4e80bb18bf02b75903eb1cb7cd5aa000"
+        "sha256": "56157357f6b34d4e6c8f338de41c9d9f82bf690deb374bb224b71b8dd84ab5d4"
       },
       {
         "bytes": 11544,
@@ -183,49 +163,49 @@
         "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
       },
       {
-        "bytes": 6388,
+        "bytes": 6307,
         "path": "src/relay/cli.py",
-        "sha256": "10a575bb600c781814aa0cb89e31cda419388fcacc896673b9011ad8cdd083b7"
+        "sha256": "5f335d03bc2fd286a2bd57ecc4642d3069ec9da05a17741537d82fdc46bc875a"
       },
       {
-        "bytes": 31686,
+        "bytes": 31443,
         "path": "src/relay/engine.py",
-        "sha256": "42f6f6bda21baf32aaa692b21caa71f467d96d2669544dfea507b149bbc6e1f3"
+        "sha256": "1b81d7914b27917da8b85e121d5c774a53c96ac6a3ba5294b65a2f631532d40e"
       },
       {
-        "bytes": 4320,
+        "bytes": 3411,
         "path": "src/relay/example.py",
-        "sha256": "43ebed89823b8d7184ada632bdad3568b8ea4143878691be6431dff308d7a479"
+        "sha256": "0b7611b595a454d662830e4858d315069d37eb5312f3c9d974ba9200a698a31e"
       },
       {
-        "bytes": 5501,
+        "bytes": 3485,
         "path": "src/relay/graph.py",
-        "sha256": "2a37564609ea9e1f8d0b69bb18d19b4b9e8e145f210be2c792001b8a007c1552"
+        "sha256": "723f575122b95da5aabbbf91927501c1e0f550e77c5839c9c862b33f8e5391eb"
       },
       {
-        "bytes": 11250,
+        "bytes": 10674,
         "path": "src/relay/journal.py",
-        "sha256": "49d9fd2635c4e5242ae71ca09893931548e275c6b71c75e87af527ec86a8d621"
+        "sha256": "a617d8f311426a6c9f6f14a0a284185f32594caedb25899afb31b69c1e1a3be8"
       },
       {
-        "bytes": 2587,
+        "bytes": 2440,
         "path": "src/relay/redaction.py",
-        "sha256": "1aaa87519e32ac8c31c18096edad0da6cb5397e9320af0bfbe1c39ffbe3f8dc8"
+        "sha256": "2eebff46473cf7b400e53f1e5af96cc9134d8e344541a3cf63869e916561d526"
       },
       {
-        "bytes": 203,
+        "bytes": 136,
         "path": "src/relay/types.py",
-        "sha256": "b8815343a4811ea0665b077519dfb870f10d96de5cf96c5a8444300305668760"
+        "sha256": "46428a0d275177af039eb12d4013d912e4d51942c80848ab07118a3e0e30b9bc"
       },
       {
-        "bytes": 120,
+        "bytes": 46,
         "path": "src/relay_otel/__init__.py",
-        "sha256": "3ed9e623b3153c5767b76733d8ae38842cd3aa5eb9484192e0ccea7d370d5118"
+        "sha256": "4f06f5043c68afe8946e9aeff2511afac24cbaa759d1e3a7f44fbe9d8a566085"
       },
       {
-        "bytes": 12057,
+        "bytes": 11934,
         "path": "src/relay_otel/cli.py",
-        "sha256": "35f9b0d42cccee14b2819356da85e88de071a472c29d49e8c62d5cb992856cef"
+        "sha256": "2dda77470cf36ca00c880319a97b1489615c628ede3133197b92ac6ce6ef38eb"
       },
       {
         "bytes": 3611,
@@ -233,89 +213,89 @@
         "sha256": "af86c29f68d388106ef75cac165cad40968d133301d8f6e67fbc70cb40ef5d82"
       },
       {
-        "bytes": 5136,
+        "bytes": 5063,
         "path": "src/relay_otel/demo.py",
-        "sha256": "e850e47d37d02f98954e9072612bb76c98cf64cfb133aff65cd1986f7e9eef36"
+        "sha256": "2bdd70970d768034587280462b309c9c5fb110d16e59859380fc6afb4bd32fb1"
       },
       {
-        "bytes": 1427,
+        "bytes": 1349,
         "path": "src/relay_otel/deployment.py",
-        "sha256": "ff4d6e7b7c5e69e227eacea2fe7abd409b4f7484c934452b23a247144373bbbc"
+        "sha256": "f7ea5ea6fb63cc8efd716386648fd43b2e76c657a8a615691c312a81549c4175"
       },
       {
-        "bytes": 16843,
+        "bytes": 16444,
         "path": "src/relay_otel/exporter.py",
-        "sha256": "6214986679a229bdb17da5168a07c1b0964d4619c300ed51ca7df5c8882efa18"
+        "sha256": "ea4d6359edd3f4eaf64eda467df8cdb217ffc19dec7821086879f74a89d70b41"
       },
       {
-        "bytes": 39353,
+        "bytes": 38491,
         "path": "src/relay_otel/lineage.py",
-        "sha256": "d7859ac1c4cf2d9b0e3003518ba6622ccb8b5e78d481123f4b97d4948ed7da1c"
+        "sha256": "fc41c474b3513e218846c16aee26ebbadc27caf9787ac8450608e67a63402635"
       },
       {
-        "bytes": 2009,
+        "bytes": 1926,
         "path": "src/relay_otel/live.py",
-        "sha256": "44b2ac99ed4e92e802f41ea9b5b175799b042dbc0dada3c13b86248987648c44"
+        "sha256": "1a7b8cd55a03fb8e1c2ef40dd1566c1c4e6b39fde7f4088de791836405d8478d"
       },
       {
-        "bytes": 3959,
+        "bytes": 3881,
         "path": "src/relay_otel/mapping.py",
-        "sha256": "d6ae7d6916dee18f564127a86625f9cfd7081f0c7ceff800537c627d7b710a43"
+        "sha256": "8c4d39fa02f1bf9ae2a20f23511c136791dde555936573bab4df59114d148cce"
       },
       {
-        "bytes": 18127,
+        "bytes": 18043,
         "path": "src/relay_otel/product.py",
-        "sha256": "046413132b1bb7b55c40aeb652b371ef17850431f3a3d261c1a0c3063fbebfea"
+        "sha256": "9b32a942ac656773cb1adc4889ed37bb65cc6ef252c302d50c52a712d7fb1c31"
       },
       {
-        "bytes": 19806,
+        "bytes": 19647,
         "path": "src/relay_otel/projector.py",
-        "sha256": "8bcc85f05e910734a0ce8c0b0cfcdb5f3be727f26854944b58e8bd6480781fae"
+        "sha256": "1e8a727932a4dc80d646506cc908891ee6bd318a0534ae38c6b2358da869f89b"
       },
       {
-        "bytes": 10994,
+        "bytes": 10827,
         "path": "src/relay_otel/queryback.py",
-        "sha256": "c222efb2386e78a8e6dd60c38909675a205f7938f56a40dca3ddec6f10c71c8b"
+        "sha256": "235f240575a2f9d92d1dde39497af3d17ddc7afad900a1e29b8c9c4aa1936a7b"
       },
       {
-        "bytes": 1212,
+        "bytes": 894,
         "path": "src/relay_otel/runtime_paths.py",
-        "sha256": "1380f2c7390f1a43526cf7cf82f2d99221fd12fb1922ca3bd739bda5156b1517"
+        "sha256": "416af5a746e9f447cf61b81473604b819abcf4071a9bce4514ea50eac367e2f1"
       },
       {
-        "bytes": 5654,
+        "bytes": 5354,
         "path": "src/relay_otel/signoz.py",
-        "sha256": "74233b4e96914a44d2198827744a1a489e873ab399d00d3c98a01ff79f6386f7"
+        "sha256": "3824c02b923d27e6d23004a9b80cf00758220927d9d43aa1a6f8babef461889b"
       },
       {
-        "bytes": 5199,
+        "bytes": 5191,
         "path": "verify/README.md",
-        "sha256": "c2e288d36ce659d1fccebfcac4eaf7f17ae56f75dcdc873d99656bd5a4e84a34"
+        "sha256": "eb640a5a2ab30eb1215866d948638583c4e2eeee65935d58a889e930f9fd99a6"
       },
       {
-        "bytes": 8325,
+        "bytes": 8040,
         "path": "verify/_command_truth.py",
-        "sha256": "0b8ebedb1205d9c3d60fb539b440aaaf947c1a2a8132da456ba20bb8e18d63e5"
+        "sha256": "875f93e126c7617e4e3b9266f76516979b9e78d87bc7d7bd3e584a48f092e674"
       },
       {
-        "bytes": 4408,
+        "bytes": 4320,
         "path": "verify/_common.py",
-        "sha256": "fb1bba6b8c28b213139e2773b067e159972e04fd78b5bab44b98d11613531a90"
+        "sha256": "f3864d2815ef4f08389a92a751bed027a656cf84c275157ba4d0aa3652fdd1f9"
       },
       {
-        "bytes": 42993,
+        "bytes": 42768,
         "path": "verify/release_audit.py",
-        "sha256": "ab737b0d6dae50a1f5feca57aac9808f75c3c6f6e03c553025df306aeb161e5d"
+        "sha256": "c89a3b332856dfa47275c9d0aae54f01f5afffdbc96f85cd054d8170a250dccf"
       },
       {
-        "bytes": 26603,
+        "bytes": 26361,
         "path": "verify/runtime_correctness.py",
-        "sha256": "b47922ecd9d647934adb4cdffca8c9aa0060401426744e741a2d041105bdf7e9"
+        "sha256": "089751fd128336901ee087e3f260d2c9571adbf286c6f2502150c8dad2eed65f"
       },
       {
-        "bytes": 53725,
+        "bytes": 53340,
         "path": "verify/v2_phase.py",
-        "sha256": "10b678fbf7ffb8ffad625a8f0f7c02c48f4a4fec71c3bcb09b91c251cb6756d8"
+        "sha256": "edf70d71e3b772f9c594520c71dc6eb7bcbbac330360923d6e15eced9680ce8f"
       }
     ],
     "vendor": [],
@@ -331,9 +311,9 @@
         "sha256": "00e8bfd0de4e39d3630aa065233390a786fdede5417ed777eb9e541da282449b"
       },
       {
-        "bytes": 7370,
+        "bytes": 7264,
         "path": "web/app/api/runs/route.ts",
-        "sha256": "4564ed05a9f56c4fea62bb29821189d07dae0f29b41ff343ce52226f437a8fed"
+        "sha256": "44846d003874df289616349e0e9e8ae2e9b449e1ea54f642c09d25a3c6fc1559"
       },
       {
         "bytes": 316,
@@ -461,9 +441,9 @@
         "sha256": "870f1adccecf3051cbcd9fd307cef51d7633cf510979c181a81f4b1797273493"
       },
       {
-        "bytes": 1360,
+        "bytes": 1197,
         "path": "web/lib/local-api.ts",
-        "sha256": "017e9771ca67a5a9b5524a96d18da282457e02e23695c4918c05385e7b983d22"
+        "sha256": "6e23825555e4ba68b913922d7a43f6add0fe664e2948f42cce5e592649a2372c"
       },
       {
         "bytes": 1573,
@@ -471,9 +451,9 @@
         "sha256": "df175fdcb201add900acb2697ed1bed1bd586f1e391a675437eea7b1aea12ef5"
       },
       {
-        "bytes": 2435,
+        "bytes": 2295,
         "path": "web/lib/runs.ts",
-        "sha256": "aac2b646a78bab2b090baf05e3c323581e81139e8af4d4a200761f4054611547"
+        "sha256": "03fa9b9b639a8771f85ff5f7fce78b8bbb8444bd9e56efec30554ad312429c60"
       },
       {
         "bytes": 10249,
@@ -481,9 +461,9 @@
         "sha256": "0cad096873a0daed54632c42f376cb2108de8cc4c45190733ca77911c6d9705c"
       },
       {
-        "bytes": 33031,
+        "bytes": 32880,
         "path": "web/lib/types.ts",
-        "sha256": "bb8a192e9922a1f0529bb2fb0caf665139fe75c00c4f1bb7baffff464a1b70c8"
+        "sha256": "6727e1ffb70f57addf039ecbfb85cceb81781b45487344bd4f713e277c0bd807"
       },
       {
         "bytes": 169,
@@ -527,7 +507,7 @@
       }
     ]
   },
-  "created_at": "2026-09-27T11:42:32.668679+00:00",
+  "created_at": "2026-09-28T09:34:00.197153+00:00",
   "environment": {
     "implementation": "CPython",
     "packages": {
@@ -544,7 +524,7 @@
     "platform": "Windows-11-10.0.26200-SP0",
     "python": "3.12.7"
   },
-  "lineage_id": "v2-2026-09-27-r11",
+  "lineage_id": "v2-2026-09-28-r13",
   "schema_version": 1,
   "selection_policy": {
     "generated_exclusions": [

@@ -1,0 +1,45 @@
+{
+  "evidence": [
+    {
+      "bytes": 24534,
+      "path": "web/data/featured.json",
+      "sha256": "36e459e312a4b368eef431c630573f54e970293b855655762c6ce44dbabefb54"
+    }
+  ],
+  "finalized_at": "2026-09-28T09:36:39.608276+00:00",
+  "inputs": {
+    "bytes": 18112,
+    "path": "receipts/lineages/v2-2026-09-28-r13/inputs.json",
+    "sha256": "4e4340c1835f73c705e9b3e25ffa29c5f6d8fe0194f772576763244f4c0196b3"
+  },
+  "lineage_id": "v2-2026-09-28-r13",
+  "phase_receipts": [
+    {
+      "bytes": 806,
+      "path": "receipts/lineages/v2-2026-09-28-r13/phase-01-runtime.json",
+      "sha256": "1d116078004e62ba9cacba92610b0605a509f4447876e065aac35c02eef920f7"
+    },
+    {
+      "bytes": 3126,
+      "path": "receipts/lineages/v2-2026-09-28-r13/phase-02-integration.json",
+      "sha256": "e4fc642bed1b067d4249c5bb3190251d830c6cd963a1ed100b12c17209de8bf2"
+    },
+    {
+      "bytes": 3189,
+      "path": "receipts/lineages/v2-2026-09-28-r13/phase-03-publication.json",
+      "sha256": "7763521e1519ae43157b08fd532d50d3eab095ba4dae061bfa1ecd2f3582fb6d"
+    }
+  ],
+  "publication": [
+    {
+      "bytes": 3660,
+      "path": "README.md",
+      "sha256": "907e82bdb8dcfd1df64079aa8a200dcbb89d0cffd2940af0431e72bd13c01c26"
+    }
+  ],
+  "schema_version": 1,
+  "status": "current",
+  "validation": {
+    "checked_artifacts_before_finalization": 124
+  }
+}

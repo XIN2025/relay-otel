@@ -178,35 +178,35 @@
       "aware": {
         "delivery": {
           "bytes": 564,
-          "path": "receipts/lineages/v2-2026-09-27-r11/integration/aware-delivery.json",
-          "sha256": "9cc31972ea70999ac626927f84cc3b9a99e6f317abc0d451323719600ba3194a"
+          "path": "receipts/lineages/v2-2026-09-28-r13/integration/aware-delivery.json",
+          "sha256": "137cac9a3413317d49ffc4b091ed8285ef2048447f6937ddcf32c849c0891105"
         },
         "final": {
           "bytes": 6902,
-          "path": "receipts/lineages/v2-2026-09-27-r11/integration/aware-final.json",
-          "sha256": "6fcb33f61039e8bc0bb36e7cbc6aefc1bdeb9a45ef088a25b0c9ceb5ac9e408c"
+          "path": "receipts/lineages/v2-2026-09-28-r13/integration/aware-final.json",
+          "sha256": "3e83d69b61b265fcb9d85a3e81678d3bd21c5c55f8d50eea1124e47bdc655829"
         },
         "staged": {
           "bytes": 6351,
-          "path": "receipts/lineages/v2-2026-09-27-r11/integration/aware-staged.json",
-          "sha256": "2fe38ddef9448ee4994be920fe66c239a85712705bd9b0314dee0040abd441c1"
+          "path": "receipts/lineages/v2-2026-09-28-r13/integration/aware-staged.json",
+          "sha256": "482ac8759d36b5da95ef696fc858d690e060febfe6d62e16a9d76c0c229d11c6"
         }
       },
       "control": {
         "delivery": {
           "bytes": 568,
-          "path": "receipts/lineages/v2-2026-09-27-r11/integration/control-delivery.json",
-          "sha256": "50c5fa5b76afbc7679529eeb028c7df0b4bb8e4ce6410ca9339393266335b810"
+          "path": "receipts/lineages/v2-2026-09-28-r13/integration/control-delivery.json",
+          "sha256": "e7997e6be9785539fd9ecb9a1e415d6f3dc6b5879a91e673b2d5021b74ebcd0b"
         },
         "final": {
           "bytes": 6644,
-          "path": "receipts/lineages/v2-2026-09-27-r11/integration/control-final.json",
-          "sha256": "ac94a6929e22643b2623f7ebabd8337df9e711559c8c2cbbd0087847b895fcfe"
+          "path": "receipts/lineages/v2-2026-09-28-r13/integration/control-final.json",
+          "sha256": "42bd906d035e3a8143cba97dad53f5fe2a7c2868baaff7f769f4936d13d9b7e6"
         },
         "staged": {
           "bytes": 6089,
-          "path": "receipts/lineages/v2-2026-09-27-r11/integration/control-staged.json",
-          "sha256": "e93e83feaf1a1044a8ae62a0ee1e8188b760db7f0c37d7025c41c2629de927c8"
+          "path": "receipts/lineages/v2-2026-09-28-r13/integration/control-staged.json",
+          "sha256": "d299d5fe2020f122ad322f06c04b4dac14233b606e6bbc146c49726d438a3045"
         }
       }
     },
@@ -266,8 +266,8 @@
     },
     "product_snapshot": {
       "bytes": 24534,
-      "path": "receipts/lineages/v2-2026-09-27-r11/integration/product.json",
-      "sha256": "9af5df2f23fbc5f4a606b6766901fffa20201b7d3c4e3ec2ffbc9e3b16a87a8d"
+      "path": "receipts/lineages/v2-2026-09-28-r13/integration/product.json",
+      "sha256": "36e459e312a4b368eef431c630573f54e970293b855655762c6ce44dbabefb54"
     },
     "published_ports": [
       {
@@ -294,7 +294,7 @@
         "attributesVerified": true,
         "duplicateRows": 0,
         "identityVerified": true,
-        "queryAttempts": 5,
+        "queryAttempts": 2,
         "request": {
           "compositeQuery": {
             "queries": [
@@ -302,7 +302,7 @@
                 "spec": {
                   "disabled": false,
                   "filter": {
-                    "expression": "trace_id = 'f0fa64e045c679de0f4f21985b1b90f4'"
+                    "expression": "trace_id = 'cc3f896c5716f8486925f605f5b2fdd0'"
                   },
                   "limit": 100,
                   "name": "A",
@@ -353,9 +353,9 @@
               }
             ]
           },
-          "end": 1790509671179,
+          "end": 1790588354407,
           "requestType": "raw",
-          "start": 1790509070906,
+          "start": 1790587754150,
           "variables": {}
         },
         "selectedRows": [
@@ -363,28 +363,19 @@
             "effectSource": "external",
             "name": "relay.effect.execute payments:refund",
             "operationName": "effect.execute",
-            "parentSpanId": "4be324569a4bfa63",
+            "parentSpanId": "f981a10c85bcf815",
             "serviceName": "relay-otel-aware",
-            "spanId": "4758d3f96d7355a2",
-            "traceId": "f0fa64e045c679de0f4f21985b1b90f4"
+            "spanId": "2e0f8aa9be0f4d78",
+            "traceId": "cc3f896c5716f8486925f605f5b2fdd0"
           },
           {
-            "effectSource": null,
-            "name": "relay.activation issue_refund",
-            "operationName": "activation",
-            "parentSpanId": "d5905f2bf4c701b6",
+            "effectSource": "journal",
+            "name": "relay.effect.resolve payments:refund",
+            "operationName": "effect.resolve",
+            "parentSpanId": "b59f1c1d48de299c",
             "serviceName": "relay-otel-aware",
-            "spanId": "4be324569a4bfa63",
-            "traceId": "f0fa64e045c679de0f4f21985b1b90f4"
-          },
-          {
-            "effectSource": null,
-            "name": "relay.activation issue_refund",
-            "operationName": "activation",
-            "parentSpanId": "d5905f2bf4c701b6",
-            "serviceName": "relay-otel-aware",
-            "spanId": "5470f787ef133436",
-            "traceId": "f0fa64e045c679de0f4f21985b1b90f4"
+            "spanId": "40b26a4e01b657fe",
+            "traceId": "cc3f896c5716f8486925f605f5b2fdd0"
           },
           {
             "effectSource": null,
@@ -392,23 +383,32 @@
             "operationName": "run",
             "parentSpanId": null,
             "serviceName": "relay-otel-aware",
-            "spanId": "d5905f2bf4c701b6",
-            "traceId": "f0fa64e045c679de0f4f21985b1b90f4"
+            "spanId": "64ec384fc61e5e02",
+            "traceId": "cc3f896c5716f8486925f605f5b2fdd0"
           },
           {
-            "effectSource": "journal",
-            "name": "relay.effect.resolve payments:refund",
-            "operationName": "effect.resolve",
-            "parentSpanId": "5470f787ef133436",
+            "effectSource": null,
+            "name": "relay.activation issue_refund",
+            "operationName": "activation",
+            "parentSpanId": "64ec384fc61e5e02",
             "serviceName": "relay-otel-aware",
-            "spanId": "d99cf6ead0844a9a",
-            "traceId": "f0fa64e045c679de0f4f21985b1b90f4"
+            "spanId": "b59f1c1d48de299c",
+            "traceId": "cc3f896c5716f8486925f605f5b2fdd0"
+          },
+          {
+            "effectSource": null,
+            "name": "relay.activation issue_refund",
+            "operationName": "activation",
+            "parentSpanId": "64ec384fc61e5e02",
+            "serviceName": "relay-otel-aware",
+            "spanId": "f981a10c85bcf815",
+            "traceId": "cc3f896c5716f8486925f605f5b2fdd0"
           }
         ],
         "serviceNameVerified": true,
         "spansRetrieved": 5,
         "spansSent": 5,
-        "traceId": "f0fa64e045c679de0f4f21985b1b90f4",
+        "traceId": "cc3f896c5716f8486925f605f5b2fdd0",
         "verified": true
       },
       "control": {
@@ -423,7 +423,7 @@
                 "spec": {
                   "disabled": false,
                   "filter": {
-                    "expression": "trace_id = '505c04c5327537a78d53e7f76ff166ae'"
+                    "expression": "trace_id = '7496809255be10e09c717085b9ba6a3e'"
                   },
                   "limit": 100,
                   "name": "A",
@@ -474,66 +474,66 @@
               }
             ]
           },
-          "end": 1790509671179,
+          "end": 1790588354407,
           "requestType": "raw",
-          "start": 1790509070906,
+          "start": 1790587754150,
           "variables": {}
         },
         "selectedRows": [
+          {
+            "effectSource": null,
+            "name": "relay.effect.execute payments:refund",
+            "operationName": "effect.execute",
+            "parentSpanId": "dd61207c09421842",
+            "serviceName": "relay-otel-control",
+            "spanId": "0315625853c24f8c",
+            "traceId": "7496809255be10e09c717085b9ba6a3e"
+          },
+          {
+            "effectSource": null,
+            "name": "relay.effect.execute payments:refund",
+            "operationName": "effect.execute",
+            "parentSpanId": "bfd23886b0544281",
+            "serviceName": "relay-otel-control",
+            "spanId": "1e75f1ba859821b7",
+            "traceId": "7496809255be10e09c717085b9ba6a3e"
+          },
+          {
+            "effectSource": null,
+            "name": "relay.activation issue_refund",
+            "operationName": "activation",
+            "parentSpanId": "e89b7ccff3764ad5",
+            "serviceName": "relay-otel-control",
+            "spanId": "bfd23886b0544281",
+            "traceId": "7496809255be10e09c717085b9ba6a3e"
+          },
+          {
+            "effectSource": null,
+            "name": "relay.activation issue_refund",
+            "operationName": "activation",
+            "parentSpanId": "e89b7ccff3764ad5",
+            "serviceName": "relay-otel-control",
+            "spanId": "dd61207c09421842",
+            "traceId": "7496809255be10e09c717085b9ba6a3e"
+          },
           {
             "effectSource": null,
             "name": "relay.run",
             "operationName": "run",
             "parentSpanId": null,
             "serviceName": "relay-otel-control",
-            "spanId": "275f7eb24b02cb09",
-            "traceId": "505c04c5327537a78d53e7f76ff166ae"
-          },
-          {
-            "effectSource": null,
-            "name": "relay.activation issue_refund",
-            "operationName": "activation",
-            "parentSpanId": "275f7eb24b02cb09",
-            "serviceName": "relay-otel-control",
-            "spanId": "637a9ecdcb88c71e",
-            "traceId": "505c04c5327537a78d53e7f76ff166ae"
-          },
-          {
-            "effectSource": null,
-            "name": "relay.activation issue_refund",
-            "operationName": "activation",
-            "parentSpanId": "275f7eb24b02cb09",
-            "serviceName": "relay-otel-control",
-            "spanId": "6865975a129b98c3",
-            "traceId": "505c04c5327537a78d53e7f76ff166ae"
-          },
-          {
-            "effectSource": null,
-            "name": "relay.effect.execute payments:refund",
-            "operationName": "effect.execute",
-            "parentSpanId": "6865975a129b98c3",
-            "serviceName": "relay-otel-control",
-            "spanId": "8be8f2e2c3b39849",
-            "traceId": "505c04c5327537a78d53e7f76ff166ae"
-          },
-          {
-            "effectSource": null,
-            "name": "relay.effect.execute payments:refund",
-            "operationName": "effect.execute",
-            "parentSpanId": "637a9ecdcb88c71e",
-            "serviceName": "relay-otel-control",
-            "spanId": "aff9020aad87a103",
-            "traceId": "505c04c5327537a78d53e7f76ff166ae"
+            "spanId": "e89b7ccff3764ad5",
+            "traceId": "7496809255be10e09c717085b9ba6a3e"
           }
         ],
         "serviceNameVerified": true,
         "spansRetrieved": 5,
         "spansSent": 5,
-        "traceId": "505c04c5327537a78d53e7f76ff166ae",
+        "traceId": "7496809255be10e09c717085b9ba6a3e",
         "verified": true
       }
     },
-    "run_id": "product-20260927114250553-0023-dc13d5",
+    "run_id": "product-20260928093413751-0023-2e45d2",
     "service_account_command": {
       "command": [
         ".\\.venv\\Scripts\\python.exe",
@@ -546,70 +546,70 @@
     },
     "service_account_snapshot": {
       "bytes": 390,
-      "path": "receipts/lineages/v2-2026-09-27-r11/integration/signoz-access.json",
-      "sha256": "eeb44f07d113d288bbf1d296df19ce505e8c7933ad92074c24e494b7fcacd5b1"
+      "path": "receipts/lineages/v2-2026-09-28-r13/integration/signoz-access.json",
+      "sha256": "808e6726b8ebf60775effa3e6ff4924d4f32e920a5cc793d783f845f4c22db39"
     },
     "snapshots": {
       "aware_delivery": {
         "bytes": 564,
-        "path": "receipts/lineages/v2-2026-09-27-r11/integration/aware-delivery.json",
-        "sha256": "9cc31972ea70999ac626927f84cc3b9a99e6f317abc0d451323719600ba3194a"
+        "path": "receipts/lineages/v2-2026-09-28-r13/integration/aware-delivery.json",
+        "sha256": "137cac9a3413317d49ffc4b091ed8285ef2048447f6937ddcf32c849c0891105"
       },
       "aware_final": {
         "bytes": 6902,
-        "path": "receipts/lineages/v2-2026-09-27-r11/integration/aware-final.json",
-        "sha256": "6fcb33f61039e8bc0bb36e7cbc6aefc1bdeb9a45ef088a25b0c9ceb5ac9e408c"
+        "path": "receipts/lineages/v2-2026-09-28-r13/integration/aware-final.json",
+        "sha256": "3e83d69b61b265fcb9d85a3e81678d3bd21c5c55f8d50eea1124e47bdc655829"
       },
       "aware_staged": {
         "bytes": 6351,
-        "path": "receipts/lineages/v2-2026-09-27-r11/integration/aware-staged.json",
-        "sha256": "2fe38ddef9448ee4994be920fe66c239a85712705bd9b0314dee0040abd441c1"
+        "path": "receipts/lineages/v2-2026-09-28-r13/integration/aware-staged.json",
+        "sha256": "482ac8759d36b5da95ef696fc858d690e060febfe6d62e16a9d76c0c229d11c6"
       },
       "control_delivery": {
         "bytes": 568,
-        "path": "receipts/lineages/v2-2026-09-27-r11/integration/control-delivery.json",
-        "sha256": "50c5fa5b76afbc7679529eeb028c7df0b4bb8e4ce6410ca9339393266335b810"
+        "path": "receipts/lineages/v2-2026-09-28-r13/integration/control-delivery.json",
+        "sha256": "e7997e6be9785539fd9ecb9a1e415d6f3dc6b5879a91e673b2d5021b74ebcd0b"
       },
       "control_final": {
         "bytes": 6644,
-        "path": "receipts/lineages/v2-2026-09-27-r11/integration/control-final.json",
-        "sha256": "ac94a6929e22643b2623f7ebabd8337df9e711559c8c2cbbd0087847b895fcfe"
+        "path": "receipts/lineages/v2-2026-09-28-r13/integration/control-final.json",
+        "sha256": "42bd906d035e3a8143cba97dad53f5fe2a7c2868baaff7f769f4936d13d9b7e6"
       },
       "control_staged": {
         "bytes": 6089,
-        "path": "receipts/lineages/v2-2026-09-27-r11/integration/control-staged.json",
-        "sha256": "e93e83feaf1a1044a8ae62a0ee1e8188b760db7f0c37d7025c41c2629de927c8"
+        "path": "receipts/lineages/v2-2026-09-28-r13/integration/control-staged.json",
+        "sha256": "d299d5fe2020f122ad322f06c04b4dac14233b606e6bbc146c49726d438a3045"
       },
       "product": {
         "bytes": 24534,
-        "path": "receipts/lineages/v2-2026-09-27-r11/integration/product.json",
-        "sha256": "9af5df2f23fbc5f4a606b6766901fffa20201b7d3c4e3ec2ffbc9e3b16a87a8d"
+        "path": "receipts/lineages/v2-2026-09-28-r13/integration/product.json",
+        "sha256": "36e459e312a4b368eef431c630573f54e970293b855655762c6ce44dbabefb54"
       },
       "signoz_access": {
         "bytes": 390,
-        "path": "receipts/lineages/v2-2026-09-27-r11/integration/signoz-access.json",
-        "sha256": "eeb44f07d113d288bbf1d296df19ce505e8c7933ad92074c24e494b7fcacd5b1"
+        "path": "receipts/lineages/v2-2026-09-28-r13/integration/signoz-access.json",
+        "sha256": "808e6726b8ebf60775effa3e6ff4924d4f32e920a5cc793d783f845f4c22db39"
       },
       "source_facts": {
         "bytes": 5441,
-        "path": "receipts/lineages/v2-2026-09-27-r11/integration/source-facts.json",
-        "sha256": "320d98cd0fcbb149a9ea01de7d91cab7e1f550b2686a1afef1a023293d881532"
+        "path": "receipts/lineages/v2-2026-09-28-r13/integration/source-facts.json",
+        "sha256": "420949d55bf5e6e6a62093d4becdd26d2bebc3c60bc84325823542cfe5b9691b"
       }
     },
     "source_facts_snapshot": {
       "bytes": 5441,
-      "path": "receipts/lineages/v2-2026-09-27-r11/integration/source-facts.json",
-      "sha256": "320d98cd0fcbb149a9ea01de7d91cab7e1f550b2686a1afef1a023293d881532"
+      "path": "receipts/lineages/v2-2026-09-28-r13/integration/source-facts.json",
+      "sha256": "420949d55bf5e6e6a62093d4becdd26d2bebc3c60bc84325823542cfe5b9691b"
     },
     "source_product_observation": {
       "observed_bytes": 24534,
-      "observed_sha256": "9af5df2f23fbc5f4a606b6766901fffa20201b7d3c4e3ec2ffbc9e3b16a87a8d",
-      "relative_path": "receipts/work/product-runs/product-20260927114250553-0023-dc13d5/run.json"
+      "observed_sha256": "36e459e312a4b368eef431c630573f54e970293b855655762c6ce44dbabefb54",
+      "relative_path": "receipts/work/product-runs/product-20260928093413751-0023-2e45d2/run.json"
     }
   },
-  "generated_at": "2026-09-27T11:42:59.753842+00:00",
-  "lineage_id": "v2-2026-09-27-r11",
-  "lineage_inputs_sha256": "d8eb5a8bf157f723afb6dc2aba31d01d426b5ab61d173c6cabcea5a79a073571",
+  "generated_at": "2026-09-28T09:34:19.955259+00:00",
+  "lineage_id": "v2-2026-09-28-r13",
+  "lineage_inputs_sha256": "4e4340c1835f73c705e9b3e25ffa29c5f6d8fe0194f772576763244f4c0196b3",
   "phase": "02-integration",
   "schema_version": 1,
   "verdict": "PASS"

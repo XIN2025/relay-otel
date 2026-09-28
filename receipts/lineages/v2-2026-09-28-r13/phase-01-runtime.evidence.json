@@ -20,7 +20,7 @@
         ],
         "cwd": ".",
         "exit_code": 0,
-        "stderr": "Checked 47 packages in 21ms\n",
+        "stderr": "Checked 47 packages in 19ms\n",
         "stdout": ""
       },
       {
@@ -32,7 +32,7 @@
         ],
         "cwd": ".",
         "exit_code": 0,
-        "stderr": "Resolved 47 packages in 2ms\n",
+        "stderr": "Resolved 47 packages in 1ms\n",
         "stdout": ""
       },
       {
@@ -162,9 +162,9 @@
       "verdict": "PASS"
     }
   },
-  "generated_at": "2026-09-27T11:42:36.076636+00:00",
-  "lineage_id": "v2-2026-09-27-r11",
-  "lineage_inputs_sha256": "d8eb5a8bf157f723afb6dc2aba31d01d426b5ab61d173c6cabcea5a79a073571",
+  "generated_at": "2026-09-28T09:34:02.921887+00:00",
+  "lineage_id": "v2-2026-09-28-r13",
+  "lineage_inputs_sha256": "4e4340c1835f73c705e9b3e25ffa29c5f6d8fe0194f772576763244f4c0196b3",
   "phase": "01-runtime",
   "schema_version": 1,
   "verdict": "PASS"
