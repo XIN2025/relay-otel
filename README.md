@@ -13,12 +13,12 @@ It does not audit SigNoz code.
 
 ## The result
 
-| Ground truth (journal)                | Aware view                  | Replay-blind view             |
-| ------------------------------------- | --------------------------- | ----------------------------- |
-| Two attempts at the refund step       | Two activation spans        | Two activation spans          |
-| One call to the payment provider      | One `effect.execute`        | One `effect.execute`          |
-| One result read back from the journal | One linked `effect.resolve` | A second `effect.execute`     |
-| One refund                            | One business result         | The same refund counted twice |
+| Ground truth (journal) | Aware view | Replay-blind view |
+| --- | --- | --- |
+| Two attempts at the refund step | Two activation spans | Two activation spans |
+| One call to the payment provider | One `effect.execute` | One `effect.execute` |
+| One result read back from the journal | One linked `effect.resolve` | A second `effect.execute` |
+| One refund | One business result | The same refund counted twice |
 
 The replay-blind view is a deliberate control: it shows what an observer loses
 when it cannot tell a real call from a result replayed out of the journal. It is
@@ -70,15 +70,15 @@ bound file without cutting a new release turns CI red.
 
 ## Repository map
 
-| Path                 | Purpose                                                        |
-| -------------------- | -------------------------------------------------------------- |
-| `src/relay/`         | Durable graph runtime, journal, effect recovery                |
-| `src/relay_otel/`    | Projection, OTLP export, SigNoz query-back, release validation |
-| `web/`               | Loopback-only workbench and static evidence site               |
-| `deploy/`            | Digest-pinned local SigNoz and ClickHouse stack                |
-| `scripts/`           | Reproduction, access bootstrap, release authoring              |
-| `verify/`            | Runtime verifier, release phases and release audit             |
-| `receipts/lineages/` | The active release's hash-bound evidence                       |
+| Path | Purpose |
+| --- | --- |
+| `src/relay/` | Durable graph runtime, journal, effect recovery |
+| `src/relay_otel/` | Projection, OTLP export, SigNoz query-back, release validation |
+| `web/` | Loopback-only workbench and static evidence site |
+| `deploy/` | Digest-pinned local SigNoz and ClickHouse stack |
+| `scripts/` | Reproduction, access bootstrap, release authoring |
+| `verify/` | Runtime verifier, release phases and release audit |
+| `receipts/lineages/` | The active release's hash-bound evidence |
 
 More detail: [ARCHITECTURE.md](ARCHITECTURE.md), [SPEC.md](SPEC.md),
 [SECURITY.md](SECURITY.md).
@@ -91,3 +91,7 @@ More detail: [ARCHITECTURE.md](ARCHITECTURE.md), [SPEC.md](SPEC.md),
 - Only local SigNoz on loopback is supported, with a demo-grade key that is not
   rotated.
 - Releases are one-shot: there is no pointer rotation or rollback command.
+
+## License
+
+Apache-2.0. See [LICENSE](LICENSE).
