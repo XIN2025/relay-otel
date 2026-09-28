@@ -1,0 +1,616 @@
+{
+  "criteria": {
+    "aware_and_control_five_spans": true,
+    "collector_and_signoz_healthy": true,
+    "compose_renders": true,
+    "exact_duplicate_free_signoz_queryback": true,
+    "exact_stack_inventory_and_image_pins": true,
+    "immutable_staging_before_acknowledged_otlp": true,
+    "loopback_only_published_ports": true,
+    "mounted_histogram_helper_matches_pin": true,
+    "one_provider_attempt_and_one_durable_refund": true,
+    "registered_product_document": true,
+    "required_containers_healthy": true,
+    "retained_sanitized_source_facts": true,
+    "service_account_identity_validated": true
+  },
+  "evidence": {
+    "comparison": {
+      "awareExecutedEffectSpans": 1,
+      "awareResolvedEffectSpans": 1,
+      "controlExecutedEffectSpans": 2
+    },
+    "compose": {
+      "command": [
+        "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.EXE",
+        "--config",
+        ".\\receipts\\work\\docker-config",
+        "compose",
+        "--env-file",
+        "<host-local-signoz-env>",
+        "-f",
+        "deploy/pours/deployment/compose.yaml",
+        "-f",
+        "deploy/root-user.override.yaml",
+        "config",
+        "--quiet"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": ""
+    },
+    "compose_hash_command": {
+      "command": [
+        "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.EXE",
+        "--config",
+        ".\\receipts\\work\\docker-config",
+        "compose",
+        "--env-file",
+        "<host-local-signoz-env>",
+        "-f",
+        "deploy/pours/deployment/compose.yaml",
+        "-f",
+        "deploy/root-user.override.yaml",
+        "config",
+        "--hash",
+        "*"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "ingester 5485f04a1ba413be0363be8c5778bf3b4bebf7d340ad9e6c9ca9c115a2bb2531\nrelay-otel-signoz-signoz-0 d288c34532f45382359ba8dc5c2920ad966768d376d2a81e481476695468dccc\nrelay-otel-signoz-telemetrykeeper-clickhousekeeper-0 c4c325294f5f825139050bd6de021eb80dd729f9d762f431c8265db93f3b2b9e\nrelay-otel-signoz-telemetrystore-clickhouse-0-0 fa8ff28216e55d5466bfb8a62e5199955f8444c40a976c07ea0e050a9821c7f6\nrelay-otel-signoz-telemetrystore-clickhouse-user-scripts 51a9831aceaeddfd0c0fd7f0ecb513eda8fc7ade05ddad3d406d0910746bb3c7\nrelay-otel-signoz-telemetrystore-migrator d31f5a46d2b6c892038e378a35a4f13f3b36c1a17fe52f1eab653cb8a43aace3\n"
+    },
+    "compose_hashes": {
+      "ingester": "5485f04a1ba413be0363be8c5778bf3b4bebf7d340ad9e6c9ca9c115a2bb2531",
+      "relay-otel-signoz-signoz-0": "d288c34532f45382359ba8dc5c2920ad966768d376d2a81e481476695468dccc",
+      "relay-otel-signoz-telemetrykeeper-clickhousekeeper-0": "c4c325294f5f825139050bd6de021eb80dd729f9d762f431c8265db93f3b2b9e",
+      "relay-otel-signoz-telemetrystore-clickhouse-0-0": "fa8ff28216e55d5466bfb8a62e5199955f8444c40a976c07ea0e050a9821c7f6",
+      "relay-otel-signoz-telemetrystore-clickhouse-user-scripts": "51a9831aceaeddfd0c0fd7f0ecb513eda8fc7ade05ddad3d406d0910746bb3c7",
+      "relay-otel-signoz-telemetrystore-migrator": "d31f5a46d2b6c892038e378a35a4f13f3b36c1a17fe52f1eab653cb8a43aace3"
+    },
+    "container_health": {
+      "relay-otel-signoz-ingester-1": "healthy",
+      "relay-otel-signoz-signoz-0": "healthy",
+      "relay-otel-signoz-telemetrykeeper-clickhousekeeper-0": "healthy",
+      "relay-otel-signoz-telemetrystore-clickhouse-0-0": "healthy"
+    },
+    "container_inspect_command": {
+      "command": [
+        "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.EXE",
+        "--config",
+        ".\\receipts\\work\\docker-config",
+        "inspect",
+        "--format",
+        "{{.Name}}|{{index .Config.Labels \"com.docker.compose.service\"}}|{{.Config.Image}}|{{.Image}}|{{.State.Status}}|{{.State.ExitCode}}|{{if .State.Health}}{{.State.Health.Status}}{{else}}none{{end}}|{{index .Config.Labels \"com.docker.compose.config-hash\"}}",
+        "relay-otel-signoz-ingester-1",
+        "relay-otel-signoz-signoz-0",
+        "relay-otel-signoz-telemetrykeeper-clickhousekeeper-0",
+        "relay-otel-signoz-telemetrystore-clickhouse-0-0",
+        "relay-otel-signoz-telemetrystore-clickhouse-user-scripts",
+        "relay-otel-signoz-telemetrystore-migrator"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "/relay-otel-signoz-ingester-1|ingester|signoz/signoz-otel-collector@sha256:6d1a59bc553e041014597eff0970608948c5c7447aaa984c4d109f2bc9f4062c|sha256:6d1a59bc553e041014597eff0970608948c5c7447aaa984c4d109f2bc9f4062c|running|0|healthy|5485f04a1ba413be0363be8c5778bf3b4bebf7d340ad9e6c9ca9c115a2bb2531\n/relay-otel-signoz-signoz-0|relay-otel-signoz-signoz-0|signoz/signoz@sha256:0061009f21bf976a5374b6f73f98aa96f6f335d3ac753d6a792c6b3dc91a2328|sha256:0061009f21bf976a5374b6f73f98aa96f6f335d3ac753d6a792c6b3dc91a2328|running|0|healthy|d288c34532f45382359ba8dc5c2920ad966768d376d2a81e481476695468dccc\n/relay-otel-signoz-telemetrykeeper-clickhousekeeper-0|relay-otel-signoz-telemetrykeeper-clickhousekeeper-0|clickhouse/clickhouse-keeper@sha256:525b8b0f93ccb371131c46f22a066ea43d33d74aba314203e8044609945d8524|sha256:525b8b0f93ccb371131c46f22a066ea43d33d74aba314203e8044609945d8524|running|0|healthy|c4c325294f5f825139050bd6de021eb80dd729f9d762f431c8265db93f3b2b9e\n/relay-otel-signoz-telemetrystore-clickhouse-0-0|relay-otel-signoz-telemetrystore-clickhouse-0-0|clickhouse/clickhouse-server@sha256:cacf32d6884291dc2ff5e0156a97f46fc53ff7c929a7906d114e268a929dfd3a|sha256:cacf32d6884291dc2ff5e0156a97f46fc53ff7c929a7906d114e268a929dfd3a|running|0|healthy|fa8ff28216e55d5466bfb8a62e5199955f8444c40a976c07ea0e050a9821c7f6\n/relay-otel-signoz-telemetrystore-clickhouse-user-scripts|relay-otel-signoz-telemetrystore-clickhouse-user-scripts|clickhouse/clickhouse-server@sha256:cacf32d6884291dc2ff5e0156a97f46fc53ff7c929a7906d114e268a929dfd3a|sha256:cacf32d6884291dc2ff5e0156a97f46fc53ff7c929a7906d114e268a929dfd3a|exited|0|none|51a9831aceaeddfd0c0fd7f0ecb513eda8fc7ade05ddad3d406d0910746bb3c7\n/relay-otel-signoz-telemetrystore-migrator|relay-otel-signoz-telemetrystore-migrator|signoz/signoz-otel-collector@sha256:6d1a59bc553e041014597eff0970608948c5c7447aaa984c4d109f2bc9f4062c|sha256:6d1a59bc553e041014597eff0970608948c5c7447aaa984c4d109f2bc9f4062c|exited|0|none|d31f5a46d2b6c892038e378a35a4f13f3b36c1a17fe52f1eab653cb8a43aace3\n"
+    },
+    "container_inventory": {
+      "ingester": {
+        "config_hash": "5485f04a1ba413be0363be8c5778bf3b4bebf7d340ad9e6c9ca9c115a2bb2531",
+        "configured_image": "signoz/signoz-otel-collector@sha256:6d1a59bc553e041014597eff0970608948c5c7447aaa984c4d109f2bc9f4062c",
+        "container": "relay-otel-signoz-ingester-1",
+        "docker_health": "healthy",
+        "exit_code": 0,
+        "image_id": "sha256:6d1a59bc553e041014597eff0970608948c5c7447aaa984c4d109f2bc9f4062c",
+        "lifecycle": "running_healthy",
+        "state": "running"
+      },
+      "relay-otel-signoz-signoz-0": {
+        "config_hash": "d288c34532f45382359ba8dc5c2920ad966768d376d2a81e481476695468dccc",
+        "configured_image": "signoz/signoz@sha256:0061009f21bf976a5374b6f73f98aa96f6f335d3ac753d6a792c6b3dc91a2328",
+        "container": "relay-otel-signoz-signoz-0",
+        "docker_health": "healthy",
+        "exit_code": 0,
+        "image_id": "sha256:0061009f21bf976a5374b6f73f98aa96f6f335d3ac753d6a792c6b3dc91a2328",
+        "lifecycle": "running_healthy",
+        "state": "running"
+      },
+      "relay-otel-signoz-telemetrykeeper-clickhousekeeper-0": {
+        "config_hash": "c4c325294f5f825139050bd6de021eb80dd729f9d762f431c8265db93f3b2b9e",
+        "configured_image": "clickhouse/clickhouse-keeper@sha256:525b8b0f93ccb371131c46f22a066ea43d33d74aba314203e8044609945d8524",
+        "container": "relay-otel-signoz-telemetrykeeper-clickhousekeeper-0",
+        "docker_health": "healthy",
+        "exit_code": 0,
+        "image_id": "sha256:525b8b0f93ccb371131c46f22a066ea43d33d74aba314203e8044609945d8524",
+        "lifecycle": "running_healthy",
+        "state": "running"
+      },
+      "relay-otel-signoz-telemetrystore-clickhouse-0-0": {
+        "config_hash": "fa8ff28216e55d5466bfb8a62e5199955f8444c40a976c07ea0e050a9821c7f6",
+        "configured_image": "clickhouse/clickhouse-server@sha256:cacf32d6884291dc2ff5e0156a97f46fc53ff7c929a7906d114e268a929dfd3a",
+        "container": "relay-otel-signoz-telemetrystore-clickhouse-0-0",
+        "docker_health": "healthy",
+        "exit_code": 0,
+        "image_id": "sha256:cacf32d6884291dc2ff5e0156a97f46fc53ff7c929a7906d114e268a929dfd3a",
+        "lifecycle": "running_healthy",
+        "state": "running"
+      },
+      "relay-otel-signoz-telemetrystore-clickhouse-user-scripts": {
+        "config_hash": "51a9831aceaeddfd0c0fd7f0ecb513eda8fc7ade05ddad3d406d0910746bb3c7",
+        "configured_image": "clickhouse/clickhouse-server@sha256:cacf32d6884291dc2ff5e0156a97f46fc53ff7c929a7906d114e268a929dfd3a",
+        "container": "relay-otel-signoz-telemetrystore-clickhouse-user-scripts",
+        "docker_health": "none",
+        "exit_code": 0,
+        "image_id": "sha256:cacf32d6884291dc2ff5e0156a97f46fc53ff7c929a7906d114e268a929dfd3a",
+        "lifecycle": "completed_successfully",
+        "state": "exited"
+      },
+      "relay-otel-signoz-telemetrystore-migrator": {
+        "config_hash": "d31f5a46d2b6c892038e378a35a4f13f3b36c1a17fe52f1eab653cb8a43aace3",
+        "configured_image": "signoz/signoz-otel-collector@sha256:6d1a59bc553e041014597eff0970608948c5c7447aaa984c4d109f2bc9f4062c",
+        "container": "relay-otel-signoz-telemetrystore-migrator",
+        "docker_health": "none",
+        "exit_code": 0,
+        "image_id": "sha256:6d1a59bc553e041014597eff0970608948c5c7447aaa984c4d109f2bc9f4062c",
+        "lifecycle": "completed_successfully",
+        "state": "exited"
+      }
+    },
+    "container_names_command": {
+      "command": [
+        "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.EXE",
+        "--config",
+        ".\\receipts\\work\\docker-config",
+        "ps",
+        "-a",
+        "--filter",
+        "label=com.docker.compose.project=relay-otel-signoz",
+        "--format",
+        "{{.Names}}"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "relay-otel-signoz-ingester-1\nrelay-otel-signoz-telemetrystore-clickhouse-0-0\nrelay-otel-signoz-telemetrykeeper-clickhousekeeper-0\nrelay-otel-signoz-telemetrystore-clickhouse-user-scripts\nrelay-otel-signoz-signoz-0\nrelay-otel-signoz-telemetrystore-migrator\n"
+    },
+    "exports": {
+      "aware": {
+        "delivery": {
+          "bytes": 564,
+          "path": "receipts/lineages/v2-2026-09-27-r11/integration/aware-delivery.json",
+          "sha256": "9cc31972ea70999ac626927f84cc3b9a99e6f317abc0d451323719600ba3194a"
+        },
+        "final": {
+          "bytes": 6902,
+          "path": "receipts/lineages/v2-2026-09-27-r11/integration/aware-final.json",
+          "sha256": "6fcb33f61039e8bc0bb36e7cbc6aefc1bdeb9a45ef088a25b0c9ceb5ac9e408c"
+        },
+        "staged": {
+          "bytes": 6351,
+          "path": "receipts/lineages/v2-2026-09-27-r11/integration/aware-staged.json",
+          "sha256": "2fe38ddef9448ee4994be920fe66c239a85712705bd9b0314dee0040abd441c1"
+        }
+      },
+      "control": {
+        "delivery": {
+          "bytes": 568,
+          "path": "receipts/lineages/v2-2026-09-27-r11/integration/control-delivery.json",
+          "sha256": "50c5fa5b76afbc7679529eeb028c7df0b4bb8e4ce6410ca9339393266335b810"
+        },
+        "final": {
+          "bytes": 6644,
+          "path": "receipts/lineages/v2-2026-09-27-r11/integration/control-final.json",
+          "sha256": "ac94a6929e22643b2623f7ebabd8337df9e711559c8c2cbbd0087847b895fcfe"
+        },
+        "staged": {
+          "bytes": 6089,
+          "path": "receipts/lineages/v2-2026-09-27-r11/integration/control-staged.json",
+          "sha256": "e93e83feaf1a1044a8ae62a0ee1e8188b760db7f0c37d7025c41c2629de927c8"
+        }
+      }
+    },
+    "ground_truth": {
+      "activationAttempts": 2,
+      "businessExecutions": 1,
+      "effectCompletions": 1,
+      "effectIntents": 1,
+      "journalResolutions": 1,
+      "providerAttempts": 1
+    },
+    "health": {
+      "collector": 200,
+      "signoz": 200
+    },
+    "histogram_command": {
+      "command": [
+        "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.EXE",
+        "--config",
+        ".\\receipts\\work\\docker-config",
+        "exec",
+        "relay-otel-signoz-telemetrystore-clickhouse-0-0",
+        "sh",
+        "-ec",
+        "sha256sum /var/lib/clickhouse/user_scripts/histogramQuantile; wc -c < /var/lib/clickhouse/user_scripts/histogramQuantile"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "fc3168f98e9f3126506d96ef8d7e6057dd777fd72786cdc58e0e8c9de80dd997  /var/lib/clickhouse/user_scripts/histogramQuantile\n1446040\n"
+    },
+    "histogram_helper": {
+      "binary_bytes": 1446040,
+      "binary_sha256": "fc3168f98e9f3126506d96ef8d7e6057dd777fd72786cdc58e0e8c9de80dd997",
+      "container_path": "/var/lib/clickhouse/user_scripts/histogramQuantile",
+      "platform": "linux_amd64"
+    },
+    "port_inspect_command": {
+      "command": [
+        "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.EXE",
+        "--config",
+        ".\\receipts\\work\\docker-config",
+        "inspect",
+        "--format",
+        "{{.Name}}|{{json .NetworkSettings.Ports}}",
+        "relay-otel-signoz-ingester-1",
+        "relay-otel-signoz-signoz-0",
+        "relay-otel-signoz-telemetrykeeper-clickhousekeeper-0",
+        "relay-otel-signoz-telemetrystore-clickhouse-0-0",
+        "relay-otel-signoz-telemetrystore-clickhouse-user-scripts",
+        "relay-otel-signoz-telemetrystore-migrator"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "/relay-otel-signoz-ingester-1|{\"13133/tcp\":[{\"HostIp\":\"127.0.0.1\",\"HostPort\":\"13133\"}],\"4317/tcp\":null,\"4318/tcp\":[{\"HostIp\":\"127.0.0.1\",\"HostPort\":\"4318\"}]}\n/relay-otel-signoz-signoz-0|{\"8080/tcp\":[{\"HostIp\":\"127.0.0.1\",\"HostPort\":\"8080\"}]}\n/relay-otel-signoz-telemetrykeeper-clickhousekeeper-0|{\"10181/tcp\":null,\"2181/tcp\":null,\"44444/tcp\":null,\"9181/tcp\":null}\n/relay-otel-signoz-telemetrystore-clickhouse-0-0|{\"8123/tcp\":null,\"9000/tcp\":null,\"9009/tcp\":null}\n/relay-otel-signoz-telemetrystore-clickhouse-user-scripts|{}\n/relay-otel-signoz-telemetrystore-migrator|{}\n"
+    },
+    "product_snapshot": {
+      "bytes": 24534,
+      "path": "receipts/lineages/v2-2026-09-27-r11/integration/product.json",
+      "sha256": "9af5df2f23fbc5f4a606b6766901fffa20201b7d3c4e3ec2ffbc9e3b16a87a8d"
+    },
+    "published_ports": [
+      {
+        "container": "relay-otel-signoz-ingester-1",
+        "container_port": "13133/tcp",
+        "host_ip": "127.0.0.1",
+        "host_port": "13133"
+      },
+      {
+        "container": "relay-otel-signoz-ingester-1",
+        "container_port": "4318/tcp",
+        "host_ip": "127.0.0.1",
+        "host_port": "4318"
+      },
+      {
+        "container": "relay-otel-signoz-signoz-0",
+        "container_port": "8080/tcp",
+        "host_ip": "127.0.0.1",
+        "host_port": "8080"
+      }
+    ],
+    "query_back": {
+      "aware": {
+        "attributesVerified": true,
+        "duplicateRows": 0,
+        "identityVerified": true,
+        "queryAttempts": 5,
+        "request": {
+          "compositeQuery": {
+            "queries": [
+              {
+                "spec": {
+                  "disabled": false,
+                  "filter": {
+                    "expression": "trace_id = 'f0fa64e045c679de0f4f21985b1b90f4'"
+                  },
+                  "limit": 100,
+                  "name": "A",
+                  "offset": 0,
+                  "order": [
+                    {
+                      "direction": "asc",
+                      "key": {
+                        "name": "timestamp"
+                      }
+                    }
+                  ],
+                  "selectFields": [
+                    {
+                      "fieldContext": "span",
+                      "name": "trace_id"
+                    },
+                    {
+                      "fieldContext": "span",
+                      "name": "span_id"
+                    },
+                    {
+                      "fieldContext": "span",
+                      "name": "parent_span_id"
+                    },
+                    {
+                      "fieldContext": "span",
+                      "name": "name"
+                    },
+                    {
+                      "fieldContext": "resource",
+                      "name": "service.name"
+                    },
+                    {
+                      "fieldContext": "span",
+                      "fieldDataType": "string",
+                      "name": "relay.operation.name"
+                    },
+                    {
+                      "fieldContext": "span",
+                      "fieldDataType": "string",
+                      "name": "relay.effect.source"
+                    }
+                  ],
+                  "signal": "traces"
+                },
+                "type": "builder_query"
+              }
+            ]
+          },
+          "end": 1790509671179,
+          "requestType": "raw",
+          "start": 1790509070906,
+          "variables": {}
+        },
+        "selectedRows": [
+          {
+            "effectSource": "external",
+            "name": "relay.effect.execute payments:refund",
+            "operationName": "effect.execute",
+            "parentSpanId": "4be324569a4bfa63",
+            "serviceName": "relay-otel-aware",
+            "spanId": "4758d3f96d7355a2",
+            "traceId": "f0fa64e045c679de0f4f21985b1b90f4"
+          },
+          {
+            "effectSource": null,
+            "name": "relay.activation issue_refund",
+            "operationName": "activation",
+            "parentSpanId": "d5905f2bf4c701b6",
+            "serviceName": "relay-otel-aware",
+            "spanId": "4be324569a4bfa63",
+            "traceId": "f0fa64e045c679de0f4f21985b1b90f4"
+          },
+          {
+            "effectSource": null,
+            "name": "relay.activation issue_refund",
+            "operationName": "activation",
+            "parentSpanId": "d5905f2bf4c701b6",
+            "serviceName": "relay-otel-aware",
+            "spanId": "5470f787ef133436",
+            "traceId": "f0fa64e045c679de0f4f21985b1b90f4"
+          },
+          {
+            "effectSource": null,
+            "name": "relay.run",
+            "operationName": "run",
+            "parentSpanId": null,
+            "serviceName": "relay-otel-aware",
+            "spanId": "d5905f2bf4c701b6",
+            "traceId": "f0fa64e045c679de0f4f21985b1b90f4"
+          },
+          {
+            "effectSource": "journal",
+            "name": "relay.effect.resolve payments:refund",
+            "operationName": "effect.resolve",
+            "parentSpanId": "5470f787ef133436",
+            "serviceName": "relay-otel-aware",
+            "spanId": "d99cf6ead0844a9a",
+            "traceId": "f0fa64e045c679de0f4f21985b1b90f4"
+          }
+        ],
+        "serviceNameVerified": true,
+        "spansRetrieved": 5,
+        "spansSent": 5,
+        "traceId": "f0fa64e045c679de0f4f21985b1b90f4",
+        "verified": true
+      },
+      "control": {
+        "attributesVerified": true,
+        "duplicateRows": 0,
+        "identityVerified": true,
+        "queryAttempts": 1,
+        "request": {
+          "compositeQuery": {
+            "queries": [
+              {
+                "spec": {
+                  "disabled": false,
+                  "filter": {
+                    "expression": "trace_id = '505c04c5327537a78d53e7f76ff166ae'"
+                  },
+                  "limit": 100,
+                  "name": "A",
+                  "offset": 0,
+                  "order": [
+                    {
+                      "direction": "asc",
+                      "key": {
+                        "name": "timestamp"
+                      }
+                    }
+                  ],
+                  "selectFields": [
+                    {
+                      "fieldContext": "span",
+                      "name": "trace_id"
+                    },
+                    {
+                      "fieldContext": "span",
+                      "name": "span_id"
+                    },
+                    {
+                      "fieldContext": "span",
+                      "name": "parent_span_id"
+                    },
+                    {
+                      "fieldContext": "span",
+                      "name": "name"
+                    },
+                    {
+                      "fieldContext": "resource",
+                      "name": "service.name"
+                    },
+                    {
+                      "fieldContext": "span",
+                      "fieldDataType": "string",
+                      "name": "relay.operation.name"
+                    },
+                    {
+                      "fieldContext": "span",
+                      "fieldDataType": "string",
+                      "name": "relay.effect.source"
+                    }
+                  ],
+                  "signal": "traces"
+                },
+                "type": "builder_query"
+              }
+            ]
+          },
+          "end": 1790509671179,
+          "requestType": "raw",
+          "start": 1790509070906,
+          "variables": {}
+        },
+        "selectedRows": [
+          {
+            "effectSource": null,
+            "name": "relay.run",
+            "operationName": "run",
+            "parentSpanId": null,
+            "serviceName": "relay-otel-control",
+            "spanId": "275f7eb24b02cb09",
+            "traceId": "505c04c5327537a78d53e7f76ff166ae"
+          },
+          {
+            "effectSource": null,
+            "name": "relay.activation issue_refund",
+            "operationName": "activation",
+            "parentSpanId": "275f7eb24b02cb09",
+            "serviceName": "relay-otel-control",
+            "spanId": "637a9ecdcb88c71e",
+            "traceId": "505c04c5327537a78d53e7f76ff166ae"
+          },
+          {
+            "effectSource": null,
+            "name": "relay.activation issue_refund",
+            "operationName": "activation",
+            "parentSpanId": "275f7eb24b02cb09",
+            "serviceName": "relay-otel-control",
+            "spanId": "6865975a129b98c3",
+            "traceId": "505c04c5327537a78d53e7f76ff166ae"
+          },
+          {
+            "effectSource": null,
+            "name": "relay.effect.execute payments:refund",
+            "operationName": "effect.execute",
+            "parentSpanId": "6865975a129b98c3",
+            "serviceName": "relay-otel-control",
+            "spanId": "8be8f2e2c3b39849",
+            "traceId": "505c04c5327537a78d53e7f76ff166ae"
+          },
+          {
+            "effectSource": null,
+            "name": "relay.effect.execute payments:refund",
+            "operationName": "effect.execute",
+            "parentSpanId": "637a9ecdcb88c71e",
+            "serviceName": "relay-otel-control",
+            "spanId": "aff9020aad87a103",
+            "traceId": "505c04c5327537a78d53e7f76ff166ae"
+          }
+        ],
+        "serviceNameVerified": true,
+        "spansRetrieved": 5,
+        "spansSent": 5,
+        "traceId": "505c04c5327537a78d53e7f76ff166ae",
+        "verified": true
+      }
+    },
+    "run_id": "product-20260927114250553-0023-dc13d5",
+    "service_account_command": {
+      "command": [
+        ".\\.venv\\Scripts\\python.exe",
+        "scripts/bootstrap_signoz_access.py"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "Reused and validated the host-local SigNoz service-account key.\n"
+    },
+    "service_account_snapshot": {
+      "bytes": 390,
+      "path": "receipts/lineages/v2-2026-09-27-r11/integration/signoz-access.json",
+      "sha256": "eeb44f07d113d288bbf1d296df19ce505e8c7933ad92074c24e494b7fcacd5b1"
+    },
+    "snapshots": {
+      "aware_delivery": {
+        "bytes": 564,
+        "path": "receipts/lineages/v2-2026-09-27-r11/integration/aware-delivery.json",
+        "sha256": "9cc31972ea70999ac626927f84cc3b9a99e6f317abc0d451323719600ba3194a"
+      },
+      "aware_final": {
+        "bytes": 6902,
+        "path": "receipts/lineages/v2-2026-09-27-r11/integration/aware-final.json",
+        "sha256": "6fcb33f61039e8bc0bb36e7cbc6aefc1bdeb9a45ef088a25b0c9ceb5ac9e408c"
+      },
+      "aware_staged": {
+        "bytes": 6351,
+        "path": "receipts/lineages/v2-2026-09-27-r11/integration/aware-staged.json",
+        "sha256": "2fe38ddef9448ee4994be920fe66c239a85712705bd9b0314dee0040abd441c1"
+      },
+      "control_delivery": {
+        "bytes": 568,
+        "path": "receipts/lineages/v2-2026-09-27-r11/integration/control-delivery.json",
+        "sha256": "50c5fa5b76afbc7679529eeb028c7df0b4bb8e4ce6410ca9339393266335b810"
+      },
+      "control_final": {
+        "bytes": 6644,
+        "path": "receipts/lineages/v2-2026-09-27-r11/integration/control-final.json",
+        "sha256": "ac94a6929e22643b2623f7ebabd8337df9e711559c8c2cbbd0087847b895fcfe"
+      },
+      "control_staged": {
+        "bytes": 6089,
+        "path": "receipts/lineages/v2-2026-09-27-r11/integration/control-staged.json",
+        "sha256": "e93e83feaf1a1044a8ae62a0ee1e8188b760db7f0c37d7025c41c2629de927c8"
+      },
+      "product": {
+        "bytes": 24534,
+        "path": "receipts/lineages/v2-2026-09-27-r11/integration/product.json",
+        "sha256": "9af5df2f23fbc5f4a606b6766901fffa20201b7d3c4e3ec2ffbc9e3b16a87a8d"
+      },
+      "signoz_access": {
+        "bytes": 390,
+        "path": "receipts/lineages/v2-2026-09-27-r11/integration/signoz-access.json",
+        "sha256": "eeb44f07d113d288bbf1d296df19ce505e8c7933ad92074c24e494b7fcacd5b1"
+      },
+      "source_facts": {
+        "bytes": 5441,
+        "path": "receipts/lineages/v2-2026-09-27-r11/integration/source-facts.json",
+        "sha256": "320d98cd0fcbb149a9ea01de7d91cab7e1f550b2686a1afef1a023293d881532"
+      }
+    },
+    "source_facts_snapshot": {
+      "bytes": 5441,
+      "path": "receipts/lineages/v2-2026-09-27-r11/integration/source-facts.json",
+      "sha256": "320d98cd0fcbb149a9ea01de7d91cab7e1f550b2686a1afef1a023293d881532"
+    },
+    "source_product_observation": {
+      "observed_bytes": 24534,
+      "observed_sha256": "9af5df2f23fbc5f4a606b6766901fffa20201b7d3c4e3ec2ffbc9e3b16a87a8d",
+      "relative_path": "receipts/work/product-runs/product-20260927114250553-0023-dc13d5/run.json"
+    }
+  },
+  "generated_at": "2026-09-27T11:42:59.753842+00:00",
+  "lineage_id": "v2-2026-09-27-r11",
+  "lineage_inputs_sha256": "d8eb5a8bf157f723afb6dc2aba31d01d426b5ab61d173c6cabcea5a79a073571",
+  "phase": "02-integration",
+  "schema_version": 1,
+  "verdict": "PASS"
+}

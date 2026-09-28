@@ -1,0 +1,166 @@
+{
+  "effect_phase_time_observation": {
+    "observed_bytes": 20480,
+    "observed_path": "receipts/work/product-runs/product-20260927114250553-0023-dc13d5/effects.sqlite",
+    "observed_sha256": "c333c71308d2e96a5cf66aa8e2cd1bd38e1c9264879f595a6e429f2dccb1eff1"
+  },
+  "journal_phase_time_observation": {
+    "observed_bytes": 28672,
+    "observed_path": "receipts/work/product-runs/product-20260927114250553-0023-dc13d5/journal.sqlite",
+    "observed_sha256": "12ae4dfbef57124bb05fb78ab0c96c74c454df8ceb765434145c827ace5a31b3"
+  },
+  "lineage_id": "v2-2026-09-27-r11",
+  "lineage_inputs_sha256": "d8eb5a8bf157f723afb6dc2aba31d01d426b5ab61d173c6cabcea5a79a073571",
+  "run_id": "product-20260927114250553-0023-dc13d5",
+  "sanitized_effect_facts": {
+    "business_executions": 1,
+    "idempotency_key_sha256": "e3322f24d51291e55fa099d267c8bec5bf33f48d72bf536bebb698e3014940a0",
+    "provider_attempts": 1
+  },
+  "sanitized_journal_events": [
+    {
+      "activationId": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+      "atUnixNano": "1790509370906139500",
+      "attemptId": null,
+      "node": "issue_refund",
+      "payload": {
+        "activation_id": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+        "input": {
+          "redacted": true
+        },
+        "journal_schema_version": 2,
+        "start_node": "issue_refund",
+        "workflow_version": "refund-v2"
+      },
+      "seq": 1,
+      "type": "run_started"
+    },
+    {
+      "activationId": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+      "atUnixNano": "1790509370907142700",
+      "attemptId": "att_ae47ce55210647b688083fa678c34db7",
+      "node": "issue_refund",
+      "payload": {
+        "recovery": false
+      },
+      "seq": 2,
+      "type": "attempt_started"
+    },
+    {
+      "activationId": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+      "atUnixNano": "1790509370908140300",
+      "attemptId": "att_ae47ce55210647b688083fa678c34db7",
+      "node": "issue_refund",
+      "payload": {
+        "adapter_version": "refund-store/v1",
+        "effect_id": "refund",
+        "idempotency_key_fingerprint": "e3322f24d51291e55fa099d267c8bec5bf33f48d72bf536bebb698e3014940a0",
+        "index": 0,
+        "label": "payments:refund",
+        "request_fingerprint": "513276307412e0ddc714be57f6d989aa8b0a55f636e34c359137d37853258419",
+        "retry_of_intent_seq": null,
+        "retry_safe": true,
+        "started_at_ns": 1790509370908140300
+      },
+      "seq": 3,
+      "type": "effect_intent"
+    },
+    {
+      "activationId": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+      "atUnixNano": "1790509370926658000",
+      "attemptId": "att_ae47ce55210647b688083fa678c34db7",
+      "node": "issue_refund",
+      "payload": {
+        "adapter_version": "refund-store/v1",
+        "effect_id": "refund",
+        "ended_at_ns": 1790509370926658000,
+        "idempotency_key_fingerprint": "e3322f24d51291e55fa099d267c8bec5bf33f48d72bf536bebb698e3014940a0",
+        "index": 0,
+        "label": "payments:refund",
+        "request_fingerprint": "513276307412e0ddc714be57f6d989aa8b0a55f636e34c359137d37853258419",
+        "result": {
+          "redacted": true
+        },
+        "retry_safe": true,
+        "source_intent_seq": 3,
+        "started_at_ns": 1790509370908140300
+      },
+      "seq": 4,
+      "type": "effect_completed"
+    },
+    {
+      "activationId": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+      "atUnixNano": "1790509371175064200",
+      "attemptId": "att_ae47ce55210647b688083fa678c34db7",
+      "node": "issue_refund",
+      "payload": {
+        "reason": {
+          "redacted": true
+        }
+      },
+      "seq": 5,
+      "type": "attempt_abandoned"
+    },
+    {
+      "activationId": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+      "atUnixNano": "1790509371176576900",
+      "attemptId": "att_d6ea15796fa042a79b3f3c26466fd6e9",
+      "node": "issue_refund",
+      "payload": {
+        "recovery": true
+      },
+      "seq": 6,
+      "type": "attempt_started"
+    },
+    {
+      "activationId": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+      "atUnixNano": "1790509371178341500",
+      "attemptId": "att_d6ea15796fa042a79b3f3c26466fd6e9",
+      "node": "issue_refund",
+      "payload": {
+        "adapter_version": "refund-store/v1",
+        "effect_id": "refund",
+        "ended_at_ns": 1790509371178341500,
+        "idempotency_key_fingerprint": "e3322f24d51291e55fa099d267c8bec5bf33f48d72bf536bebb698e3014940a0",
+        "index": 0,
+        "label": "payments:refund",
+        "request_fingerprint": "513276307412e0ddc714be57f6d989aa8b0a55f636e34c359137d37853258419",
+        "retry_safe": true,
+        "source_effect_seq": 4,
+        "source_intent_seq": 3,
+        "started_at_ns": 1790509371178341500
+      },
+      "seq": 7,
+      "type": "effect_resolved"
+    },
+    {
+      "activationId": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+      "atUnixNano": "1790509371178341500",
+      "attemptId": "att_d6ea15796fa042a79b3f3c26466fd6e9",
+      "node": "issue_refund",
+      "payload": {
+        "next_activation_id": null,
+        "next_node": "__end__",
+        "patch": {
+          "redacted": true
+        }
+      },
+      "seq": 8,
+      "type": "activation_finished"
+    },
+    {
+      "activationId": null,
+      "atUnixNano": "1790509371179849000",
+      "attemptId": null,
+      "node": null,
+      "payload": {
+        "state": {
+          "redacted": true
+        }
+      },
+      "seq": 9,
+      "type": "run_finished"
+    }
+  ],
+  "schema_version": 1
+}

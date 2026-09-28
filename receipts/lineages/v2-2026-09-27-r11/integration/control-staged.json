@@ -1,0 +1,161 @@
+{
+  "generated_at": "2026-09-27T11:42:51.801862+00:00",
+  "journal": {
+    "path": "receipts/work/product-runs/product-20260927114250553-0023-dc13d5/journal.sqlite",
+    "sha256": "12ae4dfbef57124bb05fb78ab0c96c74c454df8ceb765434145c827ace5a31b3"
+  },
+  "mode": "control",
+  "otlp": {
+    "attempted": false,
+    "endpoint": "http://127.0.0.1:4318/v1/traces",
+    "result": null,
+    "state": "STAGED"
+  },
+  "provenance": {
+    "lineageCandidate": true,
+    "lineageCheckedArtifacts": 104,
+    "lineageId": "v2-2026-09-27-r11",
+    "lineageInputsPath": "receipts/lineages/v2-2026-09-27-r11/inputs.json",
+    "lineageInputsSha256": "d8eb5a8bf157f723afb6dc2aba31d01d426b5ab61d173c6cabcea5a79a073571",
+    "lineageManifestPath": null,
+    "lineageManifestSha256": null,
+    "phaseReceipts": {}
+  },
+  "resource": {
+    "service.instance.id": "ddfbfabf-13c8-4605-8119-e5a8083f4141",
+    "service.name": "relay-otel-control",
+    "service.version": "0.2.0",
+    "telemetry.sdk.language": "python",
+    "telemetry.sdk.name": "opentelemetry",
+    "telemetry.sdk.version": "1.44.0"
+  },
+  "run_id": "product-20260927114250553-0023-dc13d5",
+  "schema_version": 1,
+  "sdk_capture_count": 5,
+  "sdk_identity_match": true,
+  "span_count": 5,
+  "spans": [
+    {
+      "attributes": {
+        "relay.operation.name": "run",
+        "relay.run.id": "product-20260927114250553-0023-dc13d5",
+        "relay.run.outcome": "finished",
+        "relay.workflow.version": "refund-v2"
+      },
+      "classification": "structural",
+      "duration_nano": 273709500,
+      "end_time_unix_nano": 1790509371179849000,
+      "identity": "run",
+      "kind": "INTERNAL",
+      "links": [],
+      "name": "relay.run",
+      "parent_span_id": null,
+      "span_id": "275f7eb24b02cb09",
+      "start_time_unix_nano": 1790509370906139500,
+      "status": "UNSET",
+      "trace_id": "505c04c5327537a78d53e7f76ff166ae"
+    },
+    {
+      "attributes": {
+        "error.type": "relay.attempt.abandoned",
+        "relay.activation.id": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+        "relay.attempt.id": "att_ae47ce55210647b688083fa678c34db7",
+        "relay.attempt.outcome": "abandoned",
+        "relay.attempt.recovery": false,
+        "relay.node.name": "issue_refund",
+        "relay.operation.name": "activation",
+        "relay.run.id": "product-20260927114250553-0023-dc13d5"
+      },
+      "classification": "structural",
+      "duration_nano": 267921500,
+      "end_time_unix_nano": 1790509371175064200,
+      "identity": "attempt:att_ae47ce55210647b688083fa678c34db7",
+      "kind": "INTERNAL",
+      "links": [],
+      "name": "relay.activation issue_refund",
+      "parent_span_id": "275f7eb24b02cb09",
+      "span_id": "637a9ecdcb88c71e",
+      "start_time_unix_nano": 1790509370907142700,
+      "status": "ERROR",
+      "trace_id": "505c04c5327537a78d53e7f76ff166ae"
+    },
+    {
+      "attributes": {
+        "relay.activation.id": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+        "relay.attempt.id": "att_d6ea15796fa042a79b3f3c26466fd6e9",
+        "relay.attempt.outcome": "completed",
+        "relay.attempt.recovery": true,
+        "relay.node.name": "issue_refund",
+        "relay.operation.name": "activation",
+        "relay.run.id": "product-20260927114250553-0023-dc13d5"
+      },
+      "classification": "structural",
+      "duration_nano": 1764600,
+      "end_time_unix_nano": 1790509371178341500,
+      "identity": "attempt:att_d6ea15796fa042a79b3f3c26466fd6e9",
+      "kind": "INTERNAL",
+      "links": [],
+      "name": "relay.activation issue_refund",
+      "parent_span_id": "275f7eb24b02cb09",
+      "span_id": "6865975a129b98c3",
+      "start_time_unix_nano": 1790509371176576900,
+      "status": "UNSET",
+      "trace_id": "505c04c5327537a78d53e7f76ff166ae"
+    },
+    {
+      "attributes": {
+        "relay.activation.id": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+        "relay.attempt.id": "att_ae47ce55210647b688083fa678c34db7",
+        "relay.effect.adapter.version": "refund-store/v1",
+        "relay.effect.id": "refund",
+        "relay.effect.index": 0,
+        "relay.effect.label": "payments:refund",
+        "relay.effect.outcome": "executed",
+        "relay.effect.request.fingerprint": "513276307412e0ddc714be57f6d989aa8b0a55f636e34c359137d37853258419",
+        "relay.node.name": "issue_refund",
+        "relay.operation.name": "effect.execute",
+        "relay.run.id": "product-20260927114250553-0023-dc13d5"
+      },
+      "classification": "executed",
+      "duration_nano": 18517700,
+      "end_time_unix_nano": 1790509370926658000,
+      "identity": "effect-execute:4",
+      "kind": "INTERNAL",
+      "links": [],
+      "name": "relay.effect.execute payments:refund",
+      "parent_span_id": "637a9ecdcb88c71e",
+      "span_id": "aff9020aad87a103",
+      "start_time_unix_nano": 1790509370908140300,
+      "status": "UNSET",
+      "trace_id": "505c04c5327537a78d53e7f76ff166ae"
+    },
+    {
+      "attributes": {
+        "relay.activation.id": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+        "relay.attempt.id": "att_d6ea15796fa042a79b3f3c26466fd6e9",
+        "relay.effect.adapter.version": "refund-store/v1",
+        "relay.effect.id": "refund",
+        "relay.effect.index": 0,
+        "relay.effect.label": "payments:refund",
+        "relay.effect.outcome": "executed",
+        "relay.effect.request.fingerprint": "513276307412e0ddc714be57f6d989aa8b0a55f636e34c359137d37853258419",
+        "relay.node.name": "issue_refund",
+        "relay.operation.name": "effect.execute",
+        "relay.run.id": "product-20260927114250553-0023-dc13d5"
+      },
+      "classification": "executed",
+      "duration_nano": 0,
+      "end_time_unix_nano": 1790509371178341500,
+      "identity": "effect-execute:7",
+      "kind": "INTERNAL",
+      "links": [],
+      "name": "relay.effect.execute payments:refund",
+      "parent_span_id": "6865975a129b98c3",
+      "span_id": "8be8f2e2c3b39849",
+      "start_time_unix_nano": 1790509371178341500,
+      "status": "UNSET",
+      "trace_id": "505c04c5327537a78d53e7f76ff166ae"
+    }
+  ],
+  "trace_id": "505c04c5327537a78d53e7f76ff166ae"
+}

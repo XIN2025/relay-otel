@@ -1,0 +1,691 @@
+{
+  "aware": {
+    "mode": "aware",
+    "serviceName": "relay-otel-aware",
+    "signozUrl": "http://127.0.0.1:8080/trace/f0fa64e045c679de0f4f21985b1b90f4",
+    "spans": [
+      {
+        "attributes": {
+          "relay.operation.name": "run",
+          "relay.run.id": "product-20260927114250553-0023-dc13d5",
+          "relay.run.outcome": "finished",
+          "relay.workflow.version": "refund-v2"
+        },
+        "classification": "structural",
+        "duration_nano": "273709500",
+        "end_time_unix_nano": "1790509371179849000",
+        "identity": "run",
+        "kind": "INTERNAL",
+        "links": [],
+        "name": "relay.run",
+        "parent_span_id": null,
+        "span_id": "d5905f2bf4c701b6",
+        "start_time_unix_nano": "1790509370906139500",
+        "status": "UNSET",
+        "trace_id": "f0fa64e045c679de0f4f21985b1b90f4"
+      },
+      {
+        "attributes": {
+          "error.type": "relay.attempt.abandoned",
+          "relay.activation.id": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+          "relay.attempt.id": "att_ae47ce55210647b688083fa678c34db7",
+          "relay.attempt.outcome": "abandoned",
+          "relay.attempt.recovery": false,
+          "relay.node.name": "issue_refund",
+          "relay.operation.name": "activation",
+          "relay.run.id": "product-20260927114250553-0023-dc13d5"
+        },
+        "classification": "structural",
+        "duration_nano": "267921500",
+        "end_time_unix_nano": "1790509371175064200",
+        "identity": "attempt:att_ae47ce55210647b688083fa678c34db7",
+        "kind": "INTERNAL",
+        "links": [],
+        "name": "relay.activation issue_refund",
+        "parent_span_id": "d5905f2bf4c701b6",
+        "span_id": "4be324569a4bfa63",
+        "start_time_unix_nano": "1790509370907142700",
+        "status": "ERROR",
+        "trace_id": "f0fa64e045c679de0f4f21985b1b90f4"
+      },
+      {
+        "attributes": {
+          "relay.activation.id": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+          "relay.attempt.id": "att_d6ea15796fa042a79b3f3c26466fd6e9",
+          "relay.attempt.outcome": "completed",
+          "relay.attempt.recovery": true,
+          "relay.node.name": "issue_refund",
+          "relay.operation.name": "activation",
+          "relay.run.id": "product-20260927114250553-0023-dc13d5"
+        },
+        "classification": "structural",
+        "duration_nano": "1764600",
+        "end_time_unix_nano": "1790509371178341500",
+        "identity": "attempt:att_d6ea15796fa042a79b3f3c26466fd6e9",
+        "kind": "INTERNAL",
+        "links": [],
+        "name": "relay.activation issue_refund",
+        "parent_span_id": "d5905f2bf4c701b6",
+        "span_id": "5470f787ef133436",
+        "start_time_unix_nano": "1790509371176576900",
+        "status": "UNSET",
+        "trace_id": "f0fa64e045c679de0f4f21985b1b90f4"
+      },
+      {
+        "attributes": {
+          "relay.activation.id": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+          "relay.attempt.id": "att_ae47ce55210647b688083fa678c34db7",
+          "relay.effect.adapter.version": "refund-store/v1",
+          "relay.effect.id": "refund",
+          "relay.effect.index": 0,
+          "relay.effect.label": "payments:refund",
+          "relay.effect.outcome": "executed",
+          "relay.effect.request.fingerprint": "513276307412e0ddc714be57f6d989aa8b0a55f636e34c359137d37853258419",
+          "relay.effect.source": "external",
+          "relay.node.name": "issue_refund",
+          "relay.operation.name": "effect.execute",
+          "relay.run.id": "product-20260927114250553-0023-dc13d5"
+        },
+        "classification": "executed",
+        "duration_nano": "18517700",
+        "end_time_unix_nano": "1790509370926658000",
+        "identity": "effect-execute:4",
+        "kind": "INTERNAL",
+        "links": [],
+        "name": "relay.effect.execute payments:refund",
+        "parent_span_id": "4be324569a4bfa63",
+        "span_id": "4758d3f96d7355a2",
+        "start_time_unix_nano": "1790509370908140300",
+        "status": "UNSET",
+        "trace_id": "f0fa64e045c679de0f4f21985b1b90f4"
+      },
+      {
+        "attributes": {
+          "relay.activation.id": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+          "relay.attempt.id": "att_d6ea15796fa042a79b3f3c26466fd6e9",
+          "relay.effect.adapter.version": "refund-store/v1",
+          "relay.effect.id": "refund",
+          "relay.effect.index": 0,
+          "relay.effect.label": "payments:refund",
+          "relay.effect.outcome": "resolved_from_journal",
+          "relay.effect.request.fingerprint": "513276307412e0ddc714be57f6d989aa8b0a55f636e34c359137d37853258419",
+          "relay.effect.source": "journal",
+          "relay.effect.source.sequence": 4,
+          "relay.node.name": "issue_refund",
+          "relay.operation.name": "effect.resolve",
+          "relay.run.id": "product-20260927114250553-0023-dc13d5"
+        },
+        "classification": "resolved",
+        "duration_nano": "0",
+        "end_time_unix_nano": "1790509371178341500",
+        "identity": "effect-resolve:7",
+        "kind": "INTERNAL",
+        "links": [
+          {
+            "span_id": "4758d3f96d7355a2",
+            "trace_id": "f0fa64e045c679de0f4f21985b1b90f4"
+          }
+        ],
+        "name": "relay.effect.resolve payments:refund",
+        "parent_span_id": "5470f787ef133436",
+        "span_id": "d99cf6ead0844a9a",
+        "start_time_unix_nano": "1790509371178341500",
+        "status": "UNSET",
+        "trace_id": "f0fa64e045c679de0f4f21985b1b90f4"
+      }
+    ],
+    "traceId": "f0fa64e045c679de0f4f21985b1b90f4"
+  },
+  "comparison": {
+    "awareExecutedEffectSpans": 1,
+    "awareResolvedEffectSpans": 1,
+    "controlExecutedEffectSpans": 2
+  },
+  "control": {
+    "mode": "control",
+    "serviceName": "relay-otel-control",
+    "signozUrl": "http://127.0.0.1:8080/trace/505c04c5327537a78d53e7f76ff166ae",
+    "spans": [
+      {
+        "attributes": {
+          "relay.operation.name": "run",
+          "relay.run.id": "product-20260927114250553-0023-dc13d5",
+          "relay.run.outcome": "finished",
+          "relay.workflow.version": "refund-v2"
+        },
+        "classification": "structural",
+        "duration_nano": "273709500",
+        "end_time_unix_nano": "1790509371179849000",
+        "identity": "run",
+        "kind": "INTERNAL",
+        "links": [],
+        "name": "relay.run",
+        "parent_span_id": null,
+        "span_id": "275f7eb24b02cb09",
+        "start_time_unix_nano": "1790509370906139500",
+        "status": "UNSET",
+        "trace_id": "505c04c5327537a78d53e7f76ff166ae"
+      },
+      {
+        "attributes": {
+          "error.type": "relay.attempt.abandoned",
+          "relay.activation.id": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+          "relay.attempt.id": "att_ae47ce55210647b688083fa678c34db7",
+          "relay.attempt.outcome": "abandoned",
+          "relay.attempt.recovery": false,
+          "relay.node.name": "issue_refund",
+          "relay.operation.name": "activation",
+          "relay.run.id": "product-20260927114250553-0023-dc13d5"
+        },
+        "classification": "structural",
+        "duration_nano": "267921500",
+        "end_time_unix_nano": "1790509371175064200",
+        "identity": "attempt:att_ae47ce55210647b688083fa678c34db7",
+        "kind": "INTERNAL",
+        "links": [],
+        "name": "relay.activation issue_refund",
+        "parent_span_id": "275f7eb24b02cb09",
+        "span_id": "637a9ecdcb88c71e",
+        "start_time_unix_nano": "1790509370907142700",
+        "status": "ERROR",
+        "trace_id": "505c04c5327537a78d53e7f76ff166ae"
+      },
+      {
+        "attributes": {
+          "relay.activation.id": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+          "relay.attempt.id": "att_d6ea15796fa042a79b3f3c26466fd6e9",
+          "relay.attempt.outcome": "completed",
+          "relay.attempt.recovery": true,
+          "relay.node.name": "issue_refund",
+          "relay.operation.name": "activation",
+          "relay.run.id": "product-20260927114250553-0023-dc13d5"
+        },
+        "classification": "structural",
+        "duration_nano": "1764600",
+        "end_time_unix_nano": "1790509371178341500",
+        "identity": "attempt:att_d6ea15796fa042a79b3f3c26466fd6e9",
+        "kind": "INTERNAL",
+        "links": [],
+        "name": "relay.activation issue_refund",
+        "parent_span_id": "275f7eb24b02cb09",
+        "span_id": "6865975a129b98c3",
+        "start_time_unix_nano": "1790509371176576900",
+        "status": "UNSET",
+        "trace_id": "505c04c5327537a78d53e7f76ff166ae"
+      },
+      {
+        "attributes": {
+          "relay.activation.id": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+          "relay.attempt.id": "att_ae47ce55210647b688083fa678c34db7",
+          "relay.effect.adapter.version": "refund-store/v1",
+          "relay.effect.id": "refund",
+          "relay.effect.index": 0,
+          "relay.effect.label": "payments:refund",
+          "relay.effect.outcome": "executed",
+          "relay.effect.request.fingerprint": "513276307412e0ddc714be57f6d989aa8b0a55f636e34c359137d37853258419",
+          "relay.node.name": "issue_refund",
+          "relay.operation.name": "effect.execute",
+          "relay.run.id": "product-20260927114250553-0023-dc13d5"
+        },
+        "classification": "executed",
+        "duration_nano": "18517700",
+        "end_time_unix_nano": "1790509370926658000",
+        "identity": "effect-execute:4",
+        "kind": "INTERNAL",
+        "links": [],
+        "name": "relay.effect.execute payments:refund",
+        "parent_span_id": "637a9ecdcb88c71e",
+        "span_id": "aff9020aad87a103",
+        "start_time_unix_nano": "1790509370908140300",
+        "status": "UNSET",
+        "trace_id": "505c04c5327537a78d53e7f76ff166ae"
+      },
+      {
+        "attributes": {
+          "relay.activation.id": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+          "relay.attempt.id": "att_d6ea15796fa042a79b3f3c26466fd6e9",
+          "relay.effect.adapter.version": "refund-store/v1",
+          "relay.effect.id": "refund",
+          "relay.effect.index": 0,
+          "relay.effect.label": "payments:refund",
+          "relay.effect.outcome": "executed",
+          "relay.effect.request.fingerprint": "513276307412e0ddc714be57f6d989aa8b0a55f636e34c359137d37853258419",
+          "relay.node.name": "issue_refund",
+          "relay.operation.name": "effect.execute",
+          "relay.run.id": "product-20260927114250553-0023-dc13d5"
+        },
+        "classification": "executed",
+        "duration_nano": "0",
+        "end_time_unix_nano": "1790509371178341500",
+        "identity": "effect-execute:7",
+        "kind": "INTERNAL",
+        "links": [],
+        "name": "relay.effect.execute payments:refund",
+        "parent_span_id": "6865975a129b98c3",
+        "span_id": "8be8f2e2c3b39849",
+        "start_time_unix_nano": "1790509371178341500",
+        "status": "UNSET",
+        "trace_id": "505c04c5327537a78d53e7f76ff166ae"
+      }
+    ],
+    "traceId": "505c04c5327537a78d53e7f76ff166ae"
+  },
+  "generatedAt": "2026-09-27T11:42:56.882605+00:00",
+  "groundTruth": {
+    "activationAttempts": 2,
+    "businessExecutions": 1,
+    "effectCompletions": 1,
+    "effectIntents": 1,
+    "journalResolutions": 1,
+    "providerAttempts": 1
+  },
+  "hardExitCode": 9,
+  "journal": {
+    "events": [
+      {
+        "activationId": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+        "atUnixNano": "1790509370906139500",
+        "attemptId": null,
+        "node": "issue_refund",
+        "payload": {
+          "activation_id": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+          "input": {
+            "redacted": true
+          },
+          "journal_schema_version": 2,
+          "start_node": "issue_refund",
+          "workflow_version": "refund-v2"
+        },
+        "seq": 1,
+        "type": "run_started"
+      },
+      {
+        "activationId": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+        "atUnixNano": "1790509370907142700",
+        "attemptId": "att_ae47ce55210647b688083fa678c34db7",
+        "node": "issue_refund",
+        "payload": {
+          "recovery": false
+        },
+        "seq": 2,
+        "type": "attempt_started"
+      },
+      {
+        "activationId": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+        "atUnixNano": "1790509370908140300",
+        "attemptId": "att_ae47ce55210647b688083fa678c34db7",
+        "node": "issue_refund",
+        "payload": {
+          "adapter_version": "refund-store/v1",
+          "effect_id": "refund",
+          "idempotency_key_fingerprint": "e3322f24d51291e55fa099d267c8bec5bf33f48d72bf536bebb698e3014940a0",
+          "index": 0,
+          "label": "payments:refund",
+          "request_fingerprint": "513276307412e0ddc714be57f6d989aa8b0a55f636e34c359137d37853258419",
+          "retry_of_intent_seq": null,
+          "retry_safe": true,
+          "started_at_ns": 1790509370908140300
+        },
+        "seq": 3,
+        "type": "effect_intent"
+      },
+      {
+        "activationId": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+        "atUnixNano": "1790509370926658000",
+        "attemptId": "att_ae47ce55210647b688083fa678c34db7",
+        "node": "issue_refund",
+        "payload": {
+          "adapter_version": "refund-store/v1",
+          "effect_id": "refund",
+          "ended_at_ns": 1790509370926658000,
+          "idempotency_key_fingerprint": "e3322f24d51291e55fa099d267c8bec5bf33f48d72bf536bebb698e3014940a0",
+          "index": 0,
+          "label": "payments:refund",
+          "request_fingerprint": "513276307412e0ddc714be57f6d989aa8b0a55f636e34c359137d37853258419",
+          "result": {
+            "redacted": true
+          },
+          "retry_safe": true,
+          "source_intent_seq": 3,
+          "started_at_ns": 1790509370908140300
+        },
+        "seq": 4,
+        "type": "effect_completed"
+      },
+      {
+        "activationId": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+        "atUnixNano": "1790509371175064200",
+        "attemptId": "att_ae47ce55210647b688083fa678c34db7",
+        "node": "issue_refund",
+        "payload": {
+          "reason": {
+            "redacted": true
+          }
+        },
+        "seq": 5,
+        "type": "attempt_abandoned"
+      },
+      {
+        "activationId": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+        "atUnixNano": "1790509371176576900",
+        "attemptId": "att_d6ea15796fa042a79b3f3c26466fd6e9",
+        "node": "issue_refund",
+        "payload": {
+          "recovery": true
+        },
+        "seq": 6,
+        "type": "attempt_started"
+      },
+      {
+        "activationId": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+        "atUnixNano": "1790509371178341500",
+        "attemptId": "att_d6ea15796fa042a79b3f3c26466fd6e9",
+        "node": "issue_refund",
+        "payload": {
+          "adapter_version": "refund-store/v1",
+          "effect_id": "refund",
+          "ended_at_ns": 1790509371178341500,
+          "idempotency_key_fingerprint": "e3322f24d51291e55fa099d267c8bec5bf33f48d72bf536bebb698e3014940a0",
+          "index": 0,
+          "label": "payments:refund",
+          "request_fingerprint": "513276307412e0ddc714be57f6d989aa8b0a55f636e34c359137d37853258419",
+          "retry_safe": true,
+          "source_effect_seq": 4,
+          "source_intent_seq": 3,
+          "started_at_ns": 1790509371178341500
+        },
+        "seq": 7,
+        "type": "effect_resolved"
+      },
+      {
+        "activationId": "act_19dfdca77ca44f9abd2884a3a07eebfd",
+        "atUnixNano": "1790509371178341500",
+        "attemptId": "att_d6ea15796fa042a79b3f3c26466fd6e9",
+        "node": "issue_refund",
+        "payload": {
+          "next_activation_id": null,
+          "next_node": "__end__",
+          "patch": {
+            "redacted": true
+          }
+        },
+        "seq": 8,
+        "type": "activation_finished"
+      },
+      {
+        "activationId": null,
+        "atUnixNano": "1790509371179849000",
+        "attemptId": null,
+        "node": null,
+        "payload": {
+          "state": {
+            "redacted": true
+          }
+        },
+        "seq": 9,
+        "type": "run_finished"
+      }
+    ]
+  },
+  "provenance": {
+    "journalPath": "receipts/work/product-runs/product-20260927114250553-0023-dc13d5/journal.sqlite",
+    "journalSha256": "12ae4dfbef57124bb05fb78ab0c96c74c454df8ceb765434145c827ace5a31b3",
+    "lineageCandidate": true,
+    "lineageCheckedArtifacts": 104,
+    "lineageId": "v2-2026-09-27-r11",
+    "lineageInputsPath": "receipts/lineages/v2-2026-09-27-r11/inputs.json",
+    "lineageInputsSha256": "d8eb5a8bf157f723afb6dc2aba31d01d426b5ab61d173c6cabcea5a79a073571",
+    "lineageManifestPath": null,
+    "lineageManifestSha256": null,
+    "phaseReceipts": {}
+  },
+  "queryBack": {
+    "aware": {
+      "attributesVerified": true,
+      "duplicateRows": 0,
+      "identityVerified": true,
+      "queryAttempts": 5,
+      "request": {
+        "compositeQuery": {
+          "queries": [
+            {
+              "spec": {
+                "disabled": false,
+                "filter": {
+                  "expression": "trace_id = 'f0fa64e045c679de0f4f21985b1b90f4'"
+                },
+                "limit": 100,
+                "name": "A",
+                "offset": 0,
+                "order": [
+                  {
+                    "direction": "asc",
+                    "key": {
+                      "name": "timestamp"
+                    }
+                  }
+                ],
+                "selectFields": [
+                  {
+                    "fieldContext": "span",
+                    "name": "trace_id"
+                  },
+                  {
+                    "fieldContext": "span",
+                    "name": "span_id"
+                  },
+                  {
+                    "fieldContext": "span",
+                    "name": "parent_span_id"
+                  },
+                  {
+                    "fieldContext": "span",
+                    "name": "name"
+                  },
+                  {
+                    "fieldContext": "resource",
+                    "name": "service.name"
+                  },
+                  {
+                    "fieldContext": "span",
+                    "fieldDataType": "string",
+                    "name": "relay.operation.name"
+                  },
+                  {
+                    "fieldContext": "span",
+                    "fieldDataType": "string",
+                    "name": "relay.effect.source"
+                  }
+                ],
+                "signal": "traces"
+              },
+              "type": "builder_query"
+            }
+          ]
+        },
+        "end": 1790509671179,
+        "requestType": "raw",
+        "start": 1790509070906,
+        "variables": {}
+      },
+      "selectedRows": [
+        {
+          "effectSource": "external",
+          "name": "relay.effect.execute payments:refund",
+          "operationName": "effect.execute",
+          "parentSpanId": "4be324569a4bfa63",
+          "serviceName": "relay-otel-aware",
+          "spanId": "4758d3f96d7355a2",
+          "traceId": "f0fa64e045c679de0f4f21985b1b90f4"
+        },
+        {
+          "effectSource": null,
+          "name": "relay.activation issue_refund",
+          "operationName": "activation",
+          "parentSpanId": "d5905f2bf4c701b6",
+          "serviceName": "relay-otel-aware",
+          "spanId": "4be324569a4bfa63",
+          "traceId": "f0fa64e045c679de0f4f21985b1b90f4"
+        },
+        {
+          "effectSource": null,
+          "name": "relay.activation issue_refund",
+          "operationName": "activation",
+          "parentSpanId": "d5905f2bf4c701b6",
+          "serviceName": "relay-otel-aware",
+          "spanId": "5470f787ef133436",
+          "traceId": "f0fa64e045c679de0f4f21985b1b90f4"
+        },
+        {
+          "effectSource": null,
+          "name": "relay.run",
+          "operationName": "run",
+          "parentSpanId": null,
+          "serviceName": "relay-otel-aware",
+          "spanId": "d5905f2bf4c701b6",
+          "traceId": "f0fa64e045c679de0f4f21985b1b90f4"
+        },
+        {
+          "effectSource": "journal",
+          "name": "relay.effect.resolve payments:refund",
+          "operationName": "effect.resolve",
+          "parentSpanId": "5470f787ef133436",
+          "serviceName": "relay-otel-aware",
+          "spanId": "d99cf6ead0844a9a",
+          "traceId": "f0fa64e045c679de0f4f21985b1b90f4"
+        }
+      ],
+      "serviceNameVerified": true,
+      "spansRetrieved": 5,
+      "spansSent": 5,
+      "traceId": "f0fa64e045c679de0f4f21985b1b90f4",
+      "verified": true
+    },
+    "control": {
+      "attributesVerified": true,
+      "duplicateRows": 0,
+      "identityVerified": true,
+      "queryAttempts": 1,
+      "request": {
+        "compositeQuery": {
+          "queries": [
+            {
+              "spec": {
+                "disabled": false,
+                "filter": {
+                  "expression": "trace_id = '505c04c5327537a78d53e7f76ff166ae'"
+                },
+                "limit": 100,
+                "name": "A",
+                "offset": 0,
+                "order": [
+                  {
+                    "direction": "asc",
+                    "key": {
+                      "name": "timestamp"
+                    }
+                  }
+                ],
+                "selectFields": [
+                  {
+                    "fieldContext": "span",
+                    "name": "trace_id"
+                  },
+                  {
+                    "fieldContext": "span",
+                    "name": "span_id"
+                  },
+                  {
+                    "fieldContext": "span",
+                    "name": "parent_span_id"
+                  },
+                  {
+                    "fieldContext": "span",
+                    "name": "name"
+                  },
+                  {
+                    "fieldContext": "resource",
+                    "name": "service.name"
+                  },
+                  {
+                    "fieldContext": "span",
+                    "fieldDataType": "string",
+                    "name": "relay.operation.name"
+                  },
+                  {
+                    "fieldContext": "span",
+                    "fieldDataType": "string",
+                    "name": "relay.effect.source"
+                  }
+                ],
+                "signal": "traces"
+              },
+              "type": "builder_query"
+            }
+          ]
+        },
+        "end": 1790509671179,
+        "requestType": "raw",
+        "start": 1790509070906,
+        "variables": {}
+      },
+      "selectedRows": [
+        {
+          "effectSource": null,
+          "name": "relay.run",
+          "operationName": "run",
+          "parentSpanId": null,
+          "serviceName": "relay-otel-control",
+          "spanId": "275f7eb24b02cb09",
+          "traceId": "505c04c5327537a78d53e7f76ff166ae"
+        },
+        {
+          "effectSource": null,
+          "name": "relay.activation issue_refund",
+          "operationName": "activation",
+          "parentSpanId": "275f7eb24b02cb09",
+          "serviceName": "relay-otel-control",
+          "spanId": "637a9ecdcb88c71e",
+          "traceId": "505c04c5327537a78d53e7f76ff166ae"
+        },
+        {
+          "effectSource": null,
+          "name": "relay.activation issue_refund",
+          "operationName": "activation",
+          "parentSpanId": "275f7eb24b02cb09",
+          "serviceName": "relay-otel-control",
+          "spanId": "6865975a129b98c3",
+          "traceId": "505c04c5327537a78d53e7f76ff166ae"
+        },
+        {
+          "effectSource": null,
+          "name": "relay.effect.execute payments:refund",
+          "operationName": "effect.execute",
+          "parentSpanId": "6865975a129b98c3",
+          "serviceName": "relay-otel-control",
+          "spanId": "8be8f2e2c3b39849",
+          "traceId": "505c04c5327537a78d53e7f76ff166ae"
+        },
+        {
+          "effectSource": null,
+          "name": "relay.effect.execute payments:refund",
+          "operationName": "effect.execute",
+          "parentSpanId": "637a9ecdcb88c71e",
+          "serviceName": "relay-otel-control",
+          "spanId": "aff9020aad87a103",
+          "traceId": "505c04c5327537a78d53e7f76ff166ae"
+        }
+      ],
+      "serviceNameVerified": true,
+      "spansRetrieved": 5,
+      "spansSent": 5,
+      "traceId": "505c04c5327537a78d53e7f76ff166ae",
+      "verified": true
+    }
+  },
+  "runId": "product-20260927114250553-0023-dc13d5",
+  "schemaVersion": 2,
+  "seed": 23,
+  "source": "local-reproduction",
+  "status": "finished"
+}

@@ -1,0 +1,17 @@
+{
+  "acknowledged": true,
+  "attempted": true,
+  "cleanup_state": "SUCCESS",
+  "endpoint": "http://127.0.0.1:4318/v1/traces",
+  "exporter_result": "SUCCESS",
+  "generated_at": "2026-09-27T11:42:51.835927+00:00",
+  "mode": "control",
+  "run_id": "product-20260927114250553-0023-dc13d5",
+  "schema_version": 1,
+  "staged_envelope": {
+    "bytes": 6089,
+    "path": "receipts/work/product-runs/product-20260927114250553-0023-dc13d5/control-spans.staged.json",
+    "sha256": "e93e83feaf1a1044a8ae62a0ee1e8188b760db7f0c37d7025c41c2629de927c8"
+  },
+  "state": "DELIVERED"
+}
