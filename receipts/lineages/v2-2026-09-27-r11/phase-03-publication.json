@@ -1,0 +1,99 @@
+{
+  "criteria": {
+    "featured_v2_proof": true,
+    "frozen_web_install": true,
+    "locked_web_toolchain": true,
+    "operator_observed_keyboard_and_reduced_motion": true,
+    "operator_observed_origin_and_unavailable_fail_closed": true,
+    "operator_observed_responsive_browser_routes": true,
+    "package_readme_license_source_and_installed_cli": true,
+    "pnpm_production_audit": true,
+    "publication_scope_and_v2_vocabulary": true,
+    "python_dependency_audit": true,
+    "python_source_security_scan": true,
+    "web_typecheck_lint_format_build": true
+  },
+  "evidence": {
+    "bytes": 55579,
+    "path": "receipts/lineages/v2-2026-09-27-r11/phase-03-publication.evidence.json",
+    "sha256": "4926b7c4ed9beea4504604cac298e02ee61cf6bcc3920cafb18b76d830778e95"
+  },
+  "generated_at": "2026-09-27T11:45:42.319500+00:00",
+  "lineage_id": "v2-2026-09-27-r11",
+  "lineage_inputs_sha256": "d8eb5a8bf157f723afb6dc2aba31d01d426b5ab61d173c6cabcea5a79a073571",
+  "phase": "03-publication",
+  "previous_phase_receipt": {
+    "bytes": 3126,
+    "path": "receipts/lineages/v2-2026-09-27-r11/phase-02-integration.json",
+    "sha256": "38c679d3bb5b1088257ebe56611a267567d75ef16854bd4db19d0b592c33d616"
+  },
+  "schema_version": 1,
+  "supporting_artifacts": [
+    {
+      "bytes": 24534,
+      "path": "web/data/featured.json",
+      "sha256": "9af5df2f23fbc5f4a606b6766901fffa20201b7d3c4e3ec2ffbc9e3b16a87a8d"
+    },
+    {
+      "bytes": 3967,
+      "path": "receipts/lineages/v2-2026-09-27-r11/browser-evidence.json",
+      "sha256": "78c783e5d9e3c68f3d83c7c2249543b22e96f0e1cea26a64e39f923767a11d4b"
+    },
+    {
+      "bytes": 58748,
+      "path": "receipts/lineages/v2-2026-09-27-r11/browser-home-375.png",
+      "sha256": "07c881c11ca716987f4b29432b57081245a55d2a4fd7cd3a71a424b77fae600b"
+    },
+    {
+      "bytes": 90964,
+      "path": "receipts/lineages/v2-2026-09-27-r11/browser-architecture-768.png",
+      "sha256": "1dc3c577669ecb428e2fd422e8e8d9e86d5b31024767fdacffcd7f95d80f7adb"
+    },
+    {
+      "bytes": 126770,
+      "path": "receipts/lineages/v2-2026-09-27-r11/browser-run-detail-1024.png",
+      "sha256": "89f839119e073eb9554882c121a1c6a05c87f60e4a3fb2865e262105bf0cf032"
+    },
+    {
+      "bytes": 174337,
+      "path": "receipts/lineages/v2-2026-09-27-r11/browser-home-1440.png",
+      "sha256": "8920fcdf013e55ab2eca334df712df6a6e4a141b7a039c7a41a4593306674b83"
+    },
+    {
+      "bytes": 128039,
+      "path": "receipts/lineages/v2-2026-09-27-r11/browser-spec-1440.png",
+      "sha256": "7aee843dfed8cca002105249e1b6f94d6d4b209176c5fef50a1701b1808b91fa"
+    },
+    {
+      "bytes": 61512,
+      "path": "receipts/lineages/v2-2026-09-27-r11/publication/packages/relay_otel-0.2.0-py3-none-any.whl",
+      "sha256": "3e263fe7f6d769376aa0074195668e0768e64f86abc52ef36a56e566dad07b33"
+    },
+    {
+      "bytes": 54485,
+      "path": "receipts/lineages/v2-2026-09-27-r11/publication/packages/relay_otel-0.2.0.tar.gz",
+      "sha256": "e215b17ffd2e17259589179afb8541cdf50c37959dbb1661a079ee687da3cc36"
+    },
+    {
+      "bytes": 10880,
+      "path": "ARCHITECTURE.md",
+      "sha256": "c13310015cd37c804041213d13081b9f6bb326800f451cea168f670f39200948"
+    },
+    {
+      "bytes": 3806,
+      "path": "README.md",
+      "sha256": "49fb49e232b9be4502531796d40fb92c368ed952e7ecdd639d3517b670273637"
+    },
+    {
+      "bytes": 8821,
+      "path": "SECURITY.md",
+      "sha256": "b4e081896da12a08605f5cb0ec13e8a3a6f56a83f37582287fb76dc0f6143a18"
+    },
+    {
+      "bytes": 12112,
+      "path": "SPEC.md",
+      "sha256": "4f1e11521affb41f7dfacc89a2111f217de55744d31d98b2a6de7201ed2159e6"
+    }
+  ],
+  "verdict": "PASS"
+}

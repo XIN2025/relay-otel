@@ -1,0 +1,440 @@
+{
+  "criteria": {
+    "featured_v2_proof": true,
+    "frozen_web_install": true,
+    "locked_web_toolchain": true,
+    "operator_observed_keyboard_and_reduced_motion": true,
+    "operator_observed_origin_and_unavailable_fail_closed": true,
+    "operator_observed_responsive_browser_routes": true,
+    "package_readme_license_source_and_installed_cli": true,
+    "pnpm_production_audit": true,
+    "publication_scope_and_v2_vocabulary": true,
+    "python_dependency_audit": true,
+    "python_source_security_scan": true,
+    "web_typecheck_lint_format_build": true
+  },
+  "evidence": {
+    "browser": {
+      "bytes": 3967,
+      "path": "receipts/lineages/v2-2026-09-27-r11/browser-evidence.json",
+      "sha256": "78c783e5d9e3c68f3d83c7c2249543b22e96f0e1cea26a64e39f923767a11d4b"
+    },
+    "browser_assurance": {
+      "kind": "hash-bound-operator-observation",
+      "release_audit_replays_browser": false,
+      "release_audit_revalidates": [
+        "artifact-hashes-and-sizes",
+        "featured-proof-binding",
+        "registered-observation-schema",
+        "screenshot-references"
+      ]
+    },
+    "browser_summary": {
+      "console_errors": 0,
+      "evidence_type": "hash-bound-operator-observation",
+      "featured": {
+        "bytes": 24534,
+        "path": "web/data/featured.json",
+        "sha256": "9af5df2f23fbc5f4a606b6766901fffa20201b7d3c4e3ec2ffbc9e3b16a87a8d"
+      },
+      "keyboard": {
+        "disabled_state": true,
+        "error_state": true,
+        "internal_table_scroll": true,
+        "skip_link": true,
+        "visible_focus": true
+      },
+      "keyboard_navigation": true,
+      "lineage_id": "v2-2026-09-27-r11",
+      "lineage_inputs_sha256": "d8eb5a8bf157f723afb6dc2aba31d01d426b5ab61d173c6cabcea5a79a073571",
+      "observation_notes": [
+        "A local production build (Next.js 16.3.6; pnpm build, pnpm start on 127.0.0.1:3010) was driven through Playwright on 2026-09-27; release audit hash-validates this record but does not replay the session.",
+        "All six registered routes were loaded at 375, 768, 1024, and 1440 CSS pixels after network idle: 24 of 24 returned 200 with no document-level horizontal overflow, no broken images, no console errors, and no 4xx/5xx responses.",
+        "Changes since r9: retired v1 verifiers, v1-only modules, the v1 semconv vendor snapshot and process documents were removed from the repository; the README was rewritten; the publication disclaimer check reads README only. r10 was superseded before finalization because its README split the required disclaimer across two lines.",
+        "The first Tab lands on 'Skip to content' (#main-content); nav links carry a focus-visible ring; 'Crash and resume' is disabled because the active r9 lineage no longer matches the changed source; the missing-run page shows 'That run is not in the local ledger.' (served with HTTP 200, a known soft 404); the journal table scrolls inside its own container at 375 px without page overflow.",
+        "The built stylesheet contains a prefers-reduced-motion rule. The four status surfaces (evidence, lineage, runner, SigNoz) were visible.",
+        "Origin checks against POST /api/runs: cross-site 403, https origin 403, missing origin 403, same origin 503 runtime_unavailable because the active r9 lineage no longer validates against the changed source."
+      ],
+      "origin_security": {
+        "cross_site_status": 403,
+        "https_origin_status": 403,
+        "missing_origin_status": 403,
+        "same_origin_unavailable_status": 503
+      },
+      "page_overflow": false,
+      "reduced_motion": true,
+      "routes": [
+        "/",
+        "/architecture",
+        "/contract",
+        "/runs",
+        "/runs/product-20260927114250553-0023-dc13d5",
+        "/spec"
+      ],
+      "screenshots": [
+        {
+          "bytes": 58748,
+          "path": "receipts/lineages/v2-2026-09-27-r11/browser-home-375.png",
+          "sha256": "07c881c11ca716987f4b29432b57081245a55d2a4fd7cd3a71a424b77fae600b"
+        },
+        {
+          "bytes": 90964,
+          "path": "receipts/lineages/v2-2026-09-27-r11/browser-architecture-768.png",
+          "sha256": "1dc3c577669ecb428e2fd422e8e8d9e86d5b31024767fdacffcd7f95d80f7adb"
+        },
+        {
+          "bytes": 126770,
+          "path": "receipts/lineages/v2-2026-09-27-r11/browser-run-detail-1024.png",
+          "sha256": "89f839119e073eb9554882c121a1c6a05c87f60e4a3fb2865e262105bf0cf032"
+        },
+        {
+          "bytes": 174337,
+          "path": "receipts/lineages/v2-2026-09-27-r11/browser-home-1440.png",
+          "sha256": "8920fcdf013e55ab2eca334df712df6a6e4a141b7a039c7a41a4593306674b83"
+        },
+        {
+          "bytes": 128039,
+          "path": "receipts/lineages/v2-2026-09-27-r11/browser-spec-1440.png",
+          "sha256": "7aee843dfed8cca002105249e1b6f94d6d4b209176c5fef50a1701b1808b91fa"
+        }
+      ],
+      "status_surfaces": {
+        "evidence": true,
+        "lineage": true,
+        "runner": true,
+        "signoz": true
+      },
+      "verdict": "PASS",
+      "viewports": [
+        {
+          "height": 812,
+          "page_overflow": false,
+          "width": 375
+        },
+        {
+          "height": 900,
+          "page_overflow": false,
+          "width": 768
+        },
+        {
+          "height": 900,
+          "page_overflow": false,
+          "width": 1024
+        },
+        {
+          "height": 900,
+          "page_overflow": false,
+          "width": 1440
+        }
+      ]
+    },
+    "featured": {
+      "bytes": 24534,
+      "path": "web/data/featured.json",
+      "sha256": "9af5df2f23fbc5f4a606b6766901fffa20201b7d3c4e3ec2ffbc9e3b16a87a8d"
+    },
+    "featured_run_id": "product-20260927114250553-0023-dc13d5",
+    "node_version": {
+      "command": [
+        "node",
+        "--version"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "v22.23.1\n"
+    },
+    "package": {
+      "command": {
+        "command": [
+          "uvx",
+          "uv@0.12.5",
+          "build",
+          "--out-dir",
+          ".\\receipts\\work\\relay-otel-build-ukfuu77r"
+        ],
+        "cwd": ".",
+        "exit_code": 0,
+        "stderr": "Building source distribution...\nrunning egg_info\nwriting src\\relay_otel.egg-info\\PKG-INFO\nwriting dependency_links to src\\relay_otel.egg-info\\dependency_links.txt\nwriting entry points to src\\relay_otel.egg-info\\entry_points.txt\nwriting requirements to src\\relay_otel.egg-info\\requires.txt\nwriting top-level names to src\\relay_otel.egg-info\\top_level.txt\nreading manifest file 'src\\relay_otel.egg-info\\SOURCES.txt'\nadding license file 'LICENSE'\nwriting manifest file 'src\\relay_otel.egg-info\\SOURCES.txt'\nrunning sdist\nrunning egg_info\nwriting src\\relay_otel.egg-info\\PKG-INFO\nwriting dependency_links to src\\relay_otel.egg-info\\dependency_links.txt\nwriting entry points to src\\relay_otel.egg-info\\entry_points.txt\nwriting requirements to src\\relay_otel.egg-info\\requires.txt\nwriting top-level names to src\\relay_otel.egg-info\\top_level.txt\nreading manifest file 'src\\relay_otel.egg-info\\SOURCES.txt'\nadding license file 'LICENSE'\nwriting manifest file 'src\\relay_otel.egg-info\\SOURCES.txt'\nrunning check\ncreating relay_otel-0.2.0\ncreating relay_otel-0.2.0\\src\\relay\ncreating relay_otel-0.2.0\\src\\relay_otel\ncreating relay_otel-0.2.0\\src\\relay_otel.egg-info\ncopying files to relay_otel-0.2.0...\ncopying LICENSE -> relay_otel-0.2.0\ncopying README.md -> relay_otel-0.2.0\ncopying pyproject.toml -> relay_otel-0.2.0\ncopying src\\relay\\__init__.py -> relay_otel-0.2.0\\src\\relay\ncopying src\\relay\\__main__.py -> relay_otel-0.2.0\\src\\relay\ncopying src\\relay\\cli.py -> relay_otel-0.2.0\\src\\relay\ncopying src\\relay\\engine.py -> relay_otel-0.2.0\\src\\relay\ncopying src\\relay\\example.py -> relay_otel-0.2.0\\src\\relay\ncopying src\\relay\\graph.py -> relay_otel-0.2.0\\src\\relay\ncopying src\\relay\\journal.py -> relay_otel-0.2.0\\src\\relay\ncopying src\\relay\\redaction.py -> relay_otel-0.2.0\\src\\relay\ncopying src\\relay\\types.py -> relay_otel-0.2.0\\src\\relay\ncopying src\\relay_otel\\__init__.py -> relay_otel-0.2.0\\src\\relay_otel\ncopying src\\relay_otel\\cli.py -> relay_otel-0.2.0\\src\\relay_otel\ncopying src\\relay_otel\\crash_runner.py -> relay_otel-0.2.0\\src\\relay_otel\ncopying src\\relay_otel\\demo.py -> relay_otel-0.2.0\\src\\relay_otel\ncopying src\\relay_otel\\deployment.py -> relay_otel-0.2.0\\src\\relay_otel\ncopying src\\relay_otel\\exporter.py -> relay_otel-0.2.0\\src\\relay_otel\ncopying src\\relay_otel\\lineage.py -> relay_otel-0.2.0\\src\\relay_otel\ncopying src\\relay_otel\\live.py -> relay_otel-0.2.0\\src\\relay_otel\ncopying src\\relay_otel\\mapping.py -> relay_otel-0.2.0\\src\\relay_otel\ncopying src\\relay_otel\\product.py -> relay_otel-0.2.0\\src\\relay_otel\ncopying src\\relay_otel\\projector.py -> relay_otel-0.2.0\\src\\relay_otel\ncopying src\\relay_otel\\queryback.py -> relay_otel-0.2.0\\src\\relay_otel\ncopying src\\relay_otel\\runtime_paths.py -> relay_otel-0.2.0\\src\\relay_otel\ncopying src\\relay_otel\\signoz.py -> relay_otel-0.2.0\\src\\relay_otel\ncopying src\\relay_otel.egg-info\\PKG-INFO -> relay_otel-0.2.0\\src\\relay_otel.egg-info\ncopying src\\relay_otel.egg-info\\SOURCES.txt -> relay_otel-0.2.0\\src\\relay_otel.egg-info\ncopying src\\relay_otel.egg-info\\dependency_links.txt -> relay_otel-0.2.0\\src\\relay_otel.egg-info\ncopying src\\relay_otel.egg-info\\entry_points.txt -> relay_otel-0.2.0\\src\\relay_otel.egg-info\ncopying src\\relay_otel.egg-info\\requires.txt -> relay_otel-0.2.0\\src\\relay_otel.egg-info\ncopying src\\relay_otel.egg-info\\top_level.txt -> relay_otel-0.2.0\\src\\relay_otel.egg-info\ncopying src\\relay_otel.egg-info\\SOURCES.txt -> relay_otel-0.2.0\\src\\relay_otel.egg-info\nWriting relay_otel-0.2.0\\setup.cfg\nCreating tar archive\nremoving 'relay_otel-0.2.0' (and everything under it)\nBuilding wheel from source distribution...\nrunning egg_info\nwriting src\\relay_otel.egg-info\\PKG-INFO\nwriting dependency_links to src\\relay_otel.egg-info\\dependency_links.txt\nwriting entry points to src\\relay_otel.egg-info\\entry_points.txt\nwriting requirements to src\\relay_otel.egg-info\\requires.txt\nwriting top-level names to src\\relay_otel.egg-info\\top_level.txt\nreading manifest file 'src\\relay_otel.egg-info\\SOURCES.txt'\nadding license file 'LICENSE'\nwriting manifest file 'src\\relay_otel.egg-info\\SOURCES.txt'\nrunning bdist_wheel\nrunning build\nrunning build_py\ncreating build\\lib\\relay\ncopying src\\relay\\cli.py -> build\\lib\\relay\ncopying src\\relay\\engine.py -> build\\lib\\relay\ncopying src\\relay\\example.py -> build\\lib\\relay\ncopying src\\relay\\graph.py -> build\\lib\\relay\ncopying src\\relay\\journal.py -> build\\lib\\relay\ncopying src\\relay\\redaction.py -> build\\lib\\relay\ncopying src\\relay\\types.py -> build\\lib\\relay\ncopying src\\relay\\__init__.py -> build\\lib\\relay\ncopying src\\relay\\__main__.py -> build\\lib\\relay\ncreating build\\lib\\relay_otel\ncopying src\\relay_otel\\cli.py -> build\\lib\\relay_otel\ncopying src\\relay_otel\\crash_runner.py -> build\\lib\\relay_otel\ncopying src\\relay_otel\\demo.py -> build\\lib\\relay_otel\ncopying src\\relay_otel\\deployment.py -> build\\lib\\relay_otel\ncopying src\\relay_otel\\exporter.py -> build\\lib\\relay_otel\ncopying src\\relay_otel\\lineage.py -> build\\lib\\relay_otel\ncopying src\\relay_otel\\live.py -> build\\lib\\relay_otel\ncopying src\\relay_otel\\mapping.py -> build\\lib\\relay_otel\ncopying src\\relay_otel\\product.py -> build\\lib\\relay_otel\ncopying src\\relay_otel\\projector.py -> build\\lib\\relay_otel\ncopying src\\relay_otel\\queryback.py -> build\\lib\\relay_otel\ncopying src\\relay_otel\\runtime_paths.py -> build\\lib\\relay_otel\ncopying src\\relay_otel\\signoz.py -> build\\lib\\relay_otel\ncopying src\\relay_otel\\__init__.py -> build\\lib\\relay_otel\nrunning egg_info\nwriting src\\relay_otel.egg-info\\PKG-INFO\nwriting dependency_links to src\\relay_otel.egg-info\\dependency_links.txt\nwriting entry points to src\\relay_otel.egg-info\\entry_points.txt\nwriting requirements to src\\relay_otel.egg-info\\requires.txt\nwriting top-level names to src\\relay_otel.egg-info\\top_level.txt\nreading manifest file 'src\\relay_otel.egg-info\\SOURCES.txt'\nadding license file 'LICENSE'\nwriting manifest file 'src\\relay_otel.egg-info\\SOURCES.txt'\ninstalling to build\\bdist.win-amd64\\wheel\nrunning install\nrunning install_lib\ncreating build\\bdist.win-amd64\\wheel\ncreating build\\bdist.win-amd64\\wheel\\relay\ncopying build\\lib\\relay\\cli.py -> build\\bdist.win-amd64\\wheel\\.\\relay\ncopying build\\lib\\relay\\engine.py -> build\\bdist.win-amd64\\wheel\\.\\relay\ncopying build\\lib\\relay\\example.py -> build\\bdist.win-amd64\\wheel\\.\\relay\ncopying build\\lib\\relay\\graph.py -> build\\bdist.win-amd64\\wheel\\.\\relay\ncopying build\\lib\\relay\\journal.py -> build\\bdist.win-amd64\\wheel\\.\\relay\ncopying build\\lib\\relay\\redaction.py -> build\\bdist.win-amd64\\wheel\\.\\relay\ncopying build\\lib\\relay\\types.py -> build\\bdist.win-amd64\\wheel\\.\\relay\ncopying build\\lib\\relay\\__init__.py -> build\\bdist.win-amd64\\wheel\\.\\relay\ncopying build\\lib\\relay\\__main__.py -> build\\bdist.win-amd64\\wheel\\.\\relay\ncreating build\\bdist.win-amd64\\wheel\\relay_otel\ncopying build\\lib\\relay_otel\\cli.py -> build\\bdist.win-amd64\\wheel\\.\\relay_otel\ncopying build\\lib\\relay_otel\\crash_runner.py -> build\\bdist.win-amd64\\wheel\\.\\relay_otel\ncopying build\\lib\\relay_otel\\demo.py -> build\\bdist.win-amd64\\wheel\\.\\relay_otel\ncopying build\\lib\\relay_otel\\deployment.py -> build\\bdist.win-amd64\\wheel\\.\\relay_otel\ncopying build\\lib\\relay_otel\\exporter.py -> build\\bdist.win-amd64\\wheel\\.\\relay_otel\ncopying build\\lib\\relay_otel\\lineage.py -> build\\bdist.win-amd64\\wheel\\.\\relay_otel\ncopying build\\lib\\relay_otel\\live.py -> build\\bdist.win-amd64\\wheel\\.\\relay_otel\ncopying build\\lib\\relay_otel\\mapping.py -> build\\bdist.win-amd64\\wheel\\.\\relay_otel\ncopying build\\lib\\relay_otel\\product.py -> build\\bdist.win-amd64\\wheel\\.\\relay_otel\ncopying build\\lib\\relay_otel\\projector.py -> build\\bdist.win-amd64\\wheel\\.\\relay_otel\ncopying build\\lib\\relay_otel\\queryback.py -> build\\bdist.win-amd64\\wheel\\.\\relay_otel\ncopying build\\lib\\relay_otel\\runtime_paths.py -> build\\bdist.win-amd64\\wheel\\.\\relay_otel\ncopying build\\lib\\relay_otel\\signoz.py -> build\\bdist.win-amd64\\wheel\\.\\relay_otel\ncopying build\\lib\\relay_otel\\__init__.py -> build\\bdist.win-amd64\\wheel\\.\\relay_otel\nrunning install_egg_info\nCopying src\\relay_otel.egg-info to build\\bdist.win-amd64\\wheel\\.\\relay_otel-0.2.0-py3.12.egg-info\nrunning install_scripts\ncreating build\\bdist.win-amd64\\wheel\\relay_otel-0.2.0.dist-info\\WHEEL\ncreating '.\\receipts\\work\\relay-otel-build-ukfuu77r\\.tmp-wqa59ncr\\relay_otel-0.2.0-py3-none-any.whl' and adding 'build\\bdist.win-amd64\\wheel' to it\nadding 'relay/__init__.py'\nadding 'relay/__main__.py'\nadding 'relay/cli.py'\nadding 'relay/engine.py'\nadding 'relay/example.py'\nadding 'relay/graph.py'\nadding 'relay/journal.py'\nadding 'relay/redaction.py'\nadding 'relay/types.py'\nadding 'relay_otel/__init__.py'\nadding 'relay_otel/cli.py'\nadding 'relay_otel/crash_runner.py'\nadding 'relay_otel/demo.py'\nadding 'relay_otel/deployment.py'\nadding 'relay_otel/exporter.py'\nadding 'relay_otel/lineage.py'\nadding 'relay_otel/live.py'\nadding 'relay_otel/mapping.py'\nadding 'relay_otel/product.py'\nadding 'relay_otel/projector.py'\nadding 'relay_otel/queryback.py'\nadding 'relay_otel/runtime_paths.py'\nadding 'relay_otel/signoz.py'\nadding 'relay_otel-0.2.0.dist-info/licenses/LICENSE'\nadding 'relay_otel-0.2.0.dist-info/METADATA'\nadding 'relay_otel-0.2.0.dist-info/WHEEL'\nadding 'relay_otel-0.2.0.dist-info/entry_points.txt'\nadding 'relay_otel-0.2.0.dist-info/top_level.txt'\nadding 'relay_otel-0.2.0.dist-info/RECORD'\nremoving build\\bdist.win-amd64\\wheel\nSuccessfully built receipts\\work\\relay-otel-build-ukfuu77r\\relay_otel-0.2.0.tar.gz\nSuccessfully built receipts\\work\\relay-otel-build-ukfuu77r\\relay_otel-0.2.0-py3-none-any.whl\n",
+        "stdout": ""
+      },
+      "contents": {
+        "relay_otel-0.2.0-py3-none-any.whl": [
+          "relay/__init__.py",
+          "relay/__main__.py",
+          "relay/cli.py",
+          "relay/engine.py",
+          "relay/example.py",
+          "relay/graph.py",
+          "relay/journal.py",
+          "relay/redaction.py",
+          "relay/types.py",
+          "relay_otel-0.2.0.dist-info/METADATA",
+          "relay_otel-0.2.0.dist-info/RECORD",
+          "relay_otel-0.2.0.dist-info/WHEEL",
+          "relay_otel-0.2.0.dist-info/entry_points.txt",
+          "relay_otel-0.2.0.dist-info/licenses/LICENSE",
+          "relay_otel-0.2.0.dist-info/top_level.txt",
+          "relay_otel/__init__.py",
+          "relay_otel/cli.py",
+          "relay_otel/crash_runner.py",
+          "relay_otel/demo.py",
+          "relay_otel/deployment.py",
+          "relay_otel/exporter.py",
+          "relay_otel/lineage.py",
+          "relay_otel/live.py",
+          "relay_otel/mapping.py",
+          "relay_otel/product.py",
+          "relay_otel/projector.py",
+          "relay_otel/queryback.py",
+          "relay_otel/runtime_paths.py",
+          "relay_otel/signoz.py"
+        ],
+        "relay_otel-0.2.0.tar.gz": [
+          "relay_otel-0.2.0",
+          "relay_otel-0.2.0/LICENSE",
+          "relay_otel-0.2.0/PKG-INFO",
+          "relay_otel-0.2.0/README.md",
+          "relay_otel-0.2.0/pyproject.toml",
+          "relay_otel-0.2.0/setup.cfg",
+          "relay_otel-0.2.0/src",
+          "relay_otel-0.2.0/src/relay",
+          "relay_otel-0.2.0/src/relay/__init__.py",
+          "relay_otel-0.2.0/src/relay/__main__.py",
+          "relay_otel-0.2.0/src/relay/cli.py",
+          "relay_otel-0.2.0/src/relay/engine.py",
+          "relay_otel-0.2.0/src/relay/example.py",
+          "relay_otel-0.2.0/src/relay/graph.py",
+          "relay_otel-0.2.0/src/relay/journal.py",
+          "relay_otel-0.2.0/src/relay/redaction.py",
+          "relay_otel-0.2.0/src/relay/types.py",
+          "relay_otel-0.2.0/src/relay_otel",
+          "relay_otel-0.2.0/src/relay_otel.egg-info",
+          "relay_otel-0.2.0/src/relay_otel.egg-info/PKG-INFO",
+          "relay_otel-0.2.0/src/relay_otel.egg-info/SOURCES.txt",
+          "relay_otel-0.2.0/src/relay_otel.egg-info/dependency_links.txt",
+          "relay_otel-0.2.0/src/relay_otel.egg-info/entry_points.txt",
+          "relay_otel-0.2.0/src/relay_otel.egg-info/requires.txt",
+          "relay_otel-0.2.0/src/relay_otel.egg-info/top_level.txt",
+          "relay_otel-0.2.0/src/relay_otel/__init__.py",
+          "relay_otel-0.2.0/src/relay_otel/cli.py",
+          "relay_otel-0.2.0/src/relay_otel/crash_runner.py",
+          "relay_otel-0.2.0/src/relay_otel/demo.py",
+          "relay_otel-0.2.0/src/relay_otel/deployment.py",
+          "relay_otel-0.2.0/src/relay_otel/exporter.py",
+          "relay_otel-0.2.0/src/relay_otel/lineage.py",
+          "relay_otel-0.2.0/src/relay_otel/live.py",
+          "relay_otel-0.2.0/src/relay_otel/mapping.py",
+          "relay_otel-0.2.0/src/relay_otel/product.py",
+          "relay_otel-0.2.0/src/relay_otel/projector.py",
+          "relay_otel-0.2.0/src/relay_otel/queryback.py",
+          "relay_otel-0.2.0/src/relay_otel/runtime_paths.py",
+          "relay_otel-0.2.0/src/relay_otel/signoz.py"
+        ]
+      },
+      "distributions": {
+        "relay_otel-0.2.0-py3-none-any.whl": {
+          "bytes": 61512,
+          "path": "receipts/lineages/v2-2026-09-27-r11/publication/packages/relay_otel-0.2.0-py3-none-any.whl",
+          "sha256": "3e263fe7f6d769376aa0074195668e0768e64f86abc52ef36a56e566dad07b33"
+        },
+        "relay_otel-0.2.0.tar.gz": {
+          "bytes": 54485,
+          "path": "receipts/lineages/v2-2026-09-27-r11/publication/packages/relay_otel-0.2.0.tar.gz",
+          "sha256": "e215b17ffd2e17259589179afb8541cdf50c37959dbb1661a079ee687da3cc36"
+        }
+      },
+      "entry_points": "[console_scripts]\nrelay-otel = relay_otel.cli:main\n",
+      "install_command": {
+        "command": [
+          "uvx",
+          "uv@0.12.5",
+          "pip",
+          "install",
+          "--target",
+          ".\\receipts\\work\\relay-otel-build-ukfuu77r\\installed-wheel",
+          "--no-deps",
+          ".\\receipts\\work\\relay-otel-build-ukfuu77r\\relay_otel-0.2.0-py3-none-any.whl"
+        ],
+        "cwd": ".",
+        "exit_code": 0,
+        "stderr": "Using CPython 3.12.7 interpreter at: .venv\\Scripts\\python.exe\nResolved 1 package in 4ms\nPrepared 1 package in 29ms\nInstalled 1 package in 119ms\n + relay-otel==0.2.0 (from file:///C:/Users/rajes/OneDrive/Desktop/mine/IP/poc-relay-otel/receipts/work/relay-otel-build-ukfuu77r/relay_otel-0.2.0-py3-none-any.whl)\n",
+        "stdout": ""
+      },
+      "installed_smoke_command": {
+        "command": [
+          ".\\.venv\\Scripts\\python.exe",
+          "-I",
+          "-c",
+          "import json,pathlib,sys;site=pathlib.Path(\"receipts\\\\work\\\\relay-otel-build-ukfuu77r\\\\installed-wheel\").resolve();sys.path.insert(0,str(site));import relay_otel.cli as cli;root=cli.resolve_project_root(pathlib.Path('.'));module=pathlib.Path(cli.__file__).resolve();assert module.is_relative_to(site);assert root == pathlib.Path('.').resolve();print(json.dumps({'module_under_installed_target':True,'project_root_verified':True},sort_keys=True))"
+        ],
+        "cwd": ".",
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "{\"module_under_installed_target\": true, \"project_root_verified\": true}\n"
+      }
+    },
+    "pnpm_audit": {
+      "command": [
+        "corepack",
+        "pnpm",
+        "audit",
+        "--prod",
+        "--json"
+      ],
+      "cwd": "web",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "{\n  \"advisories\": {},\n  \"metadata\": {\n    \"vulnerabilities\": {\n      \"info\": 0,\n      \"low\": 0,\n      \"moderate\": 0,\n      \"high\": 0,\n      \"critical\": 0\n    },\n    \"dependencies\": 20,\n    \"devDependencies\": 0,\n    \"optionalDependencies\": 79,\n    \"totalDependencies\": 99\n  }\n}\n"
+    },
+    "pnpm_version": {
+      "command": [
+        "corepack",
+        "pnpm",
+        "--version"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "11.16.0\n"
+    },
+    "publication": [
+      {
+        "bytes": 10880,
+        "path": "ARCHITECTURE.md",
+        "sha256": "c13310015cd37c804041213d13081b9f6bb326800f451cea168f670f39200948"
+      },
+      {
+        "bytes": 3806,
+        "path": "README.md",
+        "sha256": "49fb49e232b9be4502531796d40fb92c368ed952e7ecdd639d3517b670273637"
+      },
+      {
+        "bytes": 8821,
+        "path": "SECURITY.md",
+        "sha256": "b4e081896da12a08605f5cb0ec13e8a3a6f56a83f37582287fb76dc0f6143a18"
+      },
+      {
+        "bytes": 12112,
+        "path": "SPEC.md",
+        "sha256": "4f1e11521affb41f7dfacc89a2111f217de55744d31d98b2a6de7201ed2159e6"
+      }
+    ],
+    "python_dependency_audit": {
+      "command": [
+        ".\\.venv\\Scripts\\pip-audit.exe",
+        "--strict",
+        "--requirement",
+        ".\\receipts\\work\\relay-otel-audit-u8cqginh\\runtime-requirements.txt",
+        "--format",
+        "json"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "stderr": "No known vulnerabilities found\n",
+      "stdout": "{\"dependencies\": [{\"name\": \"certifi\", \"version\": \"2026.7.22\", \"vulns\": []}, {\"name\": \"charset-normalizer\", \"version\": \"3.5.1\", \"vulns\": []}, {\"name\": \"googleapis-common-protos\", \"version\": \"1.75.1\", \"vulns\": []}, {\"name\": \"protobuf\", \"version\": \"7.36.0\", \"vulns\": []}, {\"name\": \"idna\", \"version\": \"3.19\", \"vulns\": []}, {\"name\": \"opentelemetry-api\", \"version\": \"1.44.0\", \"vulns\": []}, {\"name\": \"opentelemetry-exporter-otlp-proto-common\", \"version\": \"1.44.0\", \"vulns\": []}, {\"name\": \"opentelemetry-exporter-otlp-proto-http\", \"version\": \"1.44.0\", \"vulns\": []}, {\"name\": \"opentelemetry-sdk\", \"version\": \"1.44.0\", \"vulns\": []}, {\"name\": \"requests\", \"version\": \"2.34.2\", \"vulns\": []}, {\"name\": \"urllib3\", \"version\": \"2.7.0\", \"vulns\": []}, {\"name\": \"opentelemetry-proto\", \"version\": \"1.44.0\", \"vulns\": []}, {\"name\": \"opentelemetry-semantic-conventions\", \"version\": \"0.65b0\", \"vulns\": []}, {\"name\": \"pyyaml\", \"version\": \"6.0.3\", \"vulns\": []}, {\"name\": \"typing-extensions\", \"version\": \"4.16.0\", \"vulns\": []}], \"fixes\": []}\n"
+    },
+    "python_dependency_export": {
+      "command": [
+        "uvx",
+        "uv@0.12.5",
+        "export",
+        "--frozen",
+        "--no-dev",
+        "--no-emit-project",
+        "--format",
+        "requirements.txt",
+        "--output-file",
+        ".\\receipts\\work\\relay-otel-audit-u8cqginh\\runtime-requirements.txt"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "# This file was autogenerated by uv via the following command:\n#    uv export --frozen --no-dev --no-emit-project --format requirements.txt --output-file .\\receipts\\work\\relay-otel-audit-u8cqginh\\runtime-requirements.txt\ncertifi==2026.7.22 \\\n    --hash=sha256:62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775 \\\n    --hash=sha256:741e2c3b351ddf169a738da9f2c048608ff7f2c5cc02f1ebc6b118bb090d5d55\n    # via requests\ncharset-normalizer==3.5.1 \\\n    --hash=sha256:1d1c7a53a6c2103925cdd6d7229f8c567379f211c869793df679f2e9f738c369 \\\n    --hash=sha256:2f293479cce755c75f1697e87c409b7ae4c555c7dfecb6e988ad13abba943031 \\\n    --hash=sha256:343fb4f2821043bd87095f7b08a1a181febc8e36ac64212143bbfd0a0e1bc235 \\\n    --hash=sha256:3588e376b3ea2eea84976f67273d679f229e24c66dce7b82ae45aef04ff6e072 \\\n    --hash=sha256:36047af20e17097c3bb9476c2b7655f2f7aa51322c0ba58c07695bedf755a950 \\\n    --hash=sha256:3617ac3cfd8b9888f145ad89dd6e692285834b0201c6074a5eeaad3fd4d668c2 \\\n    --hash=sha256:41876ee62a3dddf48ff1121ad8f0798032aa03f2fd35f21f34a4cab14f18d8d2 \\\n    --hash=sha256:4582c27e8c889d64811987b5967fbd3ae0c823fe1fd933b543d55ac20bb475fa \\\n    --hash=sha256:4abdc5f9ad448c1ecbfae2974b820535d6bc6e7eef63babbab3d81cf46968c71 \\\n    --hash=sha256:4b599739b93b2cbeded49645ae3c8d1405c29ddfbceac1545c87a3f9580a9e96 \\\n    --hash=sha256:4c4fb141a727957c93edfe5c32a26ceb6b5f6461d67146e2d39f51e16170bea8 \\\n    --hash=sha256:5b6d1386bf0096d26d3a863dc0a487a5b4eb9aa93cf5ba69683d29dde6b9d60f \\\n    --hash=sha256:5d8531a6569d025f68e2321e7638fb7978f23db58e5f69f56913837aae03816e \\\n    --hash=sha256:6117b84ea48435e5356dc737f5121485c30920ba43375fa7b434fd753df0eac3 \\\n    --hash=sha256:6df0ec430f9a831772c23ca5a224cba36517a58a84bb32c32bb59a9fa67c47f6 \\\n    --hash=sha256:70055ff39b97c99e7ae40ea3e393fb62aa2e44dbd9b29f8d14f42fb0025c3959 \\\n    --hash=sha256:7235dc28fc6dd9d832ac7c7bce95367dedb85929f17368a0c2bee1e080b9acbf \\\n    --hash=sha256:7c0c10730342b0c9b35dd1d619beb8214e520bd96a1f870f452680b238aab3e0 \\\n    --hash=sha256:87e4f41d375c0b9be2fb5251aee4b8a689169e134535aed81bf085c3b647451e \\\n    --hash=sha256:88e85ab89cb822c1e635f51d6d32e488f94e002e70e2f492bdb8b945543f345a \\\n    --hash=sha256:96fef3e886d6a9874b14f27fc193fbdc69d5d8035783d86aa4e1cea594e695f9 \\\n    --hash=sha256:a2028475ba855475b8b4d3cfeb4994269c967aea8b9892dfba907f4263a863a3 \\\n    --hash=sha256:a6dac12ff6b846103483683f60c5f8fee205121adc58ffd87e90a90a3af69e99 \\\n    --hash=sha256:aae2ee51122d3ae968a3837d97dc24a0aeebb0dea23694422cd172bd30017cd6 \\\n    --hash=sha256:ae4a097991662cd4fff0ddc74e0fe7874f82e00042fa0ea00855645ed0c79598 \\\n    --hash=sha256:b39b69b347e5e47a3b5b8cfc005c68c1ba347474e3960236c4944a8ecd174962 \\\n    --hash=sha256:b9af956078716df40d985fb0dfeb2c2120c5ca92ba4ff4b388acfd01cdc14d08 \\\n    --hash=sha256:ba501e667c17d8411f98e67a022d9604ef179aff0e459b7e292c796837c13573 \\\n    --hash=sha256:cee5dd7c6fb5dd52a0fe2a740f9bc6e3593f5f8b1788bde49de02086f30182b2 \\\n    --hash=sha256:cfa1c0cc3a8f9f53f1243a5a99ac36fd003880199383b37672e86ddda9cb07e2 \\\n    --hash=sha256:dd732602a7009217f658d5863d12d79d373a4de0eebc111094bcdd3bb8e0a6cc \\\n    --hash=sha256:e199fb99720074809a7720f1c0b4d919eea8b87e88713e0f8f602f7bef543d9d \\\n    --hash=sha256:e6621fb2a4988d6e53eedc455e5903e2679f3967b8acb3d639f1b63c14a2e893 \\\n    --hash=sha256:f9f8405c2c758532c74fed975dbee57be1f31a6e865c031870c79a6ed3212ada\n    # via requests\ngoogleapis-common-protos==1.75.1 \\\n    --hash=sha256:28a1934bcd33b9c9da66ac301a0a4227e3367f095a17d0375cb98f0a09d93b79 \\\n    --hash=sha256:d3042c6c5a2d4e67113104d6b6818b59b6bd92a197f2a91508e801fe815cf071\n    # via opentelemetry-exporter-otlp-proto-http\nidna==3.19 \\\n    --hash=sha256:5e0811a4383b21dc5838069f801c4fb62113b7447663d2530d2bd6e77b49bf15 \\\n    --hash=sha256:815e7be7a7806d54abb586dc943addc79e8b2ee16915059658cbeff4b1b43bf4\n    # via requests\nopentelemetry-api==1.44.0 \\\n    --hash=sha256:67647e5e9566edcf421166fdf022b3537f818635daa852b289e34604dc6fb33a \\\n    --hash=sha256:94b98c893a91b88657eaac1e3ba89618cdb85be6918196705354f34728b2cdef\n    # via\n    #   opentelemetry-exporter-otlp-proto-http\n    #   opentelemetry-sdk\n    #   opentelemetry-semantic-conventions\n    #   relay-otel\nopentelemetry-exporter-otlp-proto-common==1.44.0 \\\n    --hash=sha256:9a9fe61bba73d802904bc989f1d6b4a7b1ee40f06c40e98d6f85af65aaebb694 \\\n    --hash=sha256:dc87a5a5bc58f149a56d1547e4691588fa12994cdc3bc039a694ccb3375862ac\n    # via opentelemetry-exporter-otlp-proto-http\nopentelemetry-exporter-otlp-proto-http==1.44.0 \\\n    --hash=sha256:838592fce774c1c8bb7b9a0a7facbfa82e17be5a8a4e94cef10cb84ae026bae3 \\\n    --hash=sha256:c633d7270ad6b57cd4cfbe8b0007a9e2e7c0cb50bd6c50fe2a7b245f721a09d8\n    # via relay-otel\nopentelemetry-proto==1.44.0 \\\n    --hash=sha256:898b155a0e1557afd867478fb6158e8122a46329ca0bb8dc53cc55e98f017f56 \\\n    --hash=sha256:c547a79c2f8c0c515d31509154682e5921c7cfd5ca67b70e1f9266e2c3e103f3\n    # via\n    #   opentelemetry-exporter-otlp-proto-common\n    #   opentelemetry-exporter-otlp-proto-http\nopentelemetry-sdk==1.44.0 \\\n    --hash=sha256:cebe7f65dc12f26ead75c6064de12fd2a9052e5060c0272d402cfa203aae123b \\\n    --hash=sha256:df081c4c6bcfdb1211e3e86140376792643128a25f8d72d1d27675936e7e96ad\n    # via\n    #   opentelemetry-exporter-otlp-proto-http\n    #   relay-otel\nopentelemetry-semantic-conventions==0.65b0 \\\n    --hash=sha256:1cacde7b0ad306f84c5ef08c3dbe1bbaf20165bba6f8bff43b670e555a086bcb \\\n    --hash=sha256:f9b2b81e9d5b64f11bc952075e7e9c7fb0aab075c7fd1c46d597f1b919852d60\n    # via opentelemetry-sdk\nprotobuf==7.36.0 \\\n    --hash=sha256:1781cc1de61249b750848029bca452c0a8b7e990080316b9bbc2518b2117b488 \\\n    --hash=sha256:3297e60abdff301e5f74393d87f6cc59dacab5f024a89548a6e8de1d26576b16 \\\n    --hash=sha256:53374d53fc29a67f7dbbf0ade47d7526a0f0137bf0f9c90e48d8a60790ef748c \\\n    --hash=sha256:70f5ec8eb0da81a44360c0dc0beac99a0d78071d21956a7076bae8bd2051841b \\\n    --hash=sha256:7326fd717bdc419162a735938d89d4032332bcc3408804012b24ff3a37086071 \\\n    --hash=sha256:9103532dffd80c6fab7e50c65a31007680a06eb57537d437bb1b35812c138a37 \\\n    --hash=sha256:bf94a5917c71058262de683669bc0a797a7669d3de71f0b36d058e3194f47b44 \\\n    --hash=sha256:e8e09cb0d794c6687926fa558a8a6e72aa10edb997d5ca61da0765f12a3e00ea\n    # via\n    #   googleapis-common-protos\n    #   opentelemetry-proto\npyyaml==6.0.3 \\\n    --hash=sha256:41715c910c881bc081f1e8872880d3c650acf13dfa8214bad49ed4cede7c34ea \\\n    --hash=sha256:5fcd34e47f6e0b794d17de1b4ff496c00986e1c83f7ab2fb8fcfe9616ff7477b \\\n    --hash=sha256:5fdec68f91a0c6739b380c83b951e2c72ac0197ace422360e6d5a959d8d97b2c \\\n    --hash=sha256:64386e5e707d03a7e172c0701abfb7e10f0fb753ee1d773128192742712a98fd \\\n    --hash=sha256:7f047e29dcae44602496db43be01ad42fc6f1cc0d8cd6c83d342306c32270196 \\\n    --hash=sha256:8dc52c23056b9ddd46818a57b78404882310fb473d63f17b07d5c40421e47f8e \\\n    --hash=sha256:9149cad251584d5fb4981be1ecde53a1ca46c891a79788c0df828d2f166bda28 \\\n    --hash=sha256:96b533f0e99f6579b3d4d4995707cf36df9100d67e0c8303a0c55b27b5f99bc5 \\\n    --hash=sha256:ba1cc08a7ccde2d2ec775841541641e4548226580ab850948cbfda66a1befcdc \\\n    --hash=sha256:d76623373421df22fb4cf8817020cbb7ef15c725b9d5e45f17e189bfc384190f \\\n    --hash=sha256:fc09d0aa354569bc501d4e787133afc08552722d3ab34836a80547331bb5d4a0\n    # via relay-otel\nrequests==2.34.2 \\\n    --hash=sha256:2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0 \\\n    --hash=sha256:f288924cae4e29463698d6d60bc6a4da69c89185ad1e0bcc4104f584e960b9ed\n    # via opentelemetry-exporter-otlp-proto-http\ntyping-extensions==4.16.0 \\\n    --hash=sha256:481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8 \\\n    --hash=sha256:dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5\n    # via\n    #   opentelemetry-api\n    #   opentelemetry-exporter-otlp-proto-http\n    #   opentelemetry-sdk\n    #   opentelemetry-semantic-conventions\nurllib3==2.7.0 \\\n    --hash=sha256:231e0ec3b63ceb14667c67be60f2f2c40a518cb38b03af60abc813da26505f4c \\\n    --hash=sha256:9fb4c81ebbb1ce9531cce37674bbc6f1360472bc18ca9a553ede278ef7276897\n    # via requests\n"
+    },
+    "python_source_security_scan": {
+      "command": [
+        ".\\.venv\\Scripts\\bandit.exe",
+        "-r",
+        "src",
+        "scripts",
+        "-lll",
+        "-iii",
+        "-f",
+        "json"
+      ],
+      "cwd": ".",
+      "exit_code": 0,
+      "stderr": "[main]\tINFO\tprofile include tests: None\n[main]\tINFO\tprofile exclude tests: None\n[main]\tINFO\tcli include tests: None\n[main]\tINFO\tcli exclude tests: None\n",
+      "stdout": "{\n  \"errors\": [],\n  \"generated_at\": \"2026-09-27T11:45:35Z\",\n  \"metrics\": {\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 10,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 6,\n      \"SEVERITY.MEDIUM\": 4,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 6381,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"scripts\\\\bootstrap_signoz_access.py\": {\n      \"CONFIDENCE.HIGH\": 1,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 1,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 233,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"scripts\\\\create_lineage.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 146,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"scripts\\\\fetch_foundry.py\": {\n      \"CONFIDENCE.HIGH\": 1,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 1,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 59,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"scripts\\\\finalize_lineage.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 144,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"scripts\\\\materialize_web_data.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 245,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"scripts\\\\product_run.py\": {\n      \"CONFIDENCE.HIGH\": 2,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 2,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 449,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"scripts\\\\reproduce.py\": {\n      \"CONFIDENCE.HIGH\": 2,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 2,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 137,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"src\\\\relay\\\\__init__.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 2,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"src\\\\relay\\\\__main__.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 2,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"src\\\\relay\\\\cli.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 174,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"src\\\\relay\\\\engine.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 714,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"src\\\\relay\\\\example.py\": {\n      \"CONFIDENCE.HIGH\": 2,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 2,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 96,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"src\\\\relay\\\\graph.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 116,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"src\\\\relay\\\\journal.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 315,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"src\\\\relay\\\\redaction.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 81,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"src\\\\relay\\\\types.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 5,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"src\\\\relay_otel\\\\__init__.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 3,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"src\\\\relay_otel\\\\cli.py\": {\n      \"CONFIDENCE.HIGH\": 1,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 1,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 310,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"src\\\\relay_otel\\\\crash_runner.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 98,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"src\\\\relay_otel\\\\demo.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 128,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"src\\\\relay_otel\\\\deployment.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 34,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"src\\\\relay_otel\\\\exporter.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 420,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"src\\\\relay_otel\\\\lineage.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 960,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"src\\\\relay_otel\\\\live.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 52,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"src\\\\relay_otel\\\\mapping.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 116,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"src\\\\relay_otel\\\\product.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 422,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"src\\\\relay_otel\\\\projector.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 463,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"src\\\\relay_otel\\\\queryback.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 288,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"src\\\\relay_otel\\\\runtime_paths.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 30,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"src\\\\relay_otel\\\\signoz.py\": {\n      \"CONFIDENCE.HIGH\": 1,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 1,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 139,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}"
+    },
+    "web_install": {
+      "command": [
+        "corepack",
+        "pnpm",
+        "install",
+        "--frozen-lockfile"
+      ],
+      "cwd": "web",
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "Already up to date\nDone in 615ms using pnpm v11.16.0\n"
+    },
+    "web_verify": {
+      "build": {
+        "command": [
+          "corepack",
+          "pnpm",
+          "build"
+        ],
+        "cwd": "web",
+        "exit_code": 0,
+        "stderr": "$ next build\n",
+        "stdout": "\u25b2 Next.js 16.3.6 (Turbopack)\n\u2713 Running next.config.ts took 62ms\n\n  Creating an optimized production build ...\n\u2713 Compiled successfully in 1393ms\n  Running TypeScript ...\n  Finished TypeScript in 2.6s ...\n  Collecting page data using 12 workers ...\n  Generating static pages using 12 workers (0/9) ...\n  Generating static pages using 12 workers (2/9) \n  Generating static pages using 12 workers (4/9) \n  Generating static pages using 12 workers (6/9) \n\u2713 Generating static pages using 12 workers (9/9) in 1682ms\n  Finalizing page optimization ...\n\nRoute (app)\n\u250c \u0192 /\n\u251c \u25cb /_not-found\n\u251c \u0192 /api/runs\n\u251c \u0192 /api/runtime\n\u251c \u25cb /architecture\n\u251c \u25cb /contract\n\u251c \u0192 /runs\n\u251c   /runs/[id]\n\u2502 \u2514 \u25cf /runs/product-20260927114250553-0023-dc13d5\n\u2514 \u25cb /spec\n\n\n\u25cb  (Static)   prerendered as static content\n\u25cf  (SSG)      prerendered as static HTML (uses generateStaticParams)\n\u0192  (Dynamic)  server-rendered on demand\n\n"
+      },
+      "format": {
+        "command": [
+          "corepack",
+          "pnpm",
+          "format:check"
+        ],
+        "cwd": "web",
+        "exit_code": 0,
+        "stderr": "$ prettier --check .\n",
+        "stdout": "Checking formatting...\nAll matched files use Prettier code style!\n"
+      },
+      "lint": {
+        "command": [
+          "corepack",
+          "pnpm",
+          "exec",
+          "eslint",
+          "--format",
+          "json",
+          "."
+        ],
+        "cwd": "web",
+        "exit_code": 0,
+        "stderr": "",
+        "stdout": "[{\"filePath\":\".\\\\web\\\\app\\\\api\\\\runs\\\\route.ts\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\app\\\\api\\\\runtime\\\\route.ts\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\app\\\\architecture\\\\page.tsx\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\app\\\\contract\\\\page.tsx\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\app\\\\error.tsx\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\app\\\\layout.tsx\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\app\\\\loading.tsx\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\app\\\\not-found.tsx\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\app\\\\page.tsx\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\app\\\\runs\\\\[id]\\\\page.tsx\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\app\\\\runs\\\\page.tsx\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\app\\\\spec\\\\page.tsx\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\components\\\\architecture-diagram.tsx\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\components\\\\crash-demo.tsx\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\components\\\\journal-table.tsx\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\components\\\\runtime-status.tsx\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\components\\\\site-nav.tsx\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\components\\\\trace-tree.tsx\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\components\\\\ui\\\\badge.tsx\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\components\\\\ui\\\\button.tsx\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\components\\\\ui\\\\card.tsx\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\components\\\\ui\\\\table.tsx\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\eslint.config.mjs\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\lib\\\\local-api.ts\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\lib\\\\python-runtime.ts\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\lib\\\\runs.ts\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\lib\\\\runtime-health.ts\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\lib\\\\types.ts\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\lib\\\\utils.ts\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\next.config.ts\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\postcss.config.mjs\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]},{\"filePath\":\".\\\\web\\\\scripts\\\\build-evidence.mjs\",\"messages\":[],\"suppressedMessages\":[],\"errorCount\":0,\"fatalErrorCount\":0,\"warningCount\":0,\"fixableErrorCount\":0,\"fixableWarningCount\":0,\"usedDeprecatedRules\":[]}]\n"
+      },
+      "typecheck": {
+        "command": [
+          "corepack",
+          "pnpm",
+          "typecheck"
+        ],
+        "cwd": "web",
+        "exit_code": 0,
+        "stderr": "$ tsc --noEmit\n",
+        "stdout": ""
+      }
+    }
+  },
+  "generated_at": "2026-09-27T11:45:42.308398+00:00",
+  "lineage_id": "v2-2026-09-27-r11",
+  "lineage_inputs_sha256": "d8eb5a8bf157f723afb6dc2aba31d01d426b5ab61d173c6cabcea5a79a073571",
+  "phase": "03-publication",
+  "schema_version": 1,
+  "verdict": "PASS"
+}
