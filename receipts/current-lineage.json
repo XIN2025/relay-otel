@@ -1,0 +1,9 @@
+{
+  "lineage_id": "v2-2026-09-27-r11",
+  "manifest": {
+    "bytes": 1789,
+    "path": "receipts/lineages/v2-2026-09-27-r11/manifest.json",
+    "sha256": "1c2b2381fba1fb24269d357bc174ae39f53229fffb6c0f7101caf5670307e8b6"
+  },
+  "schema_version": 1
+}
