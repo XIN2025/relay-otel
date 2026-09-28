@@ -1,0 +1,75 @@
+name: verify
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: verify-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          version: "0.12.5"
+          enable-cache: true
+
+      - name: Install locked Python environment
+        run: uv sync --frozen --group dev
+
+      - name: Lint Python source
+        run: uv run ruff check .
+
+      - name: Check Python formatting
+        run: uv run ruff format --check .
+
+      - name: Type-check Python source
+        run: uv run mypy
+
+      - name: Compile Python commands
+        run: uv run python -m compileall -q src scripts verify
+
+      - name: Re-run bounded runtime correctness verifier
+        run: uv run python verify/runtime_correctness.py
+
+      - name: Recompute retained evidence semantics
+        run: uv run python verify/release_audit.py
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.16.0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.23.1
+          cache: pnpm
+          cache-dependency-path: web/pnpm-lock.yaml
+
+      - name: Install web dependencies
+        run: pnpm --dir web install --frozen-lockfile
+
+      - name: Verify production web application
+        run: pnpm --dir web verify
+
+      - name: Verify static evidence export
+        run: |
+          pnpm --dir web build:evidence
+          test ! -d web/out/api
+          grep -q "Live run disabled in evidence build" web/out/index.html
